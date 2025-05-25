@@ -1,26 +1,70 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #0A192F;
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color:var(--color-gray-400);
   font-family: Arial, Helvetica, sans-serif;
+}
+.colorful{
+  color:#64FFDA;
+  opacity: 0.9;
+}
+
+@layer utilities {
+  .hover\:colorful:hover {
+    color: #64FFDA;
+    opacity: 0.9;
+  }
+}
+@keyframes blink{
+  0%,100%{opacity: 1;}
+  50%{opacity: 0;}
+}
+.animate-blink{
+  animation:blink 1s step-start infinite;
+}
+.vertical-rlEN{
+  writing-mode:vertical-rl;
+}
+
+/* 애니메이션 출처: Inpa Tistory “CSS 링크 hover 디자인” */
+.effect {
+  position: relative;
+  display: inline-block;
+}
+.effect button:before,
+.effect button:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: '';
+  border-radius: 50%;
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+  transform: translate(-50%, -50%) scale(0.2);
+}
+
+.effect button:before {
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba(255, 255, 255,0.3);
+  z-index: 0;
+}
+.effect button:after {
+  width: 70px;
+  height: 70px;
+  border: 6px solid rgba(255, 255, 255,0.3);
+  transform: translate(-50%, -50%) scale(0.8);
+  z-index: 0;
+}
+.effect button:hover:before,
+.effect button:hover:after,
+.effect button:focus:before,
+.effect button:focus:after {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
