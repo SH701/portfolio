@@ -19,7 +19,7 @@ export default function SkillsContent({ activeTab }: Props) {
             </div>
             <div className="flex flex-col mt-3">
               <h3 className="text-white opacity-85 pl-1 lg:text-2xl ">{item.name}</h3>
-              <p className="text-xs text-gray-400 pb-3 pl-1 lg:text-base">- {item.description}</p>
+              <p className="text-xs text-gray-400 pb-3 pl-1 pr-5 lg:text-base">- {item.description}</p>
             </div>
           </li>
         ))}
