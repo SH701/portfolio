@@ -3,13 +3,13 @@ import Link from "next/link";
 export default function Introduce(){
     return(
          <>
-         <div className="flex flex-col gap-2 pt-15 sm:px-10 ">
-         <div className="colorful text-2xl opacity:1">안녕하세요. 저는 웹 개발자</div>
+         <div className="flex flex-col gap-2 pt-24 sm:px-10 ">
+         <div className="colorful text-2xl">안녕하세요. 저는 웹 개발자</div>
          <div className="lg:text-6xl pt-5 text-white opacity-80 text-4xl font-bold">김수환입니다.</div>
          <div className="lg:text-6xl pt-4 text-3xl font-bold">저는 끊임없는 도전을 즐기며,<br /> 
          웹 개발의 매력에 빠져 있습니다.</div>
-         <p className="pt-2 text-lg lg:text-xl">사용자에게 먼저 다가갈 수 있는 웹사이트의 프론트엔드 부분을 담당하고 있습니다.</p>
-         <div className="flex flex-row gap-3">
+         <p className="pt-5 text-lg lg:text-xl">사용자에게 먼저 다가갈 수 있는 웹사이트의 프론트엔드 부분을 담당하고 있습니다.</p>
+         <div className="flex flex-row gap-3 pt-5">
             <Link href="https://github.com/SH701">
                 <svg
                     className="size-10 colorful mt-3"

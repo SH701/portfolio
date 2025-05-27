@@ -1,14 +1,29 @@
-import Link from "next/link"
+"use client"
 
-export default function Social(){
+import { useState } from "react";
+
+type Props={
+    title:string;
+    githubLink:string;
+}
+
+export default function ProjectHeader({title,githubLink}:Props){
+  const [isHover,setIsHover] = useState(false);
+
     return(
-        <div className="flex flex-col items-center justify-center">
-            <Link 
-              href="https://github.com/SH701"
-              className="transition hover:-translate-y-1 hover:text-teal-300 duration-300"
+        <div
+        >
+        <div className="flex items-center justify-between">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+            </svg>
+            <div 
+              onClick={()=>window.open(githubLink)}
+              onMouseEnter={()=>setIsHover(true)}
+              onMouseLeave={()=>setIsHover(false)}
             >
-              <svg
-                className="size-6"
+             <svg
+                className={`size-6 ${isHover ? "colorful" : ""}`}
                 viewBox="0 0 15 15"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -20,8 +35,11 @@ export default function Social(){
                   clipRule="evenodd"
                 ></path>
               </svg>
-            </Link>
-             <div className="w-px mt-2 h-32 bg-gray-400" />
+              </div>
+        </div>
+         <p className={`mt-2 text-lg lg:text-[22px] transition-colors colorful`}>
+          {title}
+         </p>
         </div>
     )
 }

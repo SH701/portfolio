@@ -1,7 +1,6 @@
-
 import { Metadata } from "next";
 import About from "./about/page";
-import Skills from "./skils/page";
+import Skills from "./skills/page";
 import Projects from "./projects/page";
 import Contact from "./contact/page";
 import Social from "@/components/side/social";
@@ -20,7 +19,7 @@ export default function Home(){
   return(
      <>
       <div className="grid grid-cols-[auto,minmax(0,1000px),auto] mx-auto w-full sm:px-10">
-        <div className="fixed sm:left-7 left-2 bottom-0">
+        <div className="fixed  sm:left-4 left-2 bottom-0">
           <Social/>
         </div>
       <div className="flex flex-col gap-2 lg:px-30 lg:pt-20 pt-10 ">
@@ -30,7 +29,7 @@ export default function Home(){
         <section id="projects" ><Projects/></section>
         <section id="contact"><Contact/></section>
       </div>
-        <div className="fixed sm:right-7 right-2 bottom-0">
+        <div className="fixed sm:right-4 right-2 bottom-0">
           <Email/>
         </div>
       </div>

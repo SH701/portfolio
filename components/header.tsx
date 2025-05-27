@@ -26,21 +26,21 @@ export default function Header(){
           <Image src="/logo.png" alt="logo" width={60} height={60} />
         </Link>
     <div className="ml-auto px-7 py-5 flex items-end justify-end gap-5 lg:text-lg sm:text-sm text-xs">
-      <Link href="#about" className="flex flex-row">
-        <p className="colorful pr-2">01.</p>
-        <p className="hover:colorful transition-colors">About</p>
+      <Link href="#about" className="flex flex-row gap-2">
+        <p className="colorful ">01.</p>
+        <p className="hover:colorful transition-colors duration-300">About</p>
         </Link>
-      <Link href="#skills" className="flex flex-row">
-        <p className="colorful pr-2">02.</p>
-        <p className="hover:colorful transition-colors">Skills</p>
+      <Link href="#skills" className="flex flex-row gap-2">
+        <p className="colorful ">02.</p>
+        <p className="hover:colorful transition-colors duration-300">Skills</p>
         </Link>
-      <Link href="#projects" className="flex flex-row">
-        <p className="colorful pr-2">03.</p>
-        <p className="hover:colorful transition-colors">Projects</p>
+      <Link href="#projects" className="flex flex-row gap-2">
+        <p className="colorful ">03.</p>
+        <p className="hover:colorful transition-colors duration-300">Projects</p>
         </Link>
-      <Link href="#contact" className="flex flex-row">
-        <p className="colorful pr-2">04.</p>
-        <p className="hover:colorful transition-colors">Contact</p>
+      <Link href="#contact" className="flex flex-row gap-2">
+        <p className="colorful ">04.</p>
+        <p className="hover:colorful transition-colors duration-300">Contact</p>
         </Link>
     </div>
       </nav>

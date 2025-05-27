@@ -1,9 +1,7 @@
-"use client"
-
 export default function Email(){
     return(
         <div className="flex flex-col items-center justify-center">
-            <p className="vertical-rlEN text-xs">rkrk7636@gmail.com</p>
+            <p className="vertical-rlEN text-xs transition hover:-translate-y-1 hover:text-teal-300 cursor-pointer duration-300">rkrk7636@gmail.com</p>
             <div className="w-px mt-2 h-32 bg-gray-400" />
         </div>
     )

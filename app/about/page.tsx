@@ -1,6 +1,3 @@
-"use client"
-
-
 import SectionContainer from "@/components/sectioncontainer";
 import Image from "next/image"
 
