@@ -26,7 +26,7 @@ export default function Home(){
         <section className="pb-30"><Introduce/></section>
         <section id="about"><About/></section>
         <section id="skills" ><Skills/></section>
-        <section id="projects" ><Projects/></section>
+        <section id="projects" className="w-full" ><Projects/></section>
         <section id="contact"><Contact/></section>
       </div>
         <div className="fixed sm:right-4 right-2 bottom-0">

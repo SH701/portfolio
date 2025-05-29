@@ -52,7 +52,7 @@ export const tabs: {
       {Icon:SiNextdotjs,color:"#000000",name:"Next.js",description:"App Router 기반의 파일 구조와 서버 컴포넌트를 활용해 SSR 및 SEO 최적화를 구현했습니다"},
       {Icon:SiRecoil,color:"#3578E5",name:"Recoil",description:" React 앱의 전역 상태를 관리하여 컴포넌트 간에 데이터를 효율적으로 공유했습니다."},
       {Icon:SiReactrouter,color:"#CA4245",name:"react-router-dom",description:"SPA 구조에서 라우팅 처리에 사용했습니다."},
-      {Icon:SiReactquery,color:"#FF4154",name:"React Query",description:"슬라이드, 모달 등 인터랙션에 애니메이션 효과를 적용하여 부드러운 사용자 경험을 제공했습니다."},
+      {Icon:SiReactquery,color:"#FF4154",name:"React Query",description:"서버 상태를 효율적으로 관리하고, 데이터 캐싱 및 자동 리페치 기능을 통해 사용자 경험을 개선했습니다."},
       {Icon:SiTailwindcss,color:"#06B6D4",name:"Tailwind CSS",description:"틸리티 클래스 기반의 빠른 스타일링으로 반응형 UI를 제작했습니다."},
       {Icon:SiStyledcomponents,color:"#DB7093",name:"styled-components",description:"컴포넌트 단위의 스타일을 관리했습니다."},
       

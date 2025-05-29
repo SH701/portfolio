@@ -10,7 +10,7 @@ export default function SkillsContent({ activeTab }: Props) {
   const activeItems = tabs.find((t) => t.key === activeTab)?.items ?? [];
 
   return (
-    <section className="relative -translate-y-12">
+    <section className="relative sm:-translate-y-12">
       <ul>
         <p className="mb-3 flex flex-row gap-1">Skill Stack <span className="colorful">{activeTab}</span></p>
         {activeItems.map((item) => (

@@ -23,7 +23,7 @@ export default function Header(){
        isHide ? '-translate-y-full' : 'translate-y-0'}`}>
         <nav className=" flex flex-row">
         <Link href="/">
-          <Image src="/logo.png" alt="logo" width={60} height={60} />
+          <Image src="/favicon.ico" alt="logo" width={60} height={60} />
         </Link>
     <div className="ml-auto px-7 py-5 flex items-end justify-end gap-5 lg:text-lg sm:text-sm text-xs">
       <Link href="#about" className="flex flex-row gap-2">
