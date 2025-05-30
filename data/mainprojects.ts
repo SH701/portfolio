@@ -25,7 +25,7 @@ export const Main:Props[] =[
         "Typescript","NextJS", "React", "TailwindCSS","Zod","PostCSS",
         "React-Query","Express", "Prisma", "PostgreSQL ", "Next-Auth","GitHub", "Vercel"
         ],
-        img:"/Coin.png",
+        img:"/Market.png",
         projectLink:"https://carrot-market-reloaded-git-main-sh701s-projects.vercel.app",
         githubLink:"https://github.com/SH701/carrot-market-reloaded",
         capability:[
