@@ -10,9 +10,6 @@ import Introduce from "./introduce/page";
 export const metadata: Metadata = {
   title: "프론트엔드 김수환 | 포트폴리오",
   description: "김수환 포트폴리오 페이지입니다.",
-  icons:{
-    icon:"/favicon.ico",
-  }
 };
 
 export default function Home(){

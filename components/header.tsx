@@ -3,7 +3,17 @@
 import Link from "next/link";
 import Image from "next/image"
 import { useEffect,useState } from "react";
+import {motion} from "framer-motion"
+import {FadeDown} from "@/data/motion"
 
+
+const headerVariants ={
+  on:{
+    transition:{
+      staggerChildren:0.2
+    }
+  }
+}
 
 export default function Header(){
   const [isHide,setIsHide] = useState(false)
@@ -21,28 +31,40 @@ export default function Header(){
     <header className={`fixed top-0 z-30 w-full left-0 sm:px-10 pt-5
         backdrop-blur-md transition-transform duration-300 ${
        isHide ? '-translate-y-full' : 'translate-y-0'}`}>
-        <nav className=" flex flex-row">
+      <nav className=" flex flex-row">
         <Link href="/">
           <Image src="/favicon.ico" alt="logo" width={60} height={60} />
         </Link>
-    <div className="ml-auto px-7 py-5 flex items-end justify-end gap-5 lg:text-lg sm:text-sm text-xs">
+    <motion.ul 
+     initial="init"
+    animate="on"
+    variants={headerVariants }
+    className="ml-auto px-7 py-5 flex items-end justify-end gap-5 lg:text-lg sm:text-sm text-xs">
+      <motion.li variants={FadeDown}>
       <Link href="#about" className="flex flex-row gap-2">
         <p className="colorful ">01.</p>
         <p className="hover:colorful transition-colors duration-300">About</p>
         </Link>
+        </motion.li>
+      <motion.li variants={FadeDown}>
       <Link href="#skills" className="flex flex-row gap-2">
         <p className="colorful ">02.</p>
         <p className="hover:colorful transition-colors duration-300">Skills</p>
-        </Link>
+      </Link>
+      </motion.li>
+      <motion.li variants={FadeDown}>
       <Link href="#projects" className="flex flex-row gap-2">
         <p className="colorful ">03.</p>
         <p className="hover:colorful transition-colors duration-300">Projects</p>
-        </Link>
+      </Link>
+      </motion.li>
+      <motion.li variants={FadeDown}>
       <Link href="#contact" className="flex flex-row gap-2">
         <p className="colorful ">04.</p>
         <p className="hover:colorful transition-colors duration-300">Contact</p>
-        </Link>
-    </div>
+       </Link>
+       </motion.li>
+    </motion.ul>
       </nav>
       </header>
     )

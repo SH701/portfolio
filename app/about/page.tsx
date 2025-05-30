@@ -7,7 +7,7 @@ export default function About() {
       <div className="flex flex-col gap-8 md:flex-row">
         <div className="basis-[60%] sm:space-y-16 lg:text-xl text-sm space-y-10">
           <div>
-            <h3 className="mb-3 text-3xl text-lightest-slate">[첫인상을 주는 프론트엔드]</h3>
+            <h3 className="mb-3 lg:text-3xl text-2xl text-lightest-slate">[첫인상을 주는 프론트엔드]</h3>
             <div className="flex flex-col gap-2">
              <p >
               처음 마주치는 화면이 전부가 아니라는 마음으로 프론트를 만들고 있습니다.
@@ -18,7 +18,7 @@ export default function About() {
             </div>
           </div>
           <div>
-            <h3 className="mb-3 text-3xl text-lightest-slate">[몰입하는 순간의 즐거움]</h3>
+            <h3 className="mb-3 lg:text-3xl text-2xl text-lightest-slate">[몰입하는 순간의 즐거움]</h3>
             <div className="flex flex-col gap-2">
             <p>하나의 기능을 구현하다 보면 시간이 순식간에 지나갈 때가 있습니다.</p>
             <p>저는 그런 몰입의 순간을 좋아합니다.</p>
@@ -27,7 +27,7 @@ export default function About() {
             </div>
           </div>
           <div>
-            <h3 className="mb-3 text-3xl text-lightest-slate">[스스로 해결하는 사람]</h3>
+            <h3 className="mb-3 lg:text-3xl text-2xl text-lightest-slate">[스스로 해결하는 사람]</h3>
             <div className="flex flex-col gap-2">
             <p>
               인터넷 강의를 보며 개발을 처음 접했고,
