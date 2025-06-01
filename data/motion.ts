@@ -1,4 +1,4 @@
-import { Variants } from 'framer-motion';
+import {Variants } from 'framer-motion';
 
 export const FadeDown: Variants = {
 	init: {
@@ -25,10 +25,10 @@ export const FadeUp: Variants = {
 			duration: 0.3,
 		},
 	},
-	on: {
+	on:{
 		opacity: 1,
 		y: 0,
-		transition: {
+		transition : {
 			duration: 0.3,
 		},
 	},

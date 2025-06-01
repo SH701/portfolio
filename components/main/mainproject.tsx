@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useState } from "react";
 import ProjectModal from "./projectmodal/projectmodal";
 import GithubIcon from "../githubicon";
+import ScrollAnimation from "../scrollAnimation";
 
 
 export default function MainProject(){
@@ -17,7 +18,7 @@ export default function MainProject(){
             {Main.map(({ title, description, language, period,img,githubLink,projectLink }, index) => {
                 const isEven = index % 2 === 0;
                 return (
-                <div
+                <ScrollAnimation 
                     key={title}
                     className={` gap-5 mb-40 -translate-y-8 flex ${isEven ? "flex-row-reverse justify-start" : "flex-row justify-end lg:mr-20 mr-2"}`}>
                     <div className={`flex-shrink-0 ${isEven ? "ml-auto" : "mr-auto"}`}>
@@ -46,7 +47,7 @@ export default function MainProject(){
                             </div> 
                     </div>
                     
-                </div>      
+                </ScrollAnimation >      
                 );
             })}
             </div>

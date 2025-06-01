@@ -4,6 +4,7 @@ import Closebtn from "@/components/closebtn";
 import EmailForm from "@/components/emailform";
 import { useState } from "react";
 import styles from "@/app/contact/contact.module.css";
+import ScrollAnimation from "@/components/scrollAnimation";
 
 export default function Contact() {
   const [showForm, setShowForm] = useState(false);
@@ -13,7 +14,7 @@ export default function Contact() {
 
   return (
     <>
-    <div className="flex items-center justify-center flex-col gap-5 mb-10">
+    <ScrollAnimation className="flex items-center justify-center flex-col gap-5 mb-10">
         <p className="font-bold text-4xl">Contact</p>
         <p className="text-center text-lg">소통을 기반으로 배우고, 성장하는 웹 개발자가<br /> 필요하면 언제든지 연락해 주세요!</p>
         <div className={`${styles.effect} inline-block relative`}>
@@ -25,7 +26,7 @@ export default function Contact() {
           <Closebtn onclose={()=>setShowForm(false)}/>
         </div>
       )}
-      </div>
+      </ScrollAnimation>
     </>
   );
 }
