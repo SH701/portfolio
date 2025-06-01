@@ -1,4 +1,4 @@
-import ClientLoader from "@/components/clientloader";
+import ClientLoader from "@/components/loader/clientloader";
 import "./globals.css";
 import Header from "@/components/header";
 import {IBM_Plex_Sans_KR} from "next/font/google"
