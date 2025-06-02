@@ -1,4 +1,4 @@
-interface Props{
+interface MainProjectType {
     title:string;
     description:string;
     simple:string;
@@ -14,7 +14,7 @@ interface Props{
     }[];
 }
 
-export const Main:Props[] =[
+export const Main:MainProjectType [] =[
     {
         title:"🥕 Carrot",
         period:"2025.04.21 ~ 2025.05.09",

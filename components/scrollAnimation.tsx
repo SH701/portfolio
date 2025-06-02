@@ -4,7 +4,7 @@
 import { ReactNode, useRef, useEffect } from "react";
 
 type Props = {
-  children: ReactNode;      // ← 반드시 추가
+  children: ReactNode;
   className?: string;
   delay?: number;
 };
@@ -14,10 +14,10 @@ export default function ScrollAnimation({
   className,
   delay,
 }: Props) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref1 = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const el = ref.current;
+    const el = ref1.current;
     if (!el) return;
 
     // 초기 상태: 투명하고 아래로 내려간 상태
@@ -41,7 +41,7 @@ export default function ScrollAnimation({
   }, [delay]);
 
   return (
-    <div ref={ref} className={className}>
+    <div ref={ref1} className={className}>
       {children}
     </div>
   );

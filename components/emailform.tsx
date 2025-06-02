@@ -27,9 +27,8 @@ export default function EmailForm({onClose}:EmailProps){
         alert("메일 전송 실패:")
       })
     }
-
     return(
-        <div className="flex flex-col w-[90%] h-[80%] ">
+        <div className="flex flex-col w-[90%] h-[80%] max-w-[500px] ">
         <form ref={form} onSubmit={onSubmit} className="flex gap-5 flex-col">
             <label className="flex flex-col gap-1">
             <p className="colorful">Title</p>

@@ -15,11 +15,11 @@ export const metadata: Metadata = {
 export default function Home(){
   return(
      <>
-      <div className="grid grid-cols-[auto,minmax(0,1000px),auto] mx-auto w-full sm:px-10">
+      <div className="mx-auto max-w-screen-xl sm:px-10">
         <div className="fixed  sm:left-4 left-2 bottom-0">
           <Social/>
         </div>
-      <div className="flex flex-col gap-2 lg:px-30 lg:pt-20 pt-10 ">
+      <div className="max-w-[1200px] flex flex-col gap-2 lg:px-30 lg:pt-20 pt-10 ">
         <section id="top" className="pb-30"><Introduce/></section>
         <section id="about"><About/></section>
         <section id="skills" ><Skills/></section>

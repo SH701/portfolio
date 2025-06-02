@@ -17,10 +17,9 @@ export default function MainProject(){
         <div className="flex  flex-col gap-20 mt-16">
             {Main.map(({ title, description, language, period,img,githubLink,projectLink }, index) => {
                 const isEven = index % 2 === 0;
-                const first = index===0
                 return (
                 <ScrollAnimation
-                    delay={first?1:0.3}
+                    delay={1}
                     key={title}
                     className={` gap-5 mb-40 -translate-y-8 flex ${isEven ? "flex-row-reverse justify-start" : "flex-row justify-end lg:mr-20 mr-2"}`}>
                     <div className={`flex-shrink-0 ${isEven ? "ml-auto" : "mr-auto"}`}>
@@ -53,9 +52,10 @@ export default function MainProject(){
             })}
             </div>
             {openIndex !== null && (
-                <div className="fixed inset-0 z-[999] flex items-center justify-center">
+                <div className="fixed inset-0  flex items-center justify-center bg-black/50">
                     <div
-                     className="bg-sky-50 text-gray-900 p-6  shadow-xl w-[90%] max-h-[80vh] relative overflow-y-auto"
+                     className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                 bg-sky-50 text-gray-900 p-6 shadow-xl w-[90%] max-w-[800px] max-h-[80vh] overflow-y-auto"
                     onClick={(e) => e.stopPropagation()}
                     >
                     <ProjectModal

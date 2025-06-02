@@ -29,7 +29,7 @@ export default function ProjectModal({ title,simple, onClose,githubLink,projectL
     prev.includes(index)?prev.filter((i)=>i !== index):[...prev,index])
   }
   return (
-    <div className="h-full">
+    <div className="h-auto ">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold">{title}</h2>
         <CloseBtn onclose={onClose}/>

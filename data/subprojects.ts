@@ -16,7 +16,7 @@ export const subProjects:Props[] =[
     },
     {
         title:"Next Movie",
-        description:"Next.js의 라우팅과 데이터 패칭을 Nomad Coders 영화 API로 학습한 프로젝트입니다.",
+        description:"Next.js의 라우팅과 데이터 패칭을  영화 API로 학습한 프로젝트입니다.",
         language:"NextJs | Vercel",
         githubLink:"https://github.com/SH701/nextmovie",
         projectLink:"https://nextjsmovie-gamma.vercel.app/"
