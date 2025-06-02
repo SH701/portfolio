@@ -20,7 +20,7 @@ export default function Home(){
           <Social/>
         </div>
       <div className="flex flex-col gap-2 lg:px-30 lg:pt-20 pt-10 ">
-        <section className="pb-30"><Introduce/></section>
+        <section id="top" className="pb-30"><Introduce/></section>
         <section id="about"><About/></section>
         <section id="skills" ><Skills/></section>
         <section id="projects" className="w-full" ><Projects/></section>

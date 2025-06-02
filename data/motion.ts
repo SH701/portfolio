@@ -50,7 +50,7 @@ export const FadeRight: Variants = {
 			delay: 1,
 		},
 	},
-};
+}
 
 
 
@@ -71,3 +71,18 @@ export const FadeLeft: Variants = {
 		},
 	},
 };
+
+export const SkillContent: Variants={
+	init:{
+		opacity:0,
+		transition:{
+			duration:1,
+		}
+	},
+	on:{
+		opacity:1,
+		transition:{
+			duration:1.5,
+		}
+	}
+}

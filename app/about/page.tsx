@@ -6,8 +6,9 @@ import ScrollAnimation from "@/components/scrollAnimation";
 
 export default function About() {
   return (
+    <ScrollAnimation>
     <SectionContainer id="about" title="About Me" count={"01."}>
-      <ScrollAnimation className="flex flex-col gap-8 md:flex-row">
+      <ScrollAnimation delay={0.5} className="flex flex-col gap-8 md:flex-row ">
         <div className="basis-[60%] sm:space-y-16 lg:text-xl text-sm space-y-10">
           <div>
             <h3 className="mb-3 lg:text-3xl text-2xl text-lightest-slate">
@@ -73,5 +74,6 @@ export default function About() {
         </div>
       </ScrollAnimation>
     </SectionContainer>
+    </ScrollAnimation>
   );
 }

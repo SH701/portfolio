@@ -1,41 +1,48 @@
-"use client"
+// components/scrollAnimation.tsx
+"use client";
 
+import { ReactNode, useRef, useEffect } from "react";
 
-import { PropsWithChildren,useEffect,useRef,useState } from "react"
-type Props={
-    className?:string
-    delay?:number;
-}
-export default function ScrollAnimation({children,className,delay=0}:PropsWithChildren<Props>){
-    const ref = useRef<HTMLDivElement>(null);
-    const [isInter,setIsInter] = useState(false);
-    useEffect(()=>{
-        if(!ref.current) return;
-        const observer = new IntersectionObserver(
-            (entries)=>{
-                entries.forEach((entry)=>{
-                    if(entry.isIntersecting){
-                        setIsInter(true);
-                    }
-                })
-            },
-            {threshold:0.3}
-        )
-        observer.observe(ref.current)
-        return()=>{
-            observer.disconnect();
+type Props = {
+  children: ReactNode;      // ← 반드시 추가
+  className?: string;
+  delay?: number;
+};
+
+export default function ScrollAnimation({
+  children,
+  className,
+  delay,
+}: Props) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    // 초기 상태: 투명하고 아래로 내려간 상태
+    el.style.opacity = "0";
+    el.style.transform = "translateY(20px)";
+
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+          el.style.transition = `opacity 0.5s ease-out ${delay ?? 0}s, transform 0.5s ease-out ${delay ?? 0}s`;
+          io.disconnect();
         }
-    },[])
-    return (
-		<div
-			ref={ref}
-			className={`${className} relative transition-all duration-700 ease-out 
-				${isInter ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}
-                style={{
-				transitionDelay:  `${delay * 0.1}s`,
-			}}
-		>
-			{children}
-		</div>
-	);
+      },
+      { threshold: 0.2 }
+    );
+
+    io.observe(el);
+    return () => io.disconnect();
+  }, [delay]);
+
+  return (
+    <div ref={ref} className={className}>
+      {children}
+    </div>
+  );
 }

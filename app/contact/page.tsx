@@ -14,7 +14,7 @@ export default function Contact() {
 
   return (
     <>
-    <ScrollAnimation className="flex items-center justify-center flex-col gap-5 mb-10">
+    <ScrollAnimation delay={0.7} className="flex items-center justify-center flex-col gap-5 mb-10">
         <p className="font-bold text-4xl">Contact</p>
         <p className="text-center text-lg">소통을 기반으로 배우고, 성장하는 웹 개발자가<br /> 필요하면 언제든지 연락해 주세요!</p>
         <div className={`${styles.effect} inline-block relative`}>

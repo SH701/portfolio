@@ -32,8 +32,8 @@ export default function Header(){
         backdrop-blur-md transition-transform duration-300 ${
        isHide ? '-translate-y-full' : 'translate-y-0'}`}>
       <nav className=" flex flex-row">
-        <Link href="/">
-          <Image src="/favicon.ico" alt="logo" width={60} height={60} />
+        <Link href="#top">
+          <Image src="/favicon.ico" alt="logo" width={60} height={60} quality={100}/>
         </Link>
     <motion.ul 
      initial="init"

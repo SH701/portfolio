@@ -14,11 +14,13 @@ export default function MainProject(){
     const [openIndex, setOpenIndex] = useState<number | null>(null);
     return(
         <>
-        <div className="flex  flex-col gap-20">
+        <div className="flex  flex-col gap-20 mt-16">
             {Main.map(({ title, description, language, period,img,githubLink,projectLink }, index) => {
                 const isEven = index % 2 === 0;
+                const first = index===0
                 return (
-                <ScrollAnimation 
+                <ScrollAnimation
+                    delay={first?1:0.3}
                     key={title}
                     className={` gap-5 mb-40 -translate-y-8 flex ${isEven ? "flex-row-reverse justify-start" : "flex-row justify-end lg:mr-20 mr-2"}`}>
                     <div className={`flex-shrink-0 ${isEven ? "ml-auto" : "mr-auto"}`}>
@@ -46,7 +48,6 @@ export default function MainProject(){
                             </button>
                             </div> 
                     </div>
-                    
                 </ScrollAnimation >      
                 );
             })}
