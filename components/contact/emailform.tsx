@@ -28,8 +28,8 @@ export default function EmailForm({onClose}:EmailProps){
       })
     }
     return(
-        <div className="flex flex-col w-[90%] h-[80%] max-w-[500px] ">
-        <form ref={form} onSubmit={onSubmit} className="flex gap-5 flex-col">
+        <div className="flex flex-col w-[90%] h-[80%]  max-w-[800px] ">
+        <form ref={form} onSubmit={onSubmit} className="flex gap-5 flex-col w-[90%] mx-auto">
             <label className="flex flex-col gap-1">
             <p className="colorful">Title</p>
             <input type="text" name="name" required 
@@ -43,7 +43,7 @@ export default function EmailForm({onClose}:EmailProps){
             <label className="flex flex-col gap-1 ">
             <p className="colorful">Message</p>
             <textarea name="message" required 
-            className="border h-80  py-1 px-1.5 rounded-sm focus:outline-none" />
+            className="border sm:h-70 h-64  py-1 px-1.5 rounded-sm focus:outline-none" />
             </label>
             <div className="flex items-center justify-center colorful border h-10 cursor-pointer">
             <button type="submit" className="cursor-pointer">보내기</button>

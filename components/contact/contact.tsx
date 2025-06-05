@@ -22,7 +22,7 @@ export default function Contact() {
       </div>
       </ScrollAnimation>
       {showForm && (
-        <div className="fixed top-15 bg-[rgb(17,34,64)] border-[#64FFDA]  z-50 flex items-center justify-center border-2 lg:w-[50%] lg:left-[25%] w-[90%] h-[80%] sm:h-[85%] left-[5%]  mt-10 sm:mt-0">
+        <div className="fixed top-15 bg-[rgb(17,34,64)] border-[#64FFDA]  z-50 flex items-center justify-center border-2 lg:w-[50%] lg:left-[25%] w-[80%] h-[80%] sm:h-[85%] left-[10%]  mt-10 sm:mt-0">
           <EmailForm onClose={()=>setShowForm(false)} />
           <Closebtn onclose={()=>setShowForm(false)}/>
         </div>
