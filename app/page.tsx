@@ -1,11 +1,13 @@
 import { Metadata } from "next";
-import About from "./about/page";
-import Skills from "./skills/page";
-import Projects from "./projects/page";
-import Contact from "./contact/page";
+
+import Skills from "../components/skills/skills";
+import Projects from "@/components/project/project";
 import Social from "@/components/side/social";
 import Email from "@/components/side/email";
-import Introduce from "./introduce/page";
+import Introduce from "@/components/introduce/introduce";
+import About from "@/components/about/about";
+import Contact from "@/components/contact/contact";
+
 
 export const metadata: Metadata = {
   title: "프론트엔드 김수환 | 포트폴리오",

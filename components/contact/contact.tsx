@@ -1,9 +1,9 @@
 "use client"
 
 import Closebtn from "@/components/closebtn";
-import EmailForm from "@/components/emailform";
+import EmailForm from "@/components/contact/emailform";
 import { useState } from "react";
-import styles from "@/app/contact/contact.module.css";
+import styles from "@/components/contact/contact.module.css";
 import ScrollAnimation from "@/components/scrollAnimation";
 
 export default function Contact() {

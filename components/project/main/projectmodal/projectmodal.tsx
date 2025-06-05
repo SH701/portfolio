@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import CloseBtn from "../../closebtn";
+
 import styles from "../projectmodal/projectmodal.module.css"
 import { useState } from "react";
+import CloseBtn from "@/components/closebtn";
 
 interface CapabilityItem {
   title:string;

@@ -1,9 +1,10 @@
 "use client"
 
-import MainProject from "@/components/main/mainproject";
+
 import ScrollAnimation from "@/components/scrollAnimation";
 import SectionContainer from "@/components/sectioncontainer";
-import SubProject from "@/components/sub/subproject";
+import SubProject from "@/components/project/sub/subproject";
+import MainProject from "./main/mainproject";
 
 
 export default function Projects(){

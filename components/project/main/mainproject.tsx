@@ -1,14 +1,14 @@
 "use client"
 
-import ProjectHeader from "./projectheader";
+
 import {Main} from "@/data/mainprojects"
 import Image from "next/image"
 import Link from "next/link";
 import { useState } from "react";
 import ProjectModal from "./projectmodal/projectmodal";
-import GithubIcon from "../githubicon";
-import ScrollAnimation from "../scrollAnimation";
-
+import ScrollAnimation from "@/components/scrollAnimation";
+import ProjectHeader from "./projectheader";
+import GithubIcon from "@/components/githubicon";
 
 export default function MainProject(){
     const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -30,7 +30,7 @@ export default function MainProject(){
                     <div className={`absolute z-30 max-w-[500px] ${isEven ? "left-0" : "right-0"}`}>  
                         <ProjectHeader title={title} period={period} projectLink={projectLink} className={`flex flex-col ${isEven? "items-start justify-start":"items-end justify-end"}`}/>
                         <div className={`p-4 bg-[#112240] flex items-center justify-center w-[70%] h-60 lg:w-[100%] lg:h-[80%]   ${isEven ? "ml-0 mr-auto" : "ml-auto mr-0"}`}>
-                            <p className="text-[12px] lg:text-[18px] sm:text-[14px] px-8 py-5">{description}</p>
+                            <p className="text-[12px] lg:text-[18px] sm:text-[14px] sm:px-8 py-5 px-4">{description}</p>
                         </div>
                         <div className="flex flex-row flex-wrap">
                          {language.map((item)=>(                           

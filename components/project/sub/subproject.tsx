@@ -1,12 +1,10 @@
 import { subProjects } from "@/data/subprojects";
 import ProjectHeader from "./subprojectheader";
-import ScrollAnimation from "../scrollAnimation";
+import ScrollAnimation from "@/components/scrollAnimation";
 
 
 export default function SubProject(){
-
     return(
-
         <div>
             <ScrollAnimation>
             <p className="text-center mb-7 lg:text-4xl text-2xl">Sub Projects</p>
