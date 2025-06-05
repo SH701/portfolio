@@ -41,7 +41,7 @@ export default function Header(){
      initial="init"
     animate="on"
     variants={headerVariants }
-    className="ml-auto px-7 py-5 flex items-end justify-end gap-5 lg:text-lg sm:text-sm text-xs">
+    className="ml-auto sm:px-7 px-3 py-5 flex items-end justify-end gap-5 lg:text-lg sm:text-sm text-xs">
       <motion.li variants={FadeDown}>
       <Link href="#about" className="flex flex-row sm:gap-2 gap-1">
         <p className="colorful ">01.</p>
