@@ -31,10 +31,12 @@ export default function Header(){
     <header className={`fixed top-0 z-30 w-full left-0 sm:px-10 sm:pt-5
         backdrop-blur-md transition-transform duration-300 ${
        isHide ? '-translate-y-full' : 'translate-y-0'}`}>
-      <nav className=" flex flex-row">
+      <nav className="flex flex-row">
+        <div className="ml-4 mt-2">
         <Link href="#top">
-          <Image src="/favicon.ico" alt="logo" width={60} height={60} quality={100}/>
+          <Image src="/favicon.ico" alt="logo" width={60} height={60}  />
         </Link>
+        </div>
     <motion.ul 
      initial="init"
     animate="on"
