@@ -43,25 +43,25 @@ export default function Header(){
     variants={headerVariants }
     className="ml-auto px-7 py-5 flex items-end justify-end gap-5 lg:text-lg sm:text-sm text-xs">
       <motion.li variants={FadeDown}>
-      <Link href="#about" className="flex flex-row gap-2">
+      <Link href="#about" className="flex flex-row sm:gap-2 gap-1">
         <p className="colorful ">01.</p>
         <p className="hover:colorful transition-colors duration-300">About</p>
         </Link>
         </motion.li>
       <motion.li variants={FadeDown}>
-      <Link href="#skills" className="flex flex-row gap-2">
+      <Link href="#skills" className="flex flex-row sm:gap-2 gap-1">
         <p className="colorful ">02.</p>
         <p className="hover:colorful transition-colors duration-300">Skills</p>
       </Link>
       </motion.li>
       <motion.li variants={FadeDown}>
-      <Link href="#projects" className="flex flex-row gap-2">
+      <Link href="#projects" className="flex flex-row sm:gap-2 gap-1">
         <p className="colorful ">03.</p>
         <p className="hover:colorful transition-colors duration-300">Projects</p>
       </Link>
       </motion.li>
       <motion.li variants={FadeDown}>
-      <Link href="#contact" className="flex flex-row gap-2">
+      <Link href="#contact" className="flex flex-row sm:gap-2 gap-1">
         <p className="colorful ">04.</p>
         <p className="hover:colorful transition-colors duration-300">Contact</p>
        </Link>
