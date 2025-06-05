@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-import styles from "../projectmodal/projectmodal.module.css"
+import styles from "../projectdetail/projectdetail.module.css"
 import { useState } from "react";
 import CloseBtn from "@/components/closebtn";
 
@@ -23,7 +23,7 @@ interface Props {
   simple:string;
 }
 
-export default function ProjectModal({ title,simple, onClose,githubLink,projectLink,language,capability,period,intension }: Props) {
+export default function ProjectDetail({ title,simple, onClose,githubLink,projectLink,language,capability,period,intension }: Props) {
   const [isOpen,setIsOpen] = useState<number[]>([]);
   const toggleIndex = (index:number)=>{
     setIsOpen((prev)=>

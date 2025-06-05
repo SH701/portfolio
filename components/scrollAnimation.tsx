@@ -20,7 +20,6 @@ export default function ScrollAnimation({
     const el = ref1.current;
     if (!el) return;
 
-    // 초기 상태: 투명하고 아래로 내려간 상태
     el.style.opacity = "0";
     el.style.transform = "translateY(20px)";
 

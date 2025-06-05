@@ -27,7 +27,6 @@ export default function Contact() {
           <Closebtn onclose={()=>setShowForm(false)}/>
         </div>
       )}
-      
     </>
   );
 }
