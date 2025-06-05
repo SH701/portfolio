@@ -43,7 +43,7 @@ export default function EmailForm({onClose}:EmailProps){
             <label className="flex flex-col gap-1 ">
             <p className="colorful">Message</p>
             <textarea name="message" required 
-            className="border sm:h-70 h-50 py-1 px-1.5 rounded-sm focus:outline-none" />
+            className="border h-80  py-1 px-1.5 rounded-sm focus:outline-none" />
             </label>
             <div className="flex items-center justify-center colorful border h-10 cursor-pointer">
             <button type="submit" className="cursor-pointer">보내기</button>

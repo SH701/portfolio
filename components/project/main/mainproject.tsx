@@ -7,8 +7,9 @@ import Link from "next/link";
 import { useState } from "react";
 import ProjectModal from "./projectmodal/projectmodal";
 import ScrollAnimation from "@/components/scrollAnimation";
-import ProjectHeader from "./projectheader";
 import GithubIcon from "@/components/githubicon";
+import ProjectHeader from "./projectheader";
+
 
 export default function MainProject(){
     const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -28,7 +29,7 @@ export default function MainProject(){
                         </div>
                     </div>
                     <div className={`absolute z-30 max-w-[500px] ${isEven ? "left-0" : "right-0"}`}>  
-                        <ProjectHeader title={title} period={period} projectLink={projectLink} className={`flex flex-col ${isEven? "items-start justify-start":"items-end justify-end"}`}/>
+                        <ProjectHeader title={title}  period={period} projectLink={projectLink} className={`flex flex-col ${isEven? "items-start justify-start":"items-end justify-end"}`}/>
                         <div className={`p-4 bg-[#112240] flex items-center justify-center w-[70%] h-60 lg:w-[100%] lg:h-[80%]   ${isEven ? "ml-0 mr-auto" : "ml-auto mr-0"}`}>
                             <p className="text-[12px] lg:text-[18px] sm:text-[14px] sm:px-8 py-5 px-4">{description}</p>
                         </div>
@@ -55,7 +56,7 @@ export default function MainProject(){
                 <div className="fixed inset-0  flex items-center justify-center bg-black/50">
                     <div
                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-                 bg-sky-50 text-gray-900 p-6 shadow-xl w-[90%] max-w-[800px] max-h-[80vh] overflow-y-auto"
+                 bg-sky-50 text-gray-900 p-6 shadow-xl w-[100%] max-w-[800px] max-h-[80vh] overflow-y-auto"
                     onClick={(e) => e.stopPropagation()}
                     >
                     <ProjectModal
