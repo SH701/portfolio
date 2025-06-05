@@ -40,7 +40,7 @@ export default function LoadingScreen(){
         <>
         <div 
         className={`flex items-center justify-center text-3xl h-screen
-        ${finished ? "text-8xl" : "text-5xl"} transition-all duration-500`}
+        ${finished ? "sm:text-8xl text-6xl" : "sm:text-5xl text-3xl"} transition-all duration-500`}
         >
             {title}
         </div>

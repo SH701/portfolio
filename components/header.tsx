@@ -28,7 +28,7 @@ export default function Header(){
     return () => window.removeEventListener("scroll",onscroll)
   },[])
     return(
-    <header className={`fixed top-0 z-30 w-full left-0 sm:px-10 pt-5
+    <header className={`fixed top-0 z-30 w-full left-0 sm:px-10 sm:pt-5 pt-3
         backdrop-blur-md transition-transform duration-300 ${
        isHide ? '-translate-y-full' : 'translate-y-0'}`}>
       <nav className=" flex flex-row">
