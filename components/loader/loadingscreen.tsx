@@ -39,7 +39,7 @@ export default function LoadingScreen(){
     return (
         <>
         <div 
-        className={`flex items-center justify-center text-3xl h-screen sm:flex-row flex-col
+        className={`flex items-center justify-center text-3xl h-screen
         ${finished ? "text-8xl" : " text-5xl"} transition-all duration-500`}
         >
             {title}
