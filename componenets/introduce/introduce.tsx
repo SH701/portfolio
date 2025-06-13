@@ -32,7 +32,7 @@ export default function Introduce() {
         김수환입니다.
       </motion.div>
       <motion.div
-        className="lg:text-6xl pt-4 text-3xl font-bold"
+        className="lg:text-6xl pt-4 sm:text-3xl text-2xl font-bold"
         variants={FadeUp}
       >
         저는 끊임없는 도전을 즐기며,

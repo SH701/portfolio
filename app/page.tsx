@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <div className="mx-auto max-w-screen-xl sm:px-10">
         <div className="max-w-[1200px] flex flex-col gap-2 lg:pt-20 pt-10 ">
-          <section id="top" className="pb-30">
+          <section id="top" className="py-10 h-screen">
             <Introduce />
           </section>
           <section id="about">
