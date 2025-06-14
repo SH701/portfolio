@@ -32,7 +32,7 @@ export default function MainProject({ setOpenIndex }: Props) {
           const isEven = index % 2 === 0;
           return (
             <ScrollAnimation
-              delay={1}
+              delay={0.5}
               key={title}
               className={`grid grid-cols-1 md:grid-cols-2 gap-5 md:mb-20`}
             >
