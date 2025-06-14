@@ -18,15 +18,15 @@ export default function About() {
                 src="/profile.png"
                 fill
                 alt="프로필"
-                className="z-10  h-[400px] w-[300px] max-w-[300px] md:mt-[15%] mx-auto -translate-x-2  rounded-xl"
+                className="z-10  h-[400px] w-[300px] max-w-[300px] md:mt-[10%] mx-auto -translate-x-2  rounded-xl"
               />
-              <p className="md:absolute md:bottom-[-7.5rem] md:left-38 transform  text-center translate-y-105 md:translate-y-0">
+              <p className="md:absolute md:bottom-[-6.5rem] md:left-45 transform  text-center translate-y-105 md:translate-y-0">
                 김수환
               </p>
-              <p className="md:absolute md:bottom-[-10.5rem] md:left-32 transform  text-center translate-y-105 md:translate-y-0">
+              <p className="md:absolute md:bottom-[-9.5rem] md:left-38 transform  text-center translate-y-105 md:translate-y-0">
                 2000.07.01
               </p>
-              <p className="md:absolute md:bottom-[-13.5rem] md:left-21 transform  text-center translate-y-105 md:translate-y-0">
+              <p className="md:absolute md:bottom-[-12.5rem] md:left-26 transform  text-center translate-y-105 md:translate-y-0">
                 rkrk7636@gmail.com
               </p>
             </div>

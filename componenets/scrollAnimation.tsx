@@ -29,7 +29,7 @@ export default function ScrollAnimation({ children, className, delay }: Props) {
           io.disconnect();
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     io.observe(el);

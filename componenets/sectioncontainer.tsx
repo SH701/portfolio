@@ -15,7 +15,7 @@ export default function SectionContainer({
 }: Props) {
   return (
     <section
-      className={`${className ? className : ""}  sm:py-20 py-10 `}
+      className={`${className ? className : ""}  sm:py-20 sm:px-10 `}
       {...attr}
     >
       <div className="flex flex-row gap-1 sm:pb-18 lg:text-4xl text-lg pb-10">

@@ -119,7 +119,7 @@ export default function ProjectDetail({
           <p className="font-semibold pb-4">문제점: {situation}</p>
           <div className="font-semibold">
             개선사항:
-            <ol className="list-decimal list-inside  ml-6 mt-2 space-y-1">
+            <ol className="list-decimal list-inside mt-2 space-y-1">
               {improvement.map((item, idx) => (
                 <li key={idx}>{item}</li>
               ))}

@@ -35,7 +35,6 @@ export default function EmailForm({ onClose }: EmailProps) {
         onSubmit={onSubmit}
         className="flex gap-5 flex-col w-[90%] mx-auto"
       >
-        <p className="text-center text-3xl">Send Mail</p>
         <label className="flex flex-col gap-1">
           <p className="colorful">Title</p>
           <input
@@ -59,7 +58,7 @@ export default function EmailForm({ onClose }: EmailProps) {
           <textarea
             name="message"
             required
-            className="border sm:h-70 2xl:h-90 h-50  py-1 px-1.5 rounded-sm focus:outline-none"
+            className="border sm:h-70 3xl:h-90 h-50  py-1 px-1.5 rounded-sm focus:outline-none"
           />
         </label>
         <div className="flex items-center justify-center colorful border h-10 cursor-pointer">

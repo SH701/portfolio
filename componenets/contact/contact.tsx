@@ -16,7 +16,7 @@ export default function Contact() {
     <>
       <ScrollAnimation delay={0.7} className="text-center flex gap-4 flex-col">
         <p className="font-bold text-4xl">Contact</p>
-        <p className="text-lg">
+        <p className="sm:text-lg text-base">
           소통을 기반으로 배우고, 성장하는 웹 개발자가
           <br /> 필요하면 언제든지 연락해 주세요!
         </p>
