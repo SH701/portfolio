@@ -89,7 +89,7 @@ export const Main: MainProjectType[] = [
       "Framer-Motion",
       "Web-Vitals",
     ],
-    img: "/Suflix.png",
+    img: "/photo.png",
     projectLink: " https://sh701.github.io/Suflix/",
     githubLink: "https://github.com/SH701/Suflix",
     capability: [
@@ -133,7 +133,7 @@ export const Main: MainProjectType[] = [
       "apexcharts ",
       "react-apexcharts",
     ],
-    img: "/Coin.png",
+    img: "/photo2.png",
     projectLink: "https://sh701.github.io/CoinTracker/",
     githubLink: "https://github.com/SH701/CoinTracker",
     capability: [
