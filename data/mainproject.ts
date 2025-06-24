@@ -90,8 +90,8 @@ export const Main: MainProjectType[] = [
       "Web-Vitals",
     ],
     img: "/photo.png",
-    projectLink: " https://sh701.github.io/Suflix/",
-    githubLink: "https://github.com/SH701/Suflix",
+    projectLink: "https://sh701.github.io/Netflix_Clone/",
+    githubLink: "https://github.com/SH701/Netflix_Clone",
     capability: [
       {
         title: "상세정보",
