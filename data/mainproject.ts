@@ -72,7 +72,7 @@ export const Main: MainProjectType[] = [
     ],
   },
   {
-    title: "🎬 Suflix",
+    title: "🎬 Netflix Clone",
     period: "2025.03.24 ~ 2025.03.31",
     description:
       "React 기반으로 개발되었으며, styled-components로 스타일을 구성하고, recoil과 react-query를 통해 클라이언트 및 서버 상태를 효율적으로 관리했습니다. react-hook-form으로 폼 유효성 검사를 구현하고, framer-motion으로 애니메이션 효과를 적용하여 풍부한 사용자 경험을 제공했습니다.",
