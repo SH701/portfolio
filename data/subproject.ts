@@ -32,11 +32,19 @@ export const subProjects: Props[] = [
     projectLink: "https://nextjsmovie-gamma.vercel.app/",
   },
   {
-    title: "React To-Do",
+    title:"CoinTracker",
     description:
-      "React로 제작한 할 일 관리 앱. 상태 관리와 컴포넌트 분리에 중점을 두었습니다.",
-    language: "React",
-    githubLink: "https://github.com/SH701/React-to-do",
-    projectLink: "https://sh701.github.io/React-to-do/",
+      "React 기반으로 구축되었으며, recoil을 활용해 인터페이스 상태를 유연하게 관리합니다.react-query로 실시간 데이터를 빠르게 받아오고 캐싱합니다.",
+    language:"React | TypeScript | Recoil | React-Query",
+    githubLink:"https://github.com/SH701/CoinTracker",
+    projectLink:"https://sh701.github.io/CoinTracker/",
+  },
+  {
+    title: "Planflow",
+    description:
+      "localStorage를 활용해 사용자 데이터를 저장하며,JavaScript의 내장 메서드로 상태를 관리하는 로직을 구성했습니다.",
+    language: "JavaScript",
+    githubLink: "https://github.com/SH701/PlanFlow",
+    projectLink: "https://sh701.github.io/PlanFlow/",
   },
 ];

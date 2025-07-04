@@ -80,6 +80,13 @@ export const tabs: {
         description:
           "App Router 기반의 파일 구조와 서버 컴포넌트를 활용해 SSR 및 SEO 최적화를 구현했습니다",
       },
+      { 
+        Icon:SiReact,
+        color:"#000000",
+        name:"React-Native",
+        description:
+          "상태 및 이벤트 처리를 고려하여 사용자 경험 중심의 컴포넌트 구조로 구현했습니다.",
+      },
       {
         Icon: SiRecoil,
         color: "#3578E5",
