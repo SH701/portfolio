@@ -13,7 +13,7 @@ export const subProjects: Props[] = [
     "Unwind는 로그인, 게시글 작성, 댓글 기능이 포함된 커뮤니티 웹 애플리케이션입니다.",
   language: "Next.js, Tailwind CSS, Prisma",
   githubLink: "https://github.com/SH701/unwind",
-  projectLink: "https://unwind-pi.vercel.app/",
+  projectLink: "https://unwind-sh701s-projects.vercel.app/",
 },
   {
     title: "Portfolio",
