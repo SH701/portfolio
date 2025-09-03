@@ -14,14 +14,61 @@ interface MainProjectType {
   }[];
   situation: string;
   improvement: string[];
+  awards?: string[];
+  collaboration?: string;
 }
 
 export const Main: MainProjectType[] = [
   {
+    title: "🧠 Noonchi",
+    period: "2025.08.01 ~ 2025.08.26",
+    awards: ["✨ 508 AI 포텐데이 우수 프로젝트 선정 (Team PangPang)"],
+    collaboration:
+      "프론트엔드 전반 설계 및 UI 구현, AI 페르소나·존댓말 기능 및 음성 입력·TTS 연동 담당",
+    description:
+      "페르소나 선택, 존댓말·반말 슬라이더, 번역 박스, 음성 입력·TTS 기능을 결합한 대화형 학습 서비스의 프론트엔드를 구현했습니다. 사용자는 상황(상사와 대화, 부모님 상견례, 카페 주문 등)에 맞는 AI 페르소나를 선택해 실제 같은 대화를 경험할 수 있으며, 번역 박스로 다양한 언어 전환과 표현 교정을 확인할 수 있습니다.",
+    simple: "NOONCHI — 한국어 존댓말, 상황과 관계까지 코칭해주는 AI",
+    intension: "AI와 자연스러운 대화를 주고받을 수 있는 웹 클라이언트",
+    language: [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "TailwindCSS",
+      "Context API",
+      "Zustand",
+      "Vercel",
+    ],
+    img: "/noonchi.png",
+    projectLink: "https://noonchi.ai.kr",
+    githubLink: "https://github.com/SH701/noonchi-ai",
+    capability: [
+      {
+        title: "눈치코치 (Custom Chatbot)",
+        description:
+          "상견례·직장 상사와 대화하기·카페 주문하기 등 현실 시나리오 기반 대화 시뮬레이션을 구현했습니다.",
+      },
+      {
+        title: "실시간 피드백 & 리라이팅",
+        description:
+          "표현의 정중도·자연스러움 분석 + 더 자연스러운 대안 제시합니다.",
+      },
+      {
+        title: "히스토리 & 리포트",
+        description: "대화 기록을 분석해 반복 학습 및 개선 방향 제공합니다.",
+      },
+    ],
+    situation:
+      "API 응답 지연 시 로딩 처리만 단순해 사용자 경험이 다소 밋밋하다.",
+    improvement: [
+      "스트리밍 응답 UI 적용 (점차 텍스트가 나타나는 방식)",
+      "음성 재생 시 애니메이션 추가, 인터랙션 강화",
+    ],
+  },
+  {
     title: "🛒 NeighBuy",
     period: "2025.04.21 ~ 2025.06.13",
     description:
-      "해당 프로젝트는 Next.js 14 기반의 풀스택 웹 애플리케이션으로, Prisma + Supabase를 활용한 데이터 관리와, iron-session 기반의 인증 시스템을 도입했습니다.react-hook-form과 zod로 폼 유효성 검사를 구현했으며, AWS S3 및 UploadThing을 통한 이미지 업로드, 문자 인증, 그리고 Tailwind CSS 및 daisyUI로 반응형 UI를 구성하였습니다.",
+      "해당 프로젝트는 Next.js 14 기반의 풀스택 웹 애플리케이션으로, Prisma를 활용한 데이터 관리와, iron-session 기반의 인증 시스템을 도입했습니다.react-hook-form과 zod로 폼 유효성 검사를 구현했으며, UploadThing을 통한 이미지 업로드, 문자 인증, 그리고 Tailwind CSS 및 daisyUI로 반응형 UI를 구성하였습니다.",
     simple:
       "실제 당근마켓 웹페이지에 없는 로그인, 회원가입 기능, 소셜로그인, 로그인 후 권한을 바탕으로 글 CRUD와 댓글 CRUD, 무한 스크롤, 채팅기능을 추가하여 구현하였습니다.",
     intension: "로그인 기반의 중고거래 웹서비스",

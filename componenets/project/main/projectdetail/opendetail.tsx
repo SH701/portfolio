@@ -31,6 +31,8 @@ export default function OpenDetail({ openIndex, setOpenIndex }: Props) {
               capability={Main[openIndex].capability}
               situation={Main[openIndex].situation}
               improvement={Main[openIndex].improvement}
+              awards={Main[openIndex].awards}
+              collaboration={Main[openIndex].collaboration}
             />
           </div>
         </div>

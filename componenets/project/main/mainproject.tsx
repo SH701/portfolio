@@ -42,13 +42,13 @@ export default function MainProject({ setOpenIndex }: Props) {
                 }`}
               >
                 <div className="relative w-full max-w-[700px] h-[450px] bg-black">
-  <Image
-    src={img}
-    alt="대표사진"
-    fill
-    className="rounded-md shadow-md object-contain p-0 m-0"
-  />
-</div>
+                  <Image
+                    src={img}
+                    alt="대표사진"
+                    fill
+                    className="rounded-md shadow-md object-contain p-0 m-0"
+                  />
+                </div>
               </div>
               <div
                 className={`flex flex-col justify-between bg-[#112240] p-6 rounded-lg ${
