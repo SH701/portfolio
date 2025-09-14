@@ -11,12 +11,13 @@ import {
   SiStyledcomponents,
   SiReactquery,
   SiPrisma,
-  SiSupabase,
   SiPostman,
   SiGithub,
   SiVercel,
   SiSlack,
+  SiSpringboot,
 } from "react-icons/si";
+import { FaAws } from "react-icons/fa";
 
 export type TabKey = "Language" | "Frontend" | "Backend" | "ETC";
 export type TabItem = {
@@ -80,10 +81,10 @@ export const tabs: {
         description:
           "App Router 기반의 파일 구조와 서버 컴포넌트를 활용해 SSR 및 SEO 최적화를 구현했습니다",
       },
-      { 
-        Icon:SiReact,
-        color:"#000000",
-        name:"React-Native",
+      {
+        Icon: SiReact,
+        color: "#000000",
+        name: "React-Native",
         description:
           "상태 및 이벤트 처리를 고려하여 사용자 경험 중심의 컴포넌트 구조로 구현했습니다.",
       },
@@ -112,7 +113,7 @@ export const tabs: {
         color: "#06B6D4",
         name: "Tailwind CSS",
         description:
-          "틸리티 클래스 기반의 빠른 스타일링으로 반응형 UI를 제작했습니다.",
+          "유틸리티 클래스 기반의 빠른 스타일링으로 반응형 UI를 제작했습니다.",
       },
       {
         Icon: SiStyledcomponents,
@@ -134,11 +135,18 @@ export const tabs: {
           "데이터 모델링 및 ORM으로 Next.js 프로젝트에서 데이터를 구조화했습니다.",
       },
       {
-        Icon: SiSupabase,
-        color: "#3FCF8E",
-        name: "Supabase",
+        Icon: SiSpringboot,
+        color: "#6DB33F",
+        name: "Spring Boot 연동",
         description:
-          "채팅 및 실시간 기능을 구현하기 위해 인증과 DB를 연동했습니다.",
+          "Proxy Layer를 통해 세션/토큰을 안전하게 전달하고, 인증·프로필 수정·STT/TTS 등 주요 API를 연동했습니다.",
+      },
+      {
+        Icon: FaAws,
+        color: "#FF9900",
+        name: "AWS (S3, RDS, EC2)",
+        description:
+          "presigned URL 기반 파일 업로드를 처리하고 운영 서버(Spring Boot)와 안정적인 통신 환경을 구성했습니다.",
       },
       {
         Icon: SiPostman,
@@ -149,6 +157,7 @@ export const tabs: {
       },
     ],
   },
+
   {
     key: "ETC",
     label: "ETC",

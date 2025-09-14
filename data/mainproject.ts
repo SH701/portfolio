@@ -1,5 +1,6 @@
 interface MainProjectType {
   title: string;
+  award?: string;
   description: string;
   simple: string;
   intension: string;
@@ -20,9 +21,10 @@ interface MainProjectType {
 
 export const Main: MainProjectType[] = [
   {
-    title: "🧠 Noonchi",
+    title: "🤓 Noonchi ",
+    award: "508 AI 포텐데이 우수 프로젝트 선정",
     period: "2025.08.01 ~ 2025.08.26",
-    awards: ["✨ 508 AI 포텐데이 우수 프로젝트 선정 (Team PangPang)"],
+    awards: ["✨ 네이버 클라우드 주최  508 AI 포텐데이 우수 프로젝트 선정"],
     collaboration:
       "프론트엔드 전반 설계 및 UI 구현, AI 페르소나·존댓말 기능 및 음성 입력·TTS 연동 담당",
     description:
@@ -36,7 +38,6 @@ export const Main: MainProjectType[] = [
       "TailwindCSS",
       "Context API",
       "Zustand",
-      "Vercel",
     ],
     img: "/noonchi.png",
     projectLink: "https://noonchi.ai.kr",
@@ -84,8 +85,6 @@ export const Main: MainProjectType[] = [
       "Prisma",
       "PostgreSQL ",
       "Next-Auth",
-      "GitHub",
-      "Vercel",
     ],
     img: "/Buy.png",
     projectLink: "https://carrot-market-reloaded-three.vercel.app/",

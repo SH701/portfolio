@@ -20,6 +20,7 @@ export default function MainProject({ setOpenIndex }: Props) {
         (
           {
             title,
+            award,
             description,
             language,
             period,
@@ -57,6 +58,7 @@ export default function MainProject({ setOpenIndex }: Props) {
               >
                 <ProjectHeader
                   title={title}
+                  award={award}
                   period={period}
                   projectLink={projectLink}
                   className={`flex flex-col ${

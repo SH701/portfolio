@@ -57,7 +57,7 @@ export default function ProjectDetail({
       <div className="flex flex-col gap-2">
         <p className="font-semibold">진행 기간 : {period} </p>
         <p className="font-semibold">기획 의도 : {intension}</p>
-        <p className="font-semibold">내 역할 : {collaboration}</p>
+        <p className="font-semibold">역할 : {collaboration}</p>
         <hr />
         <div className="flex flex-col gap-3">
           <p className={styles.title}>1. 간단 소개</p>
