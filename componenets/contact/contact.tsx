@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import styles from "../contact/contact.module.css";
-import ScrollAnimation from "../scrollAnimation";
-import Closebtn from "../closebtn";
+import ScrollAnimation from "../etc/scrollAnimation";
+import Closebtn from "../etc/closebtn";
 import EmailForm from "./emailform";
 
 export default function Contact() {

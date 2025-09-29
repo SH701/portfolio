@@ -3,7 +3,7 @@
 import Link from "next/link";
 import styles from "../projectdetail/projectdetail.module.css";
 import { useState } from "react";
-import CloseBtn from "../../../closebtn";
+import CloseBtn from "../../../etc/closebtn";
 
 interface CapabilityItem {
   title: string;

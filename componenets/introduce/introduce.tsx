@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FadeUp } from "../../data/motion";
-import GithubIcon from "../githubicon";
+import GithubIcon from "../etc/githubicon";
 
 const textVariant = {
   on: {

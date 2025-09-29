@@ -1,5 +1,5 @@
-import ScrollAnimation from "../scrollAnimation";
-import SectionContainer from "../sectioncontainer";
+import ScrollAnimation from "../etc/scrollAnimation";
+import SectionContainer from "../etc/sectioncontainer";
 import ShowSkills from "./showskills";
 
 export default function Skills() {

@@ -35,7 +35,7 @@ export default function LoadingScreen() {
     });
   }, []);
   useEffect(() => {
-    document.title = "프론트엔드 김수환 | 포트폴리오";
+    document.title = "SuHawn portfolio";
   });
   return (
     <>

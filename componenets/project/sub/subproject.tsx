@@ -1,5 +1,5 @@
 import { subProjects } from "../../../data/subproject";
-import ScrollAnimation from "../../scrollAnimation";
+import ScrollAnimation from "../../etc/scrollAnimation";
 import ProjectHeader from "./subprojectheader";
 
 export default function SubProject() {

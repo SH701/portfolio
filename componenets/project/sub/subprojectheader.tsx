@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import GithubIcon from "../../githubicon";
+import GithubIcon from "../../etc/githubicon";
 
 type Props = {
   title: string;

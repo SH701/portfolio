@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import ScrollAnimation from "../scrollAnimation";
-import SectionContainer from "../sectioncontainer";
+import ScrollAnimation from "../etc/scrollAnimation";
+import SectionContainer from "../etc/sectioncontainer";
 import MainProject from "./main/mainproject";
 import SubProject from "./sub/subproject";
 import OpenDetail from "./main/projectdetail/opendetail";

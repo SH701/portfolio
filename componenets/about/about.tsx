@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import ScrollAnimation from "../scrollAnimation";
-import SectionContainer from "../sectioncontainer";
+import ScrollAnimation from "../etc/scrollAnimation";
+import SectionContainer from "../etc/sectioncontainer";
 
 export default function About() {
   return (

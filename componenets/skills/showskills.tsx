@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import SkillsTab from "./skillstab";
 import SkillsContent from "./skillscontent";
-import ScrollAnimation from "../scrollAnimation";
+import ScrollAnimation from "../etc/scrollAnimation";
 import { TabKey } from "../../data/skillsdata";
 
 export default function ShowSkills() {

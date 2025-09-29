@@ -5,8 +5,8 @@ import Link from "next/link";
 import { Dispatch, SetStateAction } from "react";
 import ProjectHeader from "./projectheader";
 import { Main } from "../../../data/mainproject";
-import ScrollAnimation from "../../scrollAnimation";
-import GithubIcon from "../../githubicon";
+import ScrollAnimation from "../../etc/scrollAnimation";
+import GithubIcon from "../../etc/githubicon";
 
 type Props = {
   openIndex: number | null;
