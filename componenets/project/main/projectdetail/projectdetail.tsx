@@ -4,6 +4,7 @@ import Link from "next/link";
 import styles from "../projectdetail/projectdetail.module.css";
 import { useState } from "react";
 import CloseBtn from "../../../etc/closebtn";
+import { ProjectLink } from "../../../../data/mainproject";
 
 interface CapabilityItem {
   title: string;
@@ -15,7 +16,7 @@ interface Props {
   period: string;
   onClose: () => void;
   githubLink: string;
-  projectLink: string;
+  projectLink: ProjectLink[];
   language: string[];
   capability: CapabilityItem[];
   intension: string;
@@ -87,10 +88,34 @@ export default function ProjectDetail({
               </Link>
             </li>
             <li className="list-disc">
-              사이트:{" "}
-              <Link href={projectLink} className="underline">
-                {projectLink}
-              </Link>
+              <ul className="pl-0 space-y-1">
+                {projectLink.map((link, idx) => (
+                  <li key={idx}>
+                    {typeof link === "string" ? (
+                      <Link
+                        href={link}
+                        className="underline text-blue-600"
+                        target="_blank"
+                      >
+                        {link}
+                      </Link>
+                    ) : (
+                      <>
+                        <div className="flex gap-1">
+                          <p>{link.label}:</p>
+                          <Link
+                            href={link.url}
+                            className="underline "
+                            target="_blank"
+                          >
+                            {link.url}
+                          </Link>
+                        </div>
+                      </>
+                    )}
+                  </li>
+                ))}
+              </ul>
             </li>
           </ul>
         </div>

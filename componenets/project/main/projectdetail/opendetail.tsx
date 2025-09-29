@@ -1,10 +1,12 @@
 import { Dispatch, SetStateAction } from "react";
 import ProjectDetail from "./projectdetail";
 import { Main } from "../../../../data/mainproject";
+import { ProjectLink } from "../../../../data/mainproject";
 
 type Props = {
   openIndex: number | null;
   setOpenIndex: Dispatch<SetStateAction<number | null>>;
+  projectLink: ProjectLink[];
 };
 
 export default function OpenDetail({ openIndex, setOpenIndex }: Props) {
@@ -26,7 +28,7 @@ export default function OpenDetail({ openIndex, setOpenIndex }: Props) {
               intension={Main[openIndex].intension}
               onClose={() => setOpenIndex(null)}
               githubLink={Main[openIndex].githubLink}
-              projectLink={Main[openIndex].projectLink}
+              projectLink={Main[openIndex].projectLink} 
               language={Main[openIndex].language}
               capability={Main[openIndex].capability}
               situation={Main[openIndex].situation}

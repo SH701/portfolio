@@ -1,13 +1,16 @@
+export type ProjectLink = string | { label: string; url: string };
+
 interface MainProjectType {
   title: string;
   award?: string;
+  demo?: string;
   description: string;
   simple: string;
   intension: string;
   language: string[];
   period: string;
   img: string;
-  projectLink: string;
+  projectLink: ProjectLink[];
   githubLink: string;
   capability: {
     title: string;
@@ -23,6 +26,7 @@ export const Main: MainProjectType[] = [
   {
     title: "🤓 Noonchi ",
     award: "508 AI 포텐데이 우수 프로젝트 선정",
+    demo: "계정: demo@noonchi.ai.kr / demo1234  ",
     period: "2025.08.01 ~ 2025.08.26",
     awards: ["✨ 네이버 클라우드 주최  508 AI 포텐데이 우수 프로젝트 선정"],
     collaboration:
@@ -40,8 +44,11 @@ export const Main: MainProjectType[] = [
       "Zustand",
     ],
     img: "/noonchi.png",
-    projectLink: "https://noonchi.ai.kr",
-    githubLink: "https://github.com/SH701/noonchi-ai",
+    projectLink: [
+      { label: "웹", url: "https://noonchi-web.vercel.app" },
+      { label: "모바일", url: "https://noonchi.ai.kr" },
+    ],
+    githubLink: "https://github.com/SH701/pangpang",
     capability: [
       {
         title: "눈치코치 (Custom Chatbot)",
@@ -87,7 +94,12 @@ export const Main: MainProjectType[] = [
       "Next-Auth",
     ],
     img: "/Buy.png",
-    projectLink: "https://carrot-market-reloaded-three.vercel.app/",
+    projectLink: [
+      {
+        label: "사이트",
+        url: "https://carrot-market-reloaded-three.vercel.app/",
+      },
+    ],
     githubLink: "https://github.com/SH701/carrot-market-reloaded",
     capability: [
       {
@@ -136,7 +148,9 @@ export const Main: MainProjectType[] = [
       "Web-Vitals",
     ],
     img: "/photo.png",
-    projectLink: "https://sh701.github.io/Netflix_Clone/",
+    projectLink: [
+      { label: "사이트", url: "https://sh701.github.io/Netflix_Clone/" },
+    ],
     githubLink: "https://github.com/SH701/Netflix_Clone",
     capability: [
       {
