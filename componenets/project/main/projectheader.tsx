@@ -27,8 +27,6 @@ export default function ProjectHeader({
     <div className={className}>
       <p className="text-xs lg:text-base colorful pb-3">Main Project</p>
       <p className="py-2 text-green-400">{award}</p>
-
-      {/* 버튼으로 데모 계정 토글 */}
       {demo && (
         <div className="mb-2">
           <button
