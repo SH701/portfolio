@@ -20,7 +20,7 @@ export default function Introduce() {
       initial="init"
       animate="on"
       variants={textVariant}
-      className="flex flex-col gap-2 pt-24 sm:px-10 "
+      className="flex flex-col gap-6 pt-24 sm:px-10"
     >
       <motion.div className="colorful text-2xl" variants={FadeUp}>
         안녕하세요. 웹 개발자
@@ -32,7 +32,7 @@ export default function Introduce() {
         김수환입니다.
       </motion.div>
       <motion.div
-        className="lg:text-6xl pt-4 sm:text-3xl text-2xl font-bold"
+        className="lg:text-6xl pt-4 sm:text-4xl text-2xl font-bold leading-tight"
         variants={FadeUp}
       >
         저는 끊임없는 도전을 즐기며,
