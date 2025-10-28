@@ -11,7 +11,6 @@ import {
   SiStyledcomponents,
   SiReactquery,
   SiPrisma,
-  SiPostman,
   SiGithub,
   SiVercel,
   SiSlack,
@@ -147,13 +146,6 @@ export const tabs: {
         name: "AWS (S3, RDS, EC2)",
         description:
           "presigned URL 기반 파일 업로드를 처리하고 운영 서버(Spring Boot)와 안정적인 통신 환경을 구성했습니다.",
-      },
-      {
-        Icon: SiPostman,
-        color: "#FF6C37",
-        name: "REST API",
-        description:
-          "상품 CRUD 및 로그인/리뷰 기능 등을 API 설계에 맞춰 구현했습니다.",
       },
     ],
   },

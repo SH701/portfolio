@@ -26,6 +26,7 @@ export const Main: MainProjectType[] = [
   {
     title: "✈️ SeoulCourse",
     period: "2025.10.01 ~ 2025.10.27",
+    collaboration: "프로젝트 리드 겸 단독 개발자 (기획 · 설계 · 구현 · 배포)",
     description:
       "사용자의 지역·활동을 바탕으로 AI가 현실적인 하루 일정을 자동으로 설계합니다. 요청은 입력 또는 챗으로 할 수 있으며 식사·카페·관광·이동 경로를 고려한 순서와 소요 시간을 포함해 바로 미리보기로 확인할 수 있습니다. 또한 AI를 거치지 않는 ‘구 탐색’ 모드로 특정 구의 인기 장소를 즉시 목록 형태로 확인할 수 있어 탐색과 맞춤 일정 생성 모두를 지원합니다.",
     simple:
@@ -44,7 +45,7 @@ export const Main: MainProjectType[] = [
       "PostgreSQL ",
       "Openai",
     ],
-    img: "/Buy.png",
+    img: "/course.png",
     projectLink: [
       {
         label: "사이트",
@@ -73,10 +74,10 @@ export const Main: MainProjectType[] = [
         description: "로그인 기반 권한으로 게시글 및 댓글 CRUD를 구현했습니다.",
       },
     ],
-    situation: "이미지 업로드 실패 시 사용자 안내가 부족하다",
+    situation: "AI가 정확한 답변을 내놓지 않을떄가 있다.",
     improvement: [
-      "로드 진행률 표시, 실패 시 재시도 버튼·토스트 알림 추가",
-      "NextAuth.js 또는 Iron Session 전략 통일, 리다이렉트·세션 복원 로직 보완",
+      "프롬프트 템플릿 정교화: 시스템 메시지와 예시 입력을 추가해 의도와 출력 포맷을 명확히 정의",
+      "재시도 및 대안 UI 제공: 불확실 표시, 재생성 버튼 노출",
     ],
   },
   {

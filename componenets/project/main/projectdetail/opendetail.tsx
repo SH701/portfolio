@@ -1,4 +1,6 @@
-import { Dispatch, SetStateAction } from "react";
+"use client";
+
+import { Dispatch, SetStateAction, useEffect } from "react";
 import ProjectDetail from "./projectdetail";
 import { Main } from "../../../../data/mainproject";
 import { ProjectLink } from "../../../../data/mainproject";
@@ -10,6 +12,17 @@ type Props = {
 };
 
 export default function OpenDetail({ openIndex, setOpenIndex }: Props) {
+  useEffect(() => {
+    if (openIndex !== null) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [openIndex]);
+
   return (
     <>
       {openIndex !== null && (
