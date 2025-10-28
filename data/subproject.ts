@@ -16,9 +16,15 @@ export const subProjects: Props[] = [
     projectLink: "https://unwind-sh701s-projects.vercel.app/",
   },
   {
+    title: "Netflix Clone",
+    description: "React를 활용한 넷플릭스 클론코딩",
+    language: "React, | styled-Components | Recoil",
+    githubLink: "https://github.com/SH701/Netflix_Clone",
+    projectLink: "https://sh701.github.io/Netflix_Clone/",
+  },
+  {
     title: "Portfolio",
-    description:
-      "Nextjs와 Typescript를 활용한 개인 포트폴리오입니다.",
+    description: "Nextjs와 Typescript를 활용한 개인 포트폴리오입니다.",
     language: "NextJs | TailwindCSS",
     githubLink: "https://github.com/SH701/portfolio",
     projectLink: "/",

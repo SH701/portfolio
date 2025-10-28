@@ -24,6 +24,62 @@ interface MainProjectType {
 
 export const Main: MainProjectType[] = [
   {
+    title: "✈️ SeoulCourse",
+    period: "2025.10.01 ~ 2025.10.27",
+    description:
+      "사용자의 지역·활동을 바탕으로 AI가 현실적인 하루 일정을 자동으로 설계합니다. 요청은 입력 또는 챗으로 할 수 있으며 식사·카페·관광·이동 경로를 고려한 순서와 소요 시간을 포함해 바로 미리보기로 확인할 수 있습니다. 또한 AI를 거치지 않는 ‘구 탐색’ 모드로 특정 구의 인기 장소를 즉시 목록 형태로 확인할 수 있어 탐색과 맞춤 일정 생성 모두를 지원합니다.",
+    simple:
+      "나만의 취향을 반영해 원하는 지역과 활동으로 하루 코스를 설계해 주는 AI 서비스.",
+    intension: "어디로 놀러갈지 고민하는 사람들을 위한 서비스",
+    language: [
+      "Typescript",
+      "NextJS",
+      "React",
+      "TailwindCSS",
+      "Framer-motion",
+      "PostCSS",
+      "React-Query",
+      "Clerk",
+      "Prisma",
+      "PostgreSQL ",
+      "Openai",
+    ],
+    img: "/Buy.png",
+    projectLink: [
+      {
+        label: "사이트",
+        url: "https://seoulcourse.vercel.app/",
+      },
+    ],
+    githubLink: "https://github.com/SH701/potenday",
+    capability: [
+      {
+        title: "AI 코스 생성",
+        description:
+          "OpenAI로 의도·제약을 추출해 사용자가 선택한 지역·활동을 결합한 개인화된 하루 코스를 생성합니다. 생성 결과는 구조화된 JSON으로 반환되어 UI에서 즉시 렌더링됩니다.",
+      },
+      {
+        title: "AI 채팅 기능",
+        description:
+          "대화형 챗봇이 자연어 요청을 해석해 장소 유형을 추천합니다. 세션 기반 대화 컨텍스트를 유지해 후속 질의에 대응하고 추천을 필터링·정렬합니다.",
+      },
+      {
+        title: "구별 탐색 기능",
+        description:
+          "특정 구를 선택하면 해당 구의 핫플을 즉시 목록 형태로 확인할 수 있으며 장소 저장이 가능합니다.",
+      },
+      {
+        title: "게시글 · 댓글 CRUD",
+        description: "로그인 기반 권한으로 게시글 및 댓글 CRUD를 구현했습니다.",
+      },
+    ],
+    situation: "이미지 업로드 실패 시 사용자 안내가 부족하다",
+    improvement: [
+      "로드 진행률 표시, 실패 시 재시도 버튼·토스트 알림 추가",
+      "NextAuth.js 또는 Iron Session 전략 통일, 리다이렉트·세션 복원 로직 보완",
+    ],
+  },
+  {
     title: "🤓 Noonchi ",
     award: "508 AI 포텐데이 우수 프로젝트 선정",
     demo: "계정: demo@noonchi.ai.kr / demo1234  ",
@@ -42,6 +98,7 @@ export const Main: MainProjectType[] = [
       "TailwindCSS",
       "Context API",
       "Zustand",
+      "AWS3",
     ],
     img: "/noonchi.png",
     projectLink: [
@@ -127,52 +184,6 @@ export const Main: MainProjectType[] = [
     improvement: [
       "로드 진행률 표시, 실패 시 재시도 버튼·토스트 알림 추가",
       "NextAuth.js 또는 Iron Session 전략 통일, 리다이렉트·세션 복원 로직 보완",
-    ],
-  },
-  {
-    title: "🎬 Netflix Clone",
-    period: "2025.03.24 ~ 2025.03.31",
-    description:
-      "React 기반으로 개발되었으며, styled-components로 스타일을 구성하고, recoil과 react-query를 통해 클라이언트 및 서버 상태를 효율적으로 관리했습니다. react-hook-form으로 폼 유효성 검사를 구현하고, framer-motion으로 애니메이션 효과를 적용하여 풍부한 사용자 경험을 제공했습니다.",
-    simple:
-      "영화 정보 웹 애플리케이션 인기 영화, 상영 예정작, 최고 평점 영화들을 슬라이더로 탐색하고 상세 정보를 확인할 수 있습니다.",
-    intension: "영화 정보를 탐색할 수 있는 경험을 제공",
-    language: [
-      "TypeScript",
-      "React",
-      "React-DOM",
-      "Styled-Components",
-      "Recoil",
-      "React-Query",
-      "Framer-Motion",
-      "Web-Vitals",
-    ],
-    img: "/photo.png",
-    projectLink: [
-      { label: "사이트", url: "https://sh701.github.io/Netflix_Clone/" },
-    ],
-    githubLink: "https://github.com/SH701/Netflix_Clone",
-    capability: [
-      {
-        title: "상세정보",
-        description:
-          "영화 카드 클릭 시 모달로 상세정보를 확인할 수 있으며, 컴포넌트는 분리하여 재사용성과 유지보수성을 높였습니다.",
-      },
-      {
-        title: "API 데이터 처리",
-        description:
-          "TMDB API를 통해 비동기적으로 영화 데이터를 불러오고, 로딩 상태를 반영해 Skeleton UI를 구현했습니다.",
-      },
-      {
-        title: "상태 관리",
-        description:
-          "각 슬라이더의 영화 hover/선택 상태를 useState로 관리하고, 모달에 선택된 영화 정보를 props로 전달하는 구조로 상태 흐름을 단순화했습니다.",
-      },
-    ],
-    situation: "즐겨찾기·위시리스트 기능이 없어 관심 영화 따로 관리가 안 된다.",
-    improvement: [
-      "로컬 스토리지 또는 Zustand를 이용해 관심 영화 저장·관리 기능 제공",
-      "hooks/useMovies 같은 커스텀 훅으로 호출 로직 통합, 중복 요청 방지",
     ],
   },
 ];
