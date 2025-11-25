@@ -5,8 +5,6 @@ import {
   SiTypescript,
   SiReact,
   SiNextdotjs,
-  SiRecoil,
-  SiReactrouter,
   SiTailwindcss,
   SiStyledcomponents,
   SiReactquery,
@@ -88,17 +86,11 @@ export const tabs: {
           "상태 및 이벤트 처리를 고려하여 사용자 경험 중심의 컴포넌트 구조로 구현했습니다.",
       },
       {
-        Icon: SiRecoil,
-        color: "#3578E5",
-        name: "Recoil",
+        Icon: SiReact,
+        color: "#FFCC00",
+        name: "Zustand",
         description:
-          " React 앱의 전역 상태를 관리하여 컴포넌트 간에 데이터를 효율적으로 공유했습니다.",
-      },
-      {
-        Icon: SiReactrouter,
-        color: "#CA4245",
-        name: "react-router-dom",
-        description: "SPA 구조에서 라우팅 처리에 사용했습니다.",
+          "가볍고 직관적인 API로 전역 상태 관리를 구현하고, React Query와의 조합으로 서버·클라이언트 상태를 분리했습니다.",
       },
       {
         Icon: SiReactquery,

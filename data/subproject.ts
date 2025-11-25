@@ -17,7 +17,7 @@ export const subProjects: Props[] = [
   },
   {
     title: "Netflix Clone",
-    description: "React를 활용한 넷플릭스 클론코딩",
+    description: "TMDB API와 React를 활용한 넷플릭스 클론코딩입니다.",
     language: "React, | styled-Components | Recoil",
     githubLink: "https://github.com/SH701/Netflix_Clone",
     projectLink: "https://sh701.github.io/Netflix_Clone/",
