@@ -12,7 +12,7 @@ import {
   SiGithub,
   SiVercel,
   SiSlack,
-  SiSpringboot,
+  SiFigma,
 } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 
@@ -125,19 +125,13 @@ export const tabs: {
         description:
           "데이터 모델링 및 ORM으로 Next.js 프로젝트에서 데이터를 구조화했습니다.",
       },
-      {
-        Icon: SiSpringboot,
-        color: "#6DB33F",
-        name: "Spring Boot 연동",
-        description:
-          "Proxy Layer를 통해 세션/토큰을 안전하게 전달하고, 인증·프로필 수정·STT/TTS 등 주요 API를 연동했습니다.",
-      },
+
       {
         Icon: FaAws,
         color: "#FF9900",
         name: "AWS (S3, RDS, EC2)",
         description:
-          "presigned URL 기반 파일 업로드를 처리하고 운영 서버(Spring Boot)와 안정적인 통신 환경을 구성했습니다.",
+          "프론트엔드에서 presigned URL 기반 이미지 업로드를 구현했고, Spring Boot API 서버와 안정적인 통신 환경을 구성했습니다.",
       },
     ],
   },
@@ -163,6 +157,13 @@ export const tabs: {
         color: "#4A154B",
         name: "Slack",
         description: "기술 커뮤니티 소통을 위해 활용 중입니다.",
+      },
+      {
+        Icon: SiFigma,
+        color: "#F24E1E",
+        name: "Figma",
+        description:
+          "디자이너와 협업하여 UI 컴포넌트 구조를 정의하고, 실제 화면에 맞게 구현했습니다.",
       },
     ],
   },

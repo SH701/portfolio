@@ -8,6 +8,14 @@ interface Props {
 
 export const subProjects: Props[] = [
   {
+    title: "Summary AI",
+    description:
+      "파일을 업로드하면 내용을 추출하고 OpenAI로 요약을 생성하는 문서 요약 서비스입니다.",
+    language: "React | TypeScript | OpenAI | Jest",
+    githubLink: "https://github.com/SH701/summary/",
+    projectLink: "https://summary-plum.vercel.app/",
+  },
+  {
     title: "Unwind",
     description:
       "Unwind는 로그인, 게시글 작성, 댓글 기능이 포함된 커뮤니티 웹 애플리케이션입니다.",
@@ -29,14 +37,7 @@ export const subProjects: Props[] = [
     githubLink: "https://github.com/SH701/portfolio",
     projectLink: "/",
   },
-  {
-    title: "CoinTracker",
-    description:
-      "recoil을 활용해 인터페이스 상태를 관리,react-query로 실시간 데이터를 받아오고 캐싱합니다.",
-    language: "React | TypeScript | Recoil | React-Query",
-    githubLink: "https://github.com/SH701/CoinTracker",
-    projectLink: "https://sh701.github.io/CoinTracker/",
-  },
+
   {
     title: "Planflow",
     description:
