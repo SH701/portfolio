@@ -1,3 +1,5 @@
+"use client";
+
 import Introduce from "../componenets/introduce/introduce";
 import About from "../componenets/about/about";
 import Skills from "../componenets/skills/skills";

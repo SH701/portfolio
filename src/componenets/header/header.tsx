@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FadeDown } from "@/lib/motion";
 import { Menu, X } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const headerVariants = {
   on: {
@@ -17,6 +18,21 @@ const headerVariants = {
 export default function Header() {
   const [isHide, setIsHide] = useState(false);
   const [open, setOpen] = useState(false);
+  const router = useRouter();
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string
+  ) => {
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      const path = sectionId === "top" ? "/" : `/${sectionId}`;
+      router.push(path, { scroll: false });
+    }
+    setOpen(false);
+  };
 
   useEffect(() => {
     let lateY = window.scrollY;
@@ -37,14 +53,12 @@ export default function Header() {
         }`}
     >
       <nav className="flex flex-row items-center justify-between">
-        {/* 로고 */}
         <div className="ml-4 mt-2">
-          <Link href="#top">
+          <Link href="/" onClick={(e) => handleNavClick(e, "top")}>
             <Image src="/favicon.ico" alt="logo" width={60} height={60} />
           </Link>
         </div>
 
-        {/* PC 메뉴 */}
         <motion.ul
           initial="init"
           animate="on"
@@ -54,7 +68,8 @@ export default function Header() {
           {["About", "Skills", "Projects", "Contact"].map((item, i) => (
             <motion.li key={item} variants={FadeDown}>
               <Link
-                href={`#${item.toLowerCase()}`}
+                href={`/${item.toLowerCase()}`}
+                onClick={(e) => handleNavClick(e, item.toLowerCase())}
                 className="flex flex-row sm:gap-2 gap-1"
               >
                 <p className="colorful">{String(i + 1).padStart(2, "0")}.</p>
@@ -66,7 +81,6 @@ export default function Header() {
           ))}
         </motion.ul>
 
-        {/* 햄버거 버튼 (모바일 전용) */}
         <button
           onClick={() => setOpen(!open)}
           className="lg:hidden mr-4 p-2 cursor-pointer"
@@ -89,8 +103,8 @@ export default function Header() {
               {["About", "Skills", "Projects", "Contact"].map((item) => (
                 <li key={item}>
                   <Link
-                    href={`#${item.toLowerCase()}`}
-                    onClick={() => setOpen(false)}
+                    href={`/${item.toLowerCase()}`}
+                    onClick={(e) => handleNavClick(e, item.toLowerCase())}
                   >
                     <p className="pl-5 font-bold hover:colorful transition-colors duration-300">
                       {item}
