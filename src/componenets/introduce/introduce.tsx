@@ -4,11 +4,12 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FadeUp } from "@/lib/motion";
 import GithubIcon from "../etc/githubicon";
+import { FileText } from "lucide-react";
 
 const textVariant = {
   on: {
     transition: {
-      delayChildren: 1.5,
+      delayChildren: 1,
       staggerChildren: 0.25,
     },
   },
@@ -22,7 +23,7 @@ export default function Introduce() {
       variants={textVariant}
       className="flex flex-col gap-6 pt-24 sm:px-10"
     >
-      <motion.div className="colorful text-2xl" variants={FadeUp}>
+      <motion.div className="text-teal-300 text-2xl" variants={FadeUp}>
         안녕하세요. 웹 개발자
       </motion.div>
       <motion.div
@@ -44,39 +45,10 @@ export default function Introduce() {
       </motion.p>
       <motion.div className="flex flex-row gap-3 pt-5" variants={FadeUp}>
         <Link href="https://github.com/SH701">
-          <GithubIcon className="size-10 colorful mt-3" />
+          <GithubIcon className="size-10 text-teal-300 mt-3" />
         </Link>
-        <Link href="https://vercel.com/sh701s-projects">
-          <svg
-            data-testid="geist-icon"
-            className="size-10 colorful mt-3"
-            strokeLinejoin="round"
-            viewBox="0 0 16 16"
-          >
-            <g clipPath="url(#clip0_872_3186)">
-              <circle
-                cx="8"
-                cy="8"
-                r="7.25"
-                fill="currentColor"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M8 4.5L11.5 10.625H4.5L8 4.5Z"
-                fill="var(--ds-gray-100)"
-              />
-            </g>
-            <defs>
-              <clipPath id="clip0_872_3186">
-                <rect width="16" height="16" fill="white" />
-              </clipPath>
-            </defs>
-          </svg>
+        <Link href="https://www.notion.so/2e07903c541c80b09a88f535f72907c9">
+          <FileText className="size-10 text-teal-300 hover:-translate-y-1 hover:text-teal-300 cursor-pointer duration-300 mt-3" />
         </Link>
       </motion.div>
     </motion.div>

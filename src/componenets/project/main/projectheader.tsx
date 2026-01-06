@@ -1,8 +1,5 @@
-"use client";
-
 import Link from "next/link";
 import { ProjectLink } from "@/data/mainproject";
-import { useState } from "react";
 
 interface Props {
   award?: string;
@@ -10,7 +7,6 @@ interface Props {
   period: string;
   className?: string;
   projectLink: ProjectLink[];
-  demo?: string;
 }
 
 export default function ProjectHeader({
@@ -18,28 +14,12 @@ export default function ProjectHeader({
   title,
   period,
   className,
-  demo,
   projectLink,
 }: Props) {
-  const [showDemo, setShowDemo] = useState(false);
-
   return (
     <div className={className}>
-      <p className="text-xs lg:text-base colorful pb-3">Main Project</p>
+      <p className="text-xs lg:text-base text-teal-300 pb-3">Project</p>
       <p className="py-2 text-green-400">{award}</p>
-      {demo && (
-        <div className="mb-2">
-          <button
-            onClick={() => setShowDemo((prev) => !prev)}
-            className="text-xs text-blue-500 cursor-pointer"
-          >
-            {showDemo ? "게스트 계정 숨기기" : "게스트 계정 보기"}
-          </button>
-          {showDemo && (
-            <p className="mt-1 text-sm  text-[#cdcdcd] rounded">{demo}</p>
-          )}
-        </div>
-      )}
 
       <Link
         href={

@@ -23,7 +23,7 @@ export default function Contact() {
         <div className={`${styles.effect} inline-block relative`}>
           <button
             onClick={click}
-            className="p-3 text-xl cursor-pointer colorful relative z-10"
+            className="p-3 text-xl cursor-pointer text-teal-300 relative z-10"
           >
             Send Email
           </button>

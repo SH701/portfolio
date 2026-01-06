@@ -12,8 +12,8 @@ export default function SkillsTab({ activeTab, setActiveTab }: Props) {
         <button
           key={key}
           onClick={() => setActiveTab(key)}
-          className={`p-2 sm:rounded-md cursor-pointer lg:w-25 lg:h-15 lg:text-xl
-            sm:border sm:border-teal-400 ani border-b-2
+          className={`p-2 sm:rounded-md lg:w-25 lg:h-15 lg:text-xl
+            sm:border sm:border-teal-400 hover:-translate-y-1 hover:text-teal-300 cursor-pointer duration-300 border-b-2
             ${activeTab === key ? "text-teal-300" : ""}
           `}
         >

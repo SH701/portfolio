@@ -3,7 +3,6 @@ export type ProjectLink = string | { label: string; url: string };
 interface MainProjectType {
   title: string;
   award?: string;
-  demo?: string;
   description: string;
   simple: string;
   intension: string;
@@ -83,7 +82,6 @@ export const Main: MainProjectType[] = [
   {
     title: "🤓 Noonchi ",
     award: "508 비사이드 포텐데이 우수 프로젝트 선정",
-    demo: "계정: demo@noonchi.ai.kr / demo1234  ",
     period: "2025.08.01 ~ 2025.08.26",
     awards: ["✨ 네이버 클라우드 주최  508 AI 포텐데이 우수 프로젝트 선정"],
     collaboration:

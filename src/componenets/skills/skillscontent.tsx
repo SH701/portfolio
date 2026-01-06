@@ -15,7 +15,7 @@ export default function SkillsContent({ activeTab }: Props) {
     <section className="relative sm:-translate-y-12">
       <motion.ul initial="init" animate="on">
         <p className="mb-3 flex flex-row gap-1">
-          Skill Stack <span className="colorful">{activeTab}</span>
+          Skill Stack <span className="text-teal-300">{activeTab}</span>
         </p>
         {activeItems.map((item) => (
           <motion.li

@@ -9,32 +9,3 @@ body {
   color: var(--color-gray-400);
   font-family: Arial, Helvetica, sans-serif;
 }
-.colorful {
-  color: #64ffda;
-  opacity: 0.9;
-}
-
-@layer utilities {
-  .hover\:colorful:hover {
-    color: #64ffda;
-    opacity: 0.9;
-  }
-}
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-.animate-blink {
-  animation: blink 1s step-start infinite;
-}
-.vertical-rlEN {
-  writing-mode: vertical-rl;
-}
-.ani {
-  @apply transition hover:-translate-y-1 hover:text-teal-300 cursor-pointer duration-300;
-}

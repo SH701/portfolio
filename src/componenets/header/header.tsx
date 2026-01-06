@@ -72,8 +72,8 @@ export default function Header() {
                 onClick={(e) => handleNavClick(e, item.toLowerCase())}
                 className="flex flex-row sm:gap-2 gap-1"
               >
-                <p className="colorful">{String(i + 1).padStart(2, "0")}.</p>
-                <p className="hover:colorful transition-colors duration-300">
+                <p className="text-teal-300">{String(i + 1).padStart(2, "0")}.</p>
+                <p className="hover:text-teal-300 transition-colors duration-300">
                   {item}
                 </p>
               </Link>
@@ -106,7 +106,7 @@ export default function Header() {
                     href={`/${item.toLowerCase()}`}
                     onClick={(e) => handleNavClick(e, item.toLowerCase())}
                   >
-                    <p className="pl-5 font-bold hover:colorful transition-colors duration-300">
+                    <p className="pl-5 font-bold hover:text-teal-300 transition-colors duration-300">
                       {item}
                     </p>
                   </Link>

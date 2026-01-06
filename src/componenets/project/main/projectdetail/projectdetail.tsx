@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import styles from "../projectdetail/projectdetail.module.css";
 import { useState } from "react";
 import CloseBtn from "../../../etc/closebtn";
 import { ProjectLink } from "@/data/mainproject";
@@ -61,7 +60,7 @@ export default function ProjectDetail({
         <p className="font-semibold">역할 : {collaboration}</p>
         <hr />
         <div className="flex flex-col gap-3">
-          <p className={styles.title}>1. 간단 소개</p>
+          <p className="text-black font-bold py-[7px]">1. 간단 소개</p>
           {awards && awards.length > 0 && (
             <div>
               <ul className="list-disc pl-5 space-y-1">
@@ -79,7 +78,7 @@ export default function ProjectDetail({
         </div>
 
         <div className="flex flex-col gap-3">
-          <p className={styles.title}>2. 관련 링크</p>
+          <p className="text-black font-bold py-[7px]">2. 관련 링크</p>
           <ul className="flex flex-col gap-2 pl-4">
             <li className="list-disc">
               깃허브:{" "}
@@ -120,7 +119,7 @@ export default function ProjectDetail({
           </ul>
         </div>
         <div>
-          <p className={styles.title}>3. 기술 스택</p>
+          <p className="text-black font-bold py-[7px]">3. 기술 스택</p>
           <div className="flex flex-wrap gap-2">
             {language.map((tech) => (
               <span
@@ -133,7 +132,7 @@ export default function ProjectDetail({
           </div>
         </div>
         <div>
-          <p className={styles.title}>4. 핵심 기능 설명</p>
+          <p className="text-black font-bold py-[7px]">4. 핵심 기능 설명</p>
           <div>
             {capability.map((item, index) => {
               const open = isOpen.includes(index);
@@ -156,7 +155,7 @@ export default function ProjectDetail({
           </div>
         </div>
         <div>
-          <p className={styles.title}>5. 문제점과 개선사항</p>
+          <p className="text-black font-bold py-[7px]">5. 문제점과 개선사항</p>
           <p className="font-semibold pb-4">문제점: {situation}</p>
           <div className="font-semibold">
             개선사항:
