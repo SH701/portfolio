@@ -27,7 +27,6 @@ export default function MainProject({ setOpenIndex }: Props) {
             img,
             githubLink,
             projectLink,
-            demo,
           },
           index
         ) => {
@@ -60,7 +59,6 @@ export default function MainProject({ setOpenIndex }: Props) {
                 <ProjectHeader
                   title={title}
                   award={award}
-                  demo={demo}
                   period={period}
                   projectLink={projectLink}
                   className={`flex flex-col ${
