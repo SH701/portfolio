@@ -45,7 +45,7 @@ export const Main: MainProjectType[] = [
       "PostgreSQL ",
       "Openai",
     ],
-    img: "/course.png",
+    img: "/images/course.png",
     projectLink: [
       {
         label: "사이트",
@@ -101,7 +101,7 @@ export const Main: MainProjectType[] = [
       "Zustand",
       "AWS3",
     ],
-    img: "/noonchi.png",
+    img: "/images/noonchi.png",
     projectLink: [
       { label: "웹", url: "https://noonchi-web.vercel.app" },
       { label: "모바일", url: "https://noonchi.ai.kr" },
@@ -150,7 +150,7 @@ export const Main: MainProjectType[] = [
       "PostgreSQL ",
       "Next-Auth",
     ],
-    img: "/Buy.png",
+    img: "/images/Buy.png",
     projectLink: [
       {
         label: "사이트",

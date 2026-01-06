@@ -15,7 +15,7 @@ export default function About() {
           <div className="w-full md:basis-[40%] relative aspect-square">
             <div className="relative aspect-square w-full h-[400px]  *:text-white *:md:text-2xl">
               <Image
-                src="/profile.png"
+                src="/images/profile.png"
                 fill
                 alt="프로필"
                 className="z-10  h-[400px] w-[300px] max-w-[300px] md:mt-[5%] mx-auto -translate-x-2  rounded-xl"

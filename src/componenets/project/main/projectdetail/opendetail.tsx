@@ -2,8 +2,8 @@
 
 import { Dispatch, SetStateAction, useEffect } from "react";
 import ProjectDetail from "./projectdetail";
-import { Main } from "../../../../data/mainproject";
-import { ProjectLink } from "../../../../data/mainproject";
+import { Main } from "@/data/mainproject";
+import { ProjectLink } from "@/data/mainproject";
 
 type Props = {
   openIndex: number | null;

@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TabKey, tabs } from "../../data/skillsdata";
-import { SkillContent } from "../../data/motion";
+import { TabKey, tabs } from "@/data/skillsdata";
+import { SkillContent } from "@/lib/motion";
 
 interface Props {
   activeTab: TabKey;

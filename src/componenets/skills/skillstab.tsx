@@ -1,4 +1,4 @@
-import { TabKey, tabs } from "../../data/skillsdata";
+import { TabKey, tabs } from "@/data/skillsdata";
 
 interface Props {
   activeTab: TabKey;

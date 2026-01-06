@@ -1,5 +1,4 @@
-import Header from "../componenets/etc/header";
-import ClientLoader from "../componenets/loader/clientloader";
+import Header from "../componenets/header/header";
 import { IBM_Plex_Sans_KR } from "next/font/google";
 import "./globals.css";
 import { Metadata } from "next";
@@ -23,10 +22,8 @@ export default function RootLayout({
       <body
         className={`${nanum.className} antialiased w-screen px-10 py-5 overflow-x-hidden`}
       >
-        <ClientLoader>
-          <Header />
-          {children}
-        </ClientLoader>
+        <Header />
+        {children}
       </body>
     </html>
   );

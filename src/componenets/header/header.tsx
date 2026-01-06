@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { FadeDown } from "../../data/motion";
+import { FadeDown } from "@/lib/motion";
 import { Menu, X } from "lucide-react";
 
 const headerVariants = {

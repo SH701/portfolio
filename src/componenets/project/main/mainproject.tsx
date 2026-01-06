@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Dispatch, SetStateAction } from "react";
 import ProjectHeader from "./projectheader";
-import { Main } from "../../../data/mainproject";
+import { Main } from "@/data/mainproject";
 import ScrollAnimation from "../../etc/scrollAnimation";
 import GithubIcon from "../../etc/githubicon";
 

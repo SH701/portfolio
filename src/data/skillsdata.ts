@@ -4,7 +4,6 @@ import {
   SiJavascript,
   SiTypescript,
   SiReact,
-  SiNextdotjs,
   SiTailwindcss,
   SiStyledcomponents,
   SiReactquery,
@@ -71,19 +70,12 @@ export const tabs: {
         description:
           "컴포넌트 기반 아키텍처로 사용자 인터페이스를 효율적으로 구성했습니다.",
       },
-      {
-        Icon: SiNextdotjs,
-        color: "#000000",
-        name: "Next.js",
-        description:
-          "App Router 기반의 파일 구조와 서버 컴포넌트를 활용해 SSR 및 SEO 최적화를 구현했습니다",
-      },
+
       {
         Icon: SiReact,
         color: "#000000",
         name: "React-Native",
-        description:
-          "상태 및 이벤트 처리를 고려하여 사용자 경험 중심의 컴포넌트 구조로 구현했습니다.",
+        description: "Android APK 빌드 및 배포 프로세스를 구축했습니다.",
       },
       {
         Icon: SiReact,

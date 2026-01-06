@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FadeUp } from "../../data/motion";
+import { FadeUp } from "@/lib/motion";
 import GithubIcon from "../etc/githubicon";
 
 const textVariant = {

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ProjectLink } from "../../../data/mainproject";
+import { ProjectLink } from "@/data/mainproject";
 import { useState } from "react";
 
 interface Props {
