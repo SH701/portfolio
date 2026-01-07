@@ -12,7 +12,7 @@ export default function Projects() {
   return (
     <div className="min-h-screen relative">
       <ScrollAnimation>
-        <SectionContainer title={"Projects"} count={"03."}>
+        <SectionContainer title={"Projects"}>
           <MainProject openIndex={openIndex} setOpenIndex={setOpenIndex} />
         </SectionContainer>
       </ScrollAnimation>
