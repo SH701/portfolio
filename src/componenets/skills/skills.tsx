@@ -5,11 +5,7 @@ import ShowSkills from "./showskills";
 export default function Skills() {
   return (
     <ScrollAnimation>
-      <SectionContainer
-        title={"Skills"}
-        count={"02."}
-        className="w-[80%] sm:w-[100%] "
-      >
+      <SectionContainer title={"Skills"} className="pt-20">
         <ShowSkills />
       </SectionContainer>
     </ScrollAnimation>

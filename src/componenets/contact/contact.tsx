@@ -23,14 +23,14 @@ export default function Contact() {
         <div className={`${styles.effect} inline-block relative`}>
           <button
             onClick={click}
-            className="p-3 text-xl cursor-pointer text-teal-300 relative z-10"
+            className="p-3 text-xl cursor-pointer text-orange-500 relative z-10 border"
           >
             Send Email
           </button>
         </div>
       </ScrollAnimation>
       {showForm && (
-        <div className="fixed top-15 bg-[rgb(17,34,64)] border-[#64FFDA]  z-50 flex items-center justify-center border-2 lg:w-[50%] lg:left-[25%] w-[80%] h-[80%] sm:h-[85%] left-[10%]  mt-10 sm:mt-0">
+        <div className="fixed top-15 bg-gray-900 border-orange-550  z-50 flex items-center justify-center border-2 lg:w-[50%] lg:left-[25%] w-[80%] h-[80%] sm:h-[85%] left-[10%]  mt-10 sm:mt-0">
           <EmailForm onClose={() => setShowForm(false)} />
           <Closebtn onclose={() => setShowForm(false)} />
         </div>

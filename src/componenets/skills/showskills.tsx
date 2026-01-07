@@ -13,7 +13,7 @@ export default function ShowSkills() {
   return (
     <ScrollAnimation
       delay={0.5}
-      className="flex lg:gap-20 sm:gap-10 gap-5 flex-col sm:flex-row sm:ml-[0%] ml-[5%]"
+      className="flex lg:gap-20 sm:gap-10 gap-5 flex-col md:flex-row items-center md:items-start"
     >
       <SkillsTab activeTab={activeTab} setActiveTab={setActiveTab} />
       <SkillsContent activeTab={activeTab} />

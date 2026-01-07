@@ -1,12 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FadeDown } from "@/lib/motion";
 import { Menu, X } from "lucide-react";
-import { useRouter } from "next/navigation";
 
 const headerVariants = {
   on: {
@@ -18,7 +16,6 @@ const headerVariants = {
 export default function Header() {
   const [isHide, setIsHide] = useState(false);
   const [open, setOpen] = useState(false);
-  const router = useRouter();
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -28,8 +25,6 @@ export default function Header() {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      const path = sectionId === "top" ? "/" : `/${sectionId}`;
-      router.push(path, { scroll: false });
     }
     setOpen(false);
   };
@@ -54,8 +49,13 @@ export default function Header() {
     >
       <nav className="flex flex-row items-center justify-between">
         <div className="ml-4 mt-2">
-          <Link href="/" onClick={(e) => handleNavClick(e, "top")}>
-            <Image src="/favicon.ico" alt="logo" width={60} height={60} />
+          <Link
+            href="/introduce"
+            onClick={(e) => handleNavClick(e, "introduce")}
+          >
+            <span className="font-extrabold text-3xl text-orange-550">
+              Portfolio
+            </span>
           </Link>
         </div>
 
@@ -65,15 +65,17 @@ export default function Header() {
           variants={headerVariants}
           className="hidden lg:flex ml-auto sm:px-7 px-3 py-5 items-end justify-end gap-5 lg:text-lg sm:text-sm text-xs"
         >
-          {["About", "Skills", "Projects", "Contact"].map((item, i) => (
+          {["Introduce", "Skills", "Projects", "Contact"].map((item, i) => (
             <motion.li key={item} variants={FadeDown}>
               <Link
                 href={`/${item.toLowerCase()}`}
                 onClick={(e) => handleNavClick(e, item.toLowerCase())}
                 className="flex flex-row sm:gap-2 gap-1"
               >
-                <p className="text-teal-300">{String(i + 1).padStart(2, "0")}.</p>
-                <p className="hover:text-teal-300 transition-colors duration-300">
+                <p className="text-orange-600">
+                  {String(i + 1).padStart(2, "0")}.
+                </p>
+                <p className="hover:text-orange-600 transition-colors duration-300">
                   {item}
                 </p>
               </Link>
@@ -100,13 +102,13 @@ export default function Header() {
             className=" w-screen  backdrop-blur-md pt-5 lg:hidden overflow-hidden "
           >
             <ul className="flex flex-col gap-4 text-lg">
-              {["About", "Skills", "Projects", "Contact"].map((item) => (
+              {["Skills", "Projects", "Contact"].map((item) => (
                 <li key={item}>
                   <Link
                     href={`/${item.toLowerCase()}`}
                     onClick={(e) => handleNavClick(e, item.toLowerCase())}
                   >
-                    <p className="pl-5 font-bold hover:text-teal-300 transition-colors duration-300">
+                    <p className="pl-5 font-bold hover:text-orange-600 transition-colors duration-300">
                       {item}
                     </p>
                   </Link>

@@ -1,10 +1,7 @@
-"use client";
-
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { FadeUp } from "@/lib/motion";
-import GithubIcon from "../etc/githubicon";
-import { FileText } from "lucide-react";
+
+import About from "../about/about";
 
 const textVariant = {
   on: {
@@ -21,36 +18,28 @@ export default function Introduce() {
       initial="init"
       animate="on"
       variants={textVariant}
-      className="flex flex-col gap-6 pt-24 sm:px-10"
+      className="flex flex-col gap-3 pt-10 sm:px-10 "
     >
-      <motion.div className="text-teal-300 text-2xl" variants={FadeUp}>
-        안녕하세요. 웹 개발자
+      <motion.div variants={FadeUp} className="mb-1">
+        <span className="text-3xl text-orange-550 ">Frontend Developer</span>
+      </motion.div>
+      <motion.div variants={FadeUp}>
+        <span className="lg:text-6xl   text-4xl font-bold">
+          안녕하세요, 김수환입니다.
+        </span>
       </motion.div>
       <motion.div
-        className="lg:text-6xl pt-5 text-white opacity-80 text-4xl font-bold"
+        className="lg:text-5xl pt-4 sm:text-4xl text-2xl font-bold leading-tight"
         variants={FadeUp}
       >
-        김수환입니다.
+        <span>
+          기술적인 문제 해결을 통해 <br />
+          <span className="text-orange-500">더 나은 사용자 경험</span>을 만드는
+          것을 목표로 합니다.
+        </span>
       </motion.div>
-      <motion.div
-        className="lg:text-6xl pt-4 sm:text-4xl text-2xl font-bold leading-tight"
-        variants={FadeUp}
-      >
-        저는 끊임없는 도전을 즐기며,
-        <br />웹 개발의 매력에 빠져 있습니다.
-      </motion.div>
-      <motion.p className="pt-5 text-lg lg:text-xl" variants={FadeUp}>
-        사용자에게 먼저 다가갈 수 있는 웹사이트의 프론트엔드 부분을 담당하고
-        있습니다.
-      </motion.p>
-      <motion.div className="flex flex-row gap-3 pt-5" variants={FadeUp}>
-        <Link href="https://github.com/SH701">
-          <GithubIcon className="size-10 text-teal-300 mt-3" />
-        </Link>
-        <Link href="https://www.notion.so/2e07903c541c80b09a88f535f72907c9">
-          <FileText className="size-10 text-teal-300 hover:-translate-y-1 hover:text-teal-300 cursor-pointer duration-300 mt-3" />
-        </Link>
-      </motion.div>
+
+      <About />
     </motion.div>
   );
 }
