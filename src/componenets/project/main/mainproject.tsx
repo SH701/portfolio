@@ -15,7 +15,7 @@ type Props = {
 
 export default function MainProject({ setOpenIndex }: Props) {
   return (
-    <div className="flex  flex-col gap-20 mt-16">
+    <div className="flex  flex-col gap-8 ">
       {Main.map(
         (
           {
@@ -68,7 +68,7 @@ export default function MainProject({ setOpenIndex }: Props) {
                   }`}
                 />
                 <div className="mt-4">
-                  <p className="text-[12px] sm:text-[14px] lg:text-[18px] leading-relaxed">
+                  <p className="text-xs md:text-sm lg:text-lg leading-relaxed">
                     {description}
                   </p>
                 </div>

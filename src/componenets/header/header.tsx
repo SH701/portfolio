@@ -42,7 +42,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 z-30 w-full left-0 sm:px-10 sm:pt-3
+      className={`fixed top-0 z-30 w-full left-0 md:px-10 md:pt-3
         backdrop-blur-md transition-transform duration-300 ${
           isHide ? "-translate-y-full" : "translate-y-0"
         }`}
@@ -63,14 +63,14 @@ export default function Header() {
           initial="init"
           animate="on"
           variants={headerVariants}
-          className="hidden lg:flex ml-auto sm:px-7 px-3 py-5 items-end justify-end gap-5 lg:text-lg sm:text-sm text-xs"
+          className="hidden lg:flex ml-auto md:px-7 px-3 py-5 items-end justify-end gap-5 lg:text-lg md:text-sm text-xs"
         >
           {["Introduce", "Skills", "Projects", "Contact"].map((item, i) => (
             <motion.li key={item} variants={FadeDown}>
               <Link
                 href={`/${item.toLowerCase()}`}
                 onClick={(e) => handleNavClick(e, item.toLowerCase())}
-                className="flex flex-row sm:gap-2 gap-1"
+                className="flex flex-row md:gap-2 gap-1"
               >
                 <p className="text-orange-600">
                   {String(i + 1).padStart(2, "0")}.

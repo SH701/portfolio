@@ -1,3 +1,4 @@
+import Footer from "@/componenets/footer/footer";
 import Header from "../componenets/header/header";
 
 import "./globals.css";
@@ -14,9 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className="scroll-smooth ">
-      <body className=" px-10 py-5 overflow-x-hidden">
-        <Header />
-        {children}
+      <body>
+        <div className="px-10 py-5 overflow-x-hidden">
+          <Header />
+          {children}
+        </div>
+        <Footer />
       </body>
     </html>
   );

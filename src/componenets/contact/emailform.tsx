@@ -2,12 +2,8 @@
 
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
-
-interface EmailProps {
-  onClose: () => void;
-}
-
-export default function EmailForm({ onClose }: EmailProps) {
+import styles from "../contact/contact.module.css";
+export default function EmailForm() {
   const form = useRef<HTMLFormElement>(null);
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,51 +18,43 @@ export default function EmailForm({ onClose }: EmailProps) {
       .then(() => {
         form.current?.reset();
         alert("메일이 성공적으로 전송됐습니다.");
-        onClose();
       })
       .catch(() => {
         alert("메일 전송 실패:");
       });
   };
   return (
-    <div className="flex flex-col w-[90%] h-[80%] max-w-[800px] ">
-      <form
-        ref={form}
-        onSubmit={onSubmit}
-        className="flex gap-5 flex-col w-[90%] mx-auto"
-      >
-        <label className="flex flex-col gap-1">
-          <p className="text-orange-500">Title</p>
-          <input
-            type="text"
-            name="name"
-            required
-            className="border py-1 px-1.5 rounded-sm focus:outline-none border-gray-100"
-          />
-        </label>
-        <label className="flex flex-col gap-1">
-          <p className="text-orange-500">Your Email</p>
+    <div className="flex items-center justify-center md:flex-1">
+      <div className="w-full max-w-lg">
+        <form ref={form} onSubmit={onSubmit} className="flex gap-5 flex-col">
           <input
             type="email"
             name="email"
             required
-            className="border py-1 px-1.5 rounded-sm focus:outline-none border-gray-100"
+            placeholder="Name"
+            className="border py-2 px-3 rounded-sm focus:outline-none border-gray-100 w-full"
           />
-        </label>
-        <label className="flex flex-col gap-1 ">
-          <p className="text-orange-500">Message</p>
+          <input
+            type="text"
+            name="name"
+            required
+            placeholder="Title"
+            className="border py-2 px-3 rounded-sm focus:outline-none border-gray-100 w-full"
+          />
           <textarea
             name="message"
             required
-            className="border sm:h-70 3xl:h-90 h-50  py-1 px-1.5 rounded-sm focus:outline-none border-gray-100"
+            placeholder="Message"
+            className="border h-48 py-2 px-3 rounded-sm focus:outline-none border-gray-100 w-full resize-none"
           />
-        </label>
-        <div className="flex items-center justify-center text-orange-500 border h-10 cursor-pointer">
-          <button type="submit" className="cursor-pointer">
+          <button
+            type="submit"
+            className={`${styles.effect} cursor-pointer w-full text-orange-500 border h-10`}
+          >
             보내기
           </button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 }

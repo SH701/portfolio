@@ -1,40 +1,18 @@
-"use client";
-
-import { useState } from "react";
-import styles from "../contact/contact.module.css";
 import ScrollAnimation from "../etc/scrollAnimation";
-import Closebtn from "../etc/closebtn";
+import SectionContainer from "../etc/sectioncontainer";
+import Description from "./description";
+
 import EmailForm from "./emailform";
 
 export default function Contact() {
-  const [showForm, setShowForm] = useState(false);
-  const click = () => {
-    setShowForm(true);
-  };
-
   return (
-    <>
-      <ScrollAnimation delay={0.5} className="text-center flex gap-4 flex-col">
-        <p className="font-bold text-4xl">Contact</p>
-        <p className="sm:text-lg text-base">
-          소통을 기반으로 배우고, 성장하는 웹 개발자가
-          <br /> 필요하면 언제든지 연락해 주세요!
-        </p>
-        <div className={`${styles.effect} inline-block relative`}>
-          <button
-            onClick={click}
-            className="p-3 text-xl cursor-pointer text-orange-500 relative z-10 border"
-          >
-            Send Email
-          </button>
+    <ScrollAnimation delay={0.5}>
+      <SectionContainer title={"Contact"}>
+        <div className="flex flex-col md:flex-row gap-8 md:gap-0">
+          <Description />
+          <EmailForm />
         </div>
-      </ScrollAnimation>
-      {showForm && (
-        <div className="fixed top-15 bg-gray-900 border-orange-550  z-50 flex items-center justify-center border-2 lg:w-[50%] lg:left-[25%] w-[80%] h-[80%] sm:h-[85%] left-[10%]  mt-10 sm:mt-0">
-          <EmailForm onClose={() => setShowForm(false)} />
-          <Closebtn onclose={() => setShowForm(false)} />
-        </div>
-      )}
-    </>
+      </SectionContainer>
+    </ScrollAnimation>
   );
 }

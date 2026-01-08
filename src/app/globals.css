@@ -6,8 +6,9 @@
   --color-orange-600: #f7931e;
   --color-gray-100: #a0a0a0;
   --color-gray-900: #0a0a0a;
-  --color-gray-800: #1a1a1a;
-  --color-white: #ffffff;
+  --breakpoint-sm: 375px;
+  --breakpoint-md: 744px;
+  --breakpoint-lg: 1280px;
 }
 
 body {

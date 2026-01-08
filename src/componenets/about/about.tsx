@@ -11,10 +11,12 @@ export default function About() {
   return (
     <motion.div
       variants={FadeUp}
-      className="mt-16 border-3 border-gray-700 rounded-lg px-4 py-8 mb-6 md:mx-20 "
+      className="mt-16 border-1 border-orange-500 rounded-lg px-4 py-8 mb-6 lg:mx-30"
     >
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">ABOUT</h2>
-      <div className="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-24">
+      <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-orange-500">
+        ABOUT
+      </h2>
+      <div className="flex flex-col md:flex-row items-center justify-center gap-10 lg:gap-24 md:gap-12 ">
         <div className="relative hidden md:w-[250px] md:h-[320px] flex-shrink-0 md:flex">
           <Image
             src="/images/profile.png"

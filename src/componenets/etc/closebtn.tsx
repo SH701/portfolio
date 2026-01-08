@@ -1,7 +1,7 @@
 "use client";
 
 interface Props {
-  onclose: () => void;
+  onclose?: () => void;
 }
 
 export default function CloseBtn({ onclose }: Props) {

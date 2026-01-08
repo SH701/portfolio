@@ -9,8 +9,8 @@ import Contact from "../componenets/contact/contact";
 export default function Home() {
   return (
     <>
-      <div className="mx-auto max-w-screen-xl sm:px-10">
-        <div className="max-w-[1200px] flex flex-col gap-2 lg:pt-20 pt-10 ">
+      <div className="mx-auto max-w-screen-xl md:px-10">
+        <div className="max-w-[1200px] flex flex-col  lg:pt-20 pt-10 ">
           <section id="introduce">
             <Introduce />
           </section>
