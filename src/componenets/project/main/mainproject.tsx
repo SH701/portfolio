@@ -23,7 +23,7 @@ export default function MainProject({ setOpenIndex }: Props) {
         ) => {
           return (
             <ScrollAnimation delay={0.5} key={title} className="w-full">
-              <div className="bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl  h-full flex flex-col">
+              <div className="bg-gray-800 rounded-lg overflow-hidden transition-all duration-300  h-full flex flex-col">
                 <div className="relative w-full h-[200px] lg:h-[240px]  cursor-pointer group">
                   <Image
                     src={img}
@@ -76,7 +76,7 @@ export default function MainProject({ setOpenIndex }: Props) {
 
                   <div className="flex justify-end pt-2 border-t border-white/10 gap-3">
                     <Link href={githubLink} target="_blank">
-                      <GithubIcon className="size-7 text-white hover:text-orange-500 transition-colors" />
+                      <GithubIcon className="md:size-7 size-5 text-white hover:text-orange-500 transition-colors" />
                     </Link>
                     <Link
                       href={
@@ -86,7 +86,7 @@ export default function MainProject({ setOpenIndex }: Props) {
                       }
                       target="_blank"
                     >
-                      <Globe className="size-7 hover:text-orange-500 transition-colors" />
+                      <Globe className="md:size-7 size-5 hover:text-orange-500 transition-colors" />
                     </Link>
                   </div>
                 </div>

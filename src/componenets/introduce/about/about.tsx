@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FadeUp } from "@/lib/motion";
-import { User, Cake, Home, Mail, FileText } from "lucide-react";
-import GithubIcon from "../etc/githubicon";
+import { User, Cake, Home, Mail, NotebookText } from "lucide-react";
+import GithubIcon from "@/componenets/etc/githubicon";
 
 export default function About() {
   return (
@@ -42,20 +42,20 @@ export default function About() {
             <Mail className="size-5 text-orange-500" />
             <span>rkrk7636@gmail.com</span>
           </div>
-          <div className="flex  md:flex-col md:gap-2 mt-6  justify-center gap-20 pt-3">
+          <div className="flex  md:flex-col md:gap-2 mt-6  justify-center gap-20">
             <Link
               href="https://github.com/SH701"
               className="flex items-center gap-2 hover:text-orange-500 "
             >
-              <GithubIcon className="size-5 md:size-5 text-orange-500 " />
+              <GithubIcon className="size-5  text-orange-500 " />
               <span className="md:flex hidden duration-300">Git</span>
             </Link>
             <Link
-              href="https://www.notion.so/2e07903c541c80b09a88f535f72907c9"
+              href="https://sh701.tistory.com/"
               className="flex items-center gap-2 hover:text-orange-500 transition-colors"
             >
-              <FileText className="size-5  text-orange-500 cursor-pointer  md:size-5" />
-              <span className="md:flex hidden duration-300">Resume</span>
+              <NotebookText className="size5 text-orange-500 cursor-pointer  " />
+              <span className="md:flex hidden duration-300">Blog</span>
             </Link>
           </div>
         </div>

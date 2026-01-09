@@ -13,7 +13,7 @@ export default function SectionContainer({
 }: Props) {
   return (
     <section
-      className={`${className ? className : ""}  md:pt-10 md:px-10 pt-10 pb-5 `}
+      className={`${className ? className : ""}  md:pt-10 lg:px-10 pt-10 pb-5 `}
       {...attr}
     >
       <div className="flex flex-row gap-1 md:pb-18  pb-4 justify-center items-center">
