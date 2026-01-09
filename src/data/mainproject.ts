@@ -15,8 +15,6 @@ interface MainProjectType {
     title: string;
     description: string;
   }[];
-  situation: string;
-  improvement: string[];
   awards?: string[];
   collaboration?: string;
 }
@@ -73,11 +71,6 @@ export const Main: MainProjectType[] = [
         description: "로그인 기반 권한으로 게시글 및 댓글 CRUD를 구현했습니다.",
       },
     ],
-    situation: "AI가 정확한 답변을 내놓지 않을떄가 있다.",
-    improvement: [
-      "프롬프트 템플릿 정교화: 시스템 메시지와 예시 입력을 추가해 의도와 출력 포맷을 명확히 정의",
-      "재시도 및 대안 UI 제공: 불확실 표시, 재생성 버튼 노출",
-    ],
   },
   {
     title: "🤓 Noonchi ",
@@ -120,12 +113,6 @@ export const Main: MainProjectType[] = [
         title: "히스토리 & 리포트",
         description: "대화 기록을 분석해 반복 학습 및 개선 방향 제공합니다.",
       },
-    ],
-    situation:
-      "API 응답 지연 시 로딩 처리만 단순해 사용자 경험이 다소 밋밋하다.",
-    improvement: [
-      "스트리밍 응답 UI 적용 (점차 텍스트가 나타나는 방식)",
-      "음성 재생 시 애니메이션 추가, 인터랙션 강화",
     ],
   },
   {
@@ -177,11 +164,6 @@ export const Main: MainProjectType[] = [
         description:
           "Uploadthing을 이용해 게시글 작성 시 이미지를 업로드할 수 있도록 했으며, 이미지 파일은 업로드 즉시 미리보기가 가능합니다.",
       },
-    ],
-    situation: "이미지 업로드 실패 시 사용자 안내가 부족하다",
-    improvement: [
-      "로드 진행률 표시, 실패 시 재시도 버튼·토스트 알림 추가",
-      "NextAuth.js 또는 Iron Session 전략 통일, 리다이렉트·세션 복원 로직 보완",
     ],
   },
 ];

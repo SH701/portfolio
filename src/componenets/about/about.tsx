@@ -45,17 +45,17 @@ export default function About() {
           <div className="flex  md:flex-col md:gap-2 mt-6  justify-center gap-20 pt-3">
             <Link
               href="https://github.com/SH701"
-              className="flex items-center gap-2 hover:text-orange-500 transition-colors"
+              className="flex items-center gap-2 hover:text-orange-500 "
             >
-              <GithubIcon className="size-5 md:size-5" />
-              <span className="md:flex hidden">Git</span>
+              <GithubIcon className="size-5 md:size-5 text-orange-500 " />
+              <span className="md:flex hidden duration-300">Git</span>
             </Link>
             <Link
               href="https://www.notion.so/2e07903c541c80b09a88f535f72907c9"
               className="flex items-center gap-2 hover:text-orange-500 transition-colors"
             >
-              <FileText className="size-5 hover:-translate-y-1 text-orange-500 cursor-pointer duration-300 md:size-5" />
-              <span className="md:flex hidden">Resume</span>
+              <FileText className="size-5  text-orange-500 cursor-pointer  md:size-5" />
+              <span className="md:flex hidden duration-300">Resume</span>
             </Link>
           </div>
         </div>

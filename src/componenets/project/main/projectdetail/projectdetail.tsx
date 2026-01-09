@@ -20,8 +20,6 @@ interface Props {
   capability: CapabilityItem[];
   intension: string;
   simple: string;
-  situation: string;
-  improvement: string[];
   awards?: string[];
   collaboration?: string;
 }
@@ -36,8 +34,6 @@ export default function ProjectDetail({
   capability,
   period,
   intension,
-  situation,
-  improvement,
   awards,
   collaboration,
 }: Props) {
@@ -152,18 +148,6 @@ export default function ProjectDetail({
                 </div>
               );
             })}
-          </div>
-        </div>
-        <div>
-          <p className="text-black font-bold py-[7px]">5. 문제점과 개선사항</p>
-          <p className="font-semibold pb-4">문제점: {situation}</p>
-          <div className="font-semibold">
-            개선사항:
-            <ol className="list-decimal list-inside mt-2 space-y-1">
-              {improvement.map((item, idx) => (
-                <li key={idx}>{item}</li>
-              ))}
-            </ol>
           </div>
         </div>
       </div>

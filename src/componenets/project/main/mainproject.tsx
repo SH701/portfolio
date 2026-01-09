@@ -3,10 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Dispatch, SetStateAction } from "react";
-import ProjectHeader from "./projectheader";
 import { Main } from "@/data/mainproject";
 import ScrollAnimation from "../../etc/scrollAnimation";
 import GithubIcon from "../../etc/githubicon";
+import { Globe } from "lucide-react";
 
 type Props = {
   openIndex: number | null;
@@ -15,84 +15,80 @@ type Props = {
 
 export default function MainProject({ setOpenIndex }: Props) {
   return (
-    <div className="flex  flex-col gap-8 ">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
       {Main.map(
         (
-          {
-            title,
-            award,
-            description,
-            language,
-            period,
-            img,
-            githubLink,
-            projectLink,
-          },
+          { title, simple, language, period, img, githubLink, projectLink },
           index
         ) => {
-          const isEven = index % 2 === 0;
           return (
-            <ScrollAnimation
-              delay={0.5}
-              key={title}
-              className={`grid grid-cols-1 md:grid-cols-2 gap-5 md:mb-20`}
-            >
-              <div
-                className={`flex justify-center items-center ${
-                  isEven ? "md:order-last" : ""
-                }`}
-              >
-                <div className="relative w-full max-w-[700px] h-[450px] bg-black">
+            <ScrollAnimation delay={0.5} key={title} className="w-full">
+              <div className="bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl  h-full flex flex-col">
+                <div className="relative w-full h-[200px] lg:h-[240px]  cursor-pointer group">
                   <Image
                     src={img}
-                    alt="대표사진"
+                    alt={title}
                     fill
-                    className="rounded-md shadow-md object-contain p-0 m-0"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
                     onClick={() => {
                       setOpenIndex(index);
                     }}
                   />
                 </div>
-              </div>
-              <div
-                className={`flex flex-col justify-between bg-[#112240] p-6 rounded-lg ${
-                  isEven ? "" : ""
-                }`}
-              >
-                <ProjectHeader
-                  title={title}
-                  award={award}
-                  period={period}
-                  projectLink={projectLink}
-                  className={`flex flex-col ${
-                    isEven
-                      ? "md:items-start md:text-left text-left"
-                      : "md:items-end md:text-right text-left"
-                  }`}
-                />
-                <div className="mt-4">
-                  <p className="text-xs md:text-sm lg:text-lg leading-relaxed">
-                    {description}
-                  </p>
-                </div>
-                <div className="flex flex-row flex-wrap  mt-4">
-                  {language.map((item) => (
-                    <span
-                      key={item}
-                      className="md:text-xs text-[8px] lg:text-base bg-white/10 px-2 py-1 rounded mr-2 mb-2"
+
+                <div className="p-5 space-y-3 flex-1 flex flex-col ">
+                  <div className="flex-1">
+                    <Link
+                      href={
+                        typeof projectLink[0] === "string"
+                          ? projectLink[0]
+                          : projectLink[0].url
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-                <div
-                  className={`flex gap-4 mt-4 ${
-                    isEven ? "md:justify-start" : "md:justify-end"
-                  }`}
-                >
-                  <Link href={githubLink}>
-                    <GithubIcon className="size-5 lg:size-8" />
-                  </Link>
+                      <h3 className="text-lg lg:text-xl font-bold text-orange-500 transition-colors cursor-pointer line-clamp-1">
+                        {title}
+                      </h3>
+                    </Link>
+                    <p className="text-xs text-orange-600/80 mt-1">{period}</p>
+
+                    <p className="text-sm leading-relaxed text-gray-300 mt-3 line-clamp-2">
+                      {simple}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-row flex-wrap gap-1.5">
+                    {language.slice(0, 4).map((item) => (
+                      <span
+                        key={item}
+                        className="text-[10px] lg:text-xs bg-white/10 px-2 py-0.5 rounded hover:bg-white/20 transition-colors"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                    {language.length > 4 && (
+                      <span className="text-[10px] lg:text-xs bg-white/10 px-2 py-0.5 rounded text-gray-400">
+                        +{language.length - 4}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="flex justify-end pt-2 border-t border-white/10 gap-3">
+                    <Link href={githubLink} target="_blank">
+                      <GithubIcon className="size-7 text-white hover:text-orange-500 transition-colors" />
+                    </Link>
+                    <Link
+                      href={
+                        typeof projectLink[0] === "string"
+                          ? projectLink[0]
+                          : projectLink[0].url
+                      }
+                      target="_blank"
+                    >
+                      <Globe className="size-7 hover:text-orange-500 transition-colors" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </ScrollAnimation>
