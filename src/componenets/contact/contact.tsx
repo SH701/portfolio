@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <ScrollAnimation delay={0.5}>
       <SectionContainer title={"Contact"}>
-        <div className="flex flex-col md:flex-row gap-8 md:gap-0">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-4 lg:gap-0">
           <Description />
           <EmailForm />
         </div>

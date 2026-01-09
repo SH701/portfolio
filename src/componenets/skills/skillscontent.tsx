@@ -23,9 +23,9 @@ export default function SkillsContent({ activeTab }: Props) {
             key={item.name}
             className="flex items-center lg:gap-5 gap-3 "
           >
-            <div className="lg:size-16 size-12 flex items-center justify-center rounded-full bg-gray-600 shadow-sm">
+            <div className="lg:size-16 size-10 flex items-center justify-center rounded-full bg-gray-600 shadow-sm flex-shrink-0">
               {item.Icon && (
-                <item.Icon className="lg:size-10 size-8" color={item.color} />
+                <item.Icon className="lg:size-10 size-6" color={item.color} />
               )}
             </div>
             <div className="flex flex-col mt-3">

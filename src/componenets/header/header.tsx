@@ -2,17 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { FadeDown } from "@/lib/motion";
 import { Menu, X } from "lucide-react";
-
-const headerVariants = {
-  on: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
+import { AnimatePresence, motion } from "framer-motion";
 export default function Header() {
   const [isHide, setIsHide] = useState(false);
   const [open, setOpen] = useState(false);
@@ -59,14 +50,9 @@ export default function Header() {
           </Link>
         </div>
 
-        <motion.ul
-          initial="init"
-          animate="on"
-          variants={headerVariants}
-          className="hidden lg:flex ml-auto md:px-7 px-3 py-5 items-end justify-end gap-5 lg:text-lg md:text-sm text-xs"
-        >
+        <ul className="hidden md:flex ml-auto md:px-7 px-3 py-5 items-end justify-end gap-5 lg:text-lg md:text-sm text-xs">
           {["Introduce", "Skills", "Projects", "Contact"].map((item, i) => (
-            <motion.li key={item} variants={FadeDown}>
+            <li key={item}>
               <Link
                 href={`/${item.toLowerCase()}`}
                 onClick={(e) => handleNavClick(e, item.toLowerCase())}
@@ -79,13 +65,13 @@ export default function Header() {
                   {item}
                 </p>
               </Link>
-            </motion.li>
+            </li>
           ))}
-        </motion.ul>
+        </ul>
 
         <button
           onClick={() => setOpen(!open)}
-          className="lg:hidden mr-4 p-2 cursor-pointer"
+          className="md:hidden mr-4 p-2 cursor-pointer"
           aria-label="Menu"
         >
           {open ? <X size={28} /> : <Menu size={28} />}
@@ -99,16 +85,16 @@ export default function Header() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className=" w-screen  backdrop-blur-md pt-5 lg:hidden overflow-hidden "
+            className=" w-screen  backdrop-blur-md pt-5 md:hidden overflow-hidden "
           >
             <ul className="flex flex-col gap-4 text-lg">
-              {["Skills", "Projects", "Contact"].map((item) => (
+              {["Introduce", "Skills", "Projects", "Contact"].map((item) => (
                 <li key={item}>
                   <Link
                     href={`/${item.toLowerCase()}`}
                     onClick={(e) => handleNavClick(e, item.toLowerCase())}
                   >
-                    <p className="pl-5 font-bold hover:text-orange-600 transition-colors duration-300">
+                    <p className="pl-5 font-medium hover:text-orange-600 transition-colors duration-300">
                       {item}
                     </p>
                   </Link>

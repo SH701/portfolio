@@ -16,7 +16,7 @@ export default function SectionContainer({
       className={`${className ? className : ""}  md:pt-10 md:px-10 pt-10 pb-5 `}
       {...attr}
     >
-      <div className="flex flex-row gap-1 md:pb-18  pb-10 justify-center items-center">
+      <div className="flex flex-row gap-1 md:pb-18  pb-4 justify-center items-center">
         <p className="md:text-4xl text-3xl text-orange-500">{title}</p>
       </div>
       {children}

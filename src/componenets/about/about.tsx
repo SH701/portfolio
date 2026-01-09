@@ -42,7 +42,7 @@ export default function About() {
             <Mail className="size-5 text-orange-500" />
             <span>rkrk7636@gmail.com</span>
           </div>
-          <div className="flex  md:flex-col md:gap-2 mt-6 border-t border-dotted justify-center gap-20 pt-3">
+          <div className="flex  md:flex-col md:gap-2 mt-6  justify-center gap-20 pt-3">
             <Link
               href="https://github.com/SH701"
               className="flex items-center gap-2 hover:text-orange-500 transition-colors"

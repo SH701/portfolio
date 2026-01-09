@@ -24,7 +24,7 @@ interface MainProjectType {
 export const Main: MainProjectType[] = [
   {
     title: "✈️ SeoulCourse",
-    period: "2025.10.01 ~ 2025.10.27",
+    period: "2025.10 ~ 2025.11",
     collaboration: "프로젝트 리드 겸 단독 개발자 (기획 · 설계 · 구현 · 배포)",
     description:
       "사용자의 지역·활동을 바탕으로 AI가 현실적인 하루 일정을 자동으로 설계합니다. 요청은 입력 또는 챗으로 할 수 있으며 식사·카페·관광·이동 경로를 고려한 순서와 소요 시간을 포함해 바로 미리보기로 확인할 수 있습니다. 또한 AI를 거치지 않는 ‘구 탐색’ 모드로 특정 구의 인기 장소를 즉시 목록 형태로 확인할 수 있어 탐색과 맞춤 일정 생성 모두를 지원합니다.",
@@ -82,7 +82,7 @@ export const Main: MainProjectType[] = [
   {
     title: "🤓 Noonchi ",
     award: "508 비사이드 포텐데이 우수 프로젝트 선정",
-    period: "2025.08.01 ~ 2025.08.26",
+    period: "2025.08 ~ 진행 중",
     awards: ["✨ 네이버 클라우드 주최  508 AI 포텐데이 우수 프로젝트 선정"],
     collaboration:
       "프론트엔드 전반 설계 및 UI 구현, AI 페르소나·존댓말 기능 및 음성 입력·TTS 연동 담당",
@@ -130,7 +130,7 @@ export const Main: MainProjectType[] = [
   },
   {
     title: "🛒 NeighBuy",
-    period: "2025.04.21 ~ 2025.06.13",
+    period: "2025.04 ~ 2025.06",
     description:
       "해당 프로젝트는 Next.js 14 기반의 풀스택 웹 애플리케이션으로, Prisma를 활용한 데이터 관리와, iron-session 기반의 인증 시스템을 도입했습니다.react-hook-form과 zod로 폼 유효성 검사를 구현했으며, UploadThing을 통한 이미지 업로드, 문자 인증, 그리고 Tailwind CSS 및 daisyUI로 반응형 UI를 구성하였습니다.",
     simple:

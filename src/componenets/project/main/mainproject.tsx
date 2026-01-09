@@ -48,6 +48,9 @@ export default function MainProject({ setOpenIndex }: Props) {
                     alt="대표사진"
                     fill
                     className="rounded-md shadow-md object-contain p-0 m-0"
+                    onClick={() => {
+                      setOpenIndex(index);
+                    }}
                   />
                 </div>
               </div>
@@ -90,14 +93,6 @@ export default function MainProject({ setOpenIndex }: Props) {
                   <Link href={githubLink}>
                     <GithubIcon className="size-5 lg:size-8" />
                   </Link>
-                  <button
-                    onClick={() => {
-                      setOpenIndex(index);
-                    }}
-                    className="hover:text-teal-300 transition duration-300 rounded-md cursor-pointer text-sm lg:text-lg"
-                  >
-                    상세내용
-                  </button>
                 </div>
               </div>
             </ScrollAnimation>

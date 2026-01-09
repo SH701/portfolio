@@ -18,7 +18,7 @@ export default function ProjectHeader({
 }: Props) {
   return (
     <div className={className}>
-      <p className="text-xs lg:text-base text-teal-300 pb-3">Project</p>
+      <p className="text-xs lg:text-base text-orange-500 pb-3">Project</p>
       <p className="py-2 text-green-400">{award}</p>
 
       <Link
@@ -30,9 +30,9 @@ export default function ProjectHeader({
         target="_blank"
         rel="noopener noreferrer"
       >
-        <p className="text-lg lg:text-4xl py-1 ani cursor-pointer">{title}</p>
+        <p className="text-lg lg:text-4xl py-1 cursor-pointer">{title}</p>
       </Link>
-      <p className="text-xs lg:text-lg pb-2">{period}</p>
+      <p className="text-xs md:text-base pl-1 text-orange-600">{period}</p>
     </div>
   );
 }

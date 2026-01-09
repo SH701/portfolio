@@ -1,35 +1,62 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { FadeUp } from "@/lib/motion";
 
 import About from "../about/about";
+import { useEffect, useState } from "react";
+
+interface IntroProps {
+  text: string;
+}
 
 const textVariant = {
   on: {
     transition: {
-      delayChildren: 1,
+      delayChildren: 0.25,
       staggerChildren: 0.25,
     },
   },
 };
 
-export default function Introduce() {
+export default function Introduce({ text }: IntroProps) {
+  const [displayText, setDisplayText] = useState("");
+  const [index, setIndex] = useState(0);
+  const [startTyping, setStartTyping] = useState(false);
+
+  useEffect(() => {
+    const initialDelay = setTimeout(() => {
+      setStartTyping(true);
+    }, 1000);
+    return () => clearTimeout(initialDelay);
+  }, []);
+
+  useEffect(() => {
+    if (startTyping && index < text.length) {
+      const timer = setTimeout(() => {
+        setDisplayText((prev) => prev + text[index]);
+        setIndex((prev) => prev + 1);
+      }, 150);
+      return () => clearTimeout(timer);
+    }
+  }, [startTyping, index, text]);
+
   return (
     <motion.div
       initial="init"
       animate="on"
       variants={textVariant}
-      className="flex flex-col gap-3 pt-6 md:px-10 "
+      className="flex flex-col md:gap-3 gap-1.5 pt-10 md:pt-6 md:px-10 lg:h-screen"
     >
       <motion.div variants={FadeUp} className="mb-1">
         <span className="md:text-3xl text-orange-550 ">Frontend Developer</span>
       </motion.div>
       <motion.div variants={FadeUp}>
-        <span className="md:text-6xl   text-2xl font-bold">
-          안녕하세요, 김수환입니다.
-        </span>
+        <span className="md:text-6xl text-2xl font-medium">{displayText}</span>
+        {index < text.length && <span className="md:text-6xl text-2xl">|</span>}
       </motion.div>
       <motion.div
-        className="md:text-5xl pt-4  font-bold leading-tight"
+        className="md:text-5xl md:pt-4  font-medium leading-tight"
         variants={FadeUp}
       >
         <span>
@@ -38,7 +65,6 @@ export default function Introduce() {
           것을 목표로 합니다.
         </span>
       </motion.div>
-
       <About />
     </motion.div>
   );

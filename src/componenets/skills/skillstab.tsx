@@ -7,7 +7,7 @@ interface Props {
 
 export default function SkillsTab({ activeTab, setActiveTab }: Props) {
   return (
-    <nav className="flex md:flex-col items-start gap-0 flex-row pb-4 md:gap-5">
+    <nav className="flex md:flex-col md:items-start gap-0 flex-row pb-4 md:gap-5 ">
       {tabs.map(({ key, label }) => (
         <button
           key={key}
