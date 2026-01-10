@@ -18,10 +18,9 @@ interface Props {
   projectLink: ProjectLink[];
   language: string[];
   capability: CapabilityItem[];
-  intension: string;
+
   simple: string;
   awards?: string[];
-  collaboration?: string;
 }
 
 export default function ProjectDetail({
@@ -33,9 +32,7 @@ export default function ProjectDetail({
   language,
   capability,
   period,
-  intension,
   awards,
-  collaboration,
 }: Props) {
   const [isOpen, setIsOpen] = useState<number[]>([]);
   const toggleIndex = (index: number) => {
@@ -45,18 +42,17 @@ export default function ProjectDetail({
   };
 
   return (
-    <div className="h-auto">
+    <div className="h-auto rounded-2xl">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold">{title}</h2>
         <CloseBtn onclose={onClose} />
       </div>
       <div className="flex flex-col gap-2">
-        <p className="font-semibold">진행 기간 : {period} </p>
-        <p className="font-semibold">기획 의도 : {intension}</p>
-        <p className="font-semibold">역할 : {collaboration}</p>
+        <p className="font-semibold"> {period} </p>
+
         <hr />
         <div className="flex flex-col gap-3">
-          <p className="text-black font-bold py-[7px]">1. 간단 소개</p>
+          <p className="text-black font-bold py-[7px]"> 간단 소개</p>
           {awards && awards.length > 0 && (
             <div>
               <ul className="list-disc pl-5 space-y-1">
@@ -74,7 +70,7 @@ export default function ProjectDetail({
         </div>
 
         <div className="flex flex-col gap-3">
-          <p className="text-black font-bold py-[7px]">2. 관련 링크</p>
+          <p className="text-black font-bold py-[7px]">관련 링크</p>
           <ul className="flex flex-col gap-2 pl-4">
             <li className="list-disc">
               깃허브:{" "}
@@ -115,7 +111,7 @@ export default function ProjectDetail({
           </ul>
         </div>
         <div>
-          <p className="text-black font-bold py-[7px]">3. 기술 스택</p>
+          <p className="text-black font-bold py-[7px]">기술 스택</p>
           <div className="flex flex-wrap gap-2">
             {language.map((tech) => (
               <span
@@ -128,7 +124,7 @@ export default function ProjectDetail({
           </div>
         </div>
         <div>
-          <p className="text-black font-bold py-[7px]">4. 핵심 기능 설명</p>
+          <p className="text-black font-bold py-[7px]">핵심 기능 설명</p>
           <div>
             {capability.map((item, index) => {
               const open = isOpen.includes(index);

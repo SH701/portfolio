@@ -1,14 +1,7 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { FadeUp } from "@/lib/motion";
 
-import { useEffect, useState } from "react";
 import About from "./about/about";
-
-interface IntroProps {
-  text: string;
-}
 
 const textVariant = {
   on: {
@@ -19,28 +12,7 @@ const textVariant = {
   },
 };
 
-export default function Introduce({ text }: IntroProps) {
-  const [displayText, setDisplayText] = useState("");
-  const [index, setIndex] = useState(0);
-  const [startTyping, setStartTyping] = useState(false);
-
-  useEffect(() => {
-    const initialDelay = setTimeout(() => {
-      setStartTyping(true);
-    }, 1000);
-    return () => clearTimeout(initialDelay);
-  }, []);
-
-  useEffect(() => {
-    if (startTyping && index < text.length) {
-      const timer = setTimeout(() => {
-        setDisplayText((prev) => prev + text[index]);
-        setIndex((prev) => prev + 1);
-      }, 150);
-      return () => clearTimeout(timer);
-    }
-  }, [startTyping, index, text]);
-
+export default function Introduce() {
   return (
     <motion.div
       initial="init"
@@ -52,8 +24,9 @@ export default function Introduce({ text }: IntroProps) {
         <span className="md:text-3xl text-orange-550 ">Frontend Developer</span>
       </motion.div>
       <motion.div variants={FadeUp}>
-        <span className="md:text-6xl text-2xl font-medium">{displayText}</span>
-        {index < text.length && <span className="md:text-6xl text-2xl">|</span>}
+        <span className="md:text-6xl text-2xl font-medium">
+          안녕하세요, 김수환입니다
+        </span>
       </motion.div>
       <motion.div
         className="md:text-5xl md:pt-4  font-medium leading-tight"

@@ -5,7 +5,7 @@ interface MainProjectType {
   award?: string;
   description: string;
   simple: string;
-  intension: string;
+
   language: string[];
   period: string;
   img: string;
@@ -16,19 +16,18 @@ interface MainProjectType {
     description: string;
   }[];
   awards?: string[];
-  collaboration?: string;
 }
 
 export const Main: MainProjectType[] = [
   {
     title: "✈️ SeoulCourse",
     period: "2025.10 ~ 2025.11",
-    collaboration: "프로젝트 리드 겸 단독 개발자 (기획 · 설계 · 구현 · 배포)",
+
     description:
       "사용자의 지역·활동을 바탕으로 AI가 현실적인 하루 일정을 자동으로 설계합니다. 요청은 입력 또는 챗으로 할 수 있으며 식사·카페·관광·이동 경로를 고려한 순서와 소요 시간을 포함해 바로 미리보기로 확인할 수 있습니다. 또한 AI를 거치지 않는 ‘구 탐색’ 모드로 특정 구의 인기 장소를 즉시 목록 형태로 확인할 수 있어 탐색과 맞춤 일정 생성 모두를 지원합니다.",
     simple:
       "나만의 취향을 반영해 원하는 지역과 활동으로 하루 코스를 설계해 주는 AI 서비스.",
-    intension: "어디로 놀러갈지 고민하는 사람들을 위한 서비스",
+
     language: [
       "Typescript",
       "NextJS",
@@ -77,12 +76,10 @@ export const Main: MainProjectType[] = [
     award: "508 비사이드 포텐데이 우수 프로젝트 선정",
     period: "2025.08 ~ 진행 중",
     awards: ["✨ 네이버 클라우드 주최  508 AI 포텐데이 우수 프로젝트 선정"],
-    collaboration:
-      "프론트엔드 전반 설계 및 UI 구현, AI 페르소나·존댓말 기능 및 음성 입력·TTS 연동 담당",
     description:
       "페르소나 선택, 존댓말·반말 슬라이더, 번역 박스, 음성 입력·TTS 기능을 결합한 대화형 학습 서비스의 프론트엔드를 구현했습니다. 사용자는 상황(상사와 대화, 부모님 상견례, 카페 주문 등)에 맞는 AI 페르소나를 선택해 실제 같은 대화를 경험할 수 있으며, 번역 박스로 다양한 언어 전환과 표현 교정을 확인할 수 있습니다.",
     simple: "NOONCHI — 한국어 존댓말, 상황과 관계까지 코칭해주는 AI",
-    intension: "AI와 자연스러운 대화를 주고받을 수 있는 웹 클라이언트",
+
     language: [
       "TypeScript",
       "Next.js",
@@ -122,7 +119,7 @@ export const Main: MainProjectType[] = [
       "해당 프로젝트는 Next.js 14 기반의 풀스택 웹 애플리케이션으로, Prisma를 활용한 데이터 관리와, iron-session 기반의 인증 시스템을 도입했습니다.react-hook-form과 zod로 폼 유효성 검사를 구현했으며, UploadThing을 통한 이미지 업로드, 문자 인증, 그리고 Tailwind CSS 및 daisyUI로 반응형 UI를 구성하였습니다.",
     simple:
       "실제 당근마켓 웹페이지에 없는 로그인, 회원가입 기능, 소셜로그인, 로그인 후 권한을 바탕으로 글 CRUD와 댓글 CRUD, 무한 스크롤, 채팅기능을 추가하여 구현하였습니다.",
-    intension: "로그인 기반의 중고거래 웹서비스",
+
     language: [
       "Typescript",
       "NextJS",

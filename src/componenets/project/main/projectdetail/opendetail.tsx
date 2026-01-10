@@ -31,21 +31,20 @@ export default function OpenDetail({ openIndex, setOpenIndex }: Props) {
           onClick={() => setOpenIndex(null)}
         >
           <div
-            className="bg-sky-50 text-gray-900 p-6 max-w-[800px] w-full max-h-[80vh] flex flex-col relative mx-auto mt-20 overflow-y-auto"
+            className="bg-sky-50 text-gray-900 p-6 max-w-[800px] w-full max-h-[80vh] flex flex-col relative mx-auto mt-20 overflow-y-auto rounded-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             <ProjectDetail
               title={Main[openIndex].title}
               simple={Main[openIndex].simple}
               period={Main[openIndex].period}
-              intension={Main[openIndex].intension}
               onClose={() => setOpenIndex(null)}
               githubLink={Main[openIndex].githubLink}
               projectLink={Main[openIndex]?.projectLink ?? []}
               language={Main[openIndex].language}
               capability={Main[openIndex].capability}
               awards={Main[openIndex].awards}
-              collaboration={Main[openIndex].collaboration}
+             
             />
           </div>
         </div>

@@ -74,7 +74,7 @@ export default function MainProject({ setOpenIndex }: Props) {
                     )}
                   </div>
 
-                  <div className="flex justify-end pt-2 border-t border-white/10 gap-3">
+                  <div className="flex justify-end pt-2 gap-3">
                     <Link href={githubLink} target="_blank">
                       <GithubIcon className="md:size-7 size-5 text-white hover:text-orange-500 transition-colors" />
                     </Link>
