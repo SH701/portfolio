@@ -21,15 +21,17 @@ export default function Introduce() {
       className="flex flex-col md:gap-3 gap-1.5 pt-10 md:pt-6 md:px-10 lg:h-screen"
     >
       <motion.div variants={FadeUp} className="mb-1">
-        <span className="md:text-3xl text-orange-550 ">Frontend Developer</span>
+        <span className="lg:text-3xl md:text-2xl text-orange-550 ">
+          Frontend Developer
+        </span>
       </motion.div>
       <motion.div variants={FadeUp}>
-        <span className="md:text-6xl text-2xl font-medium">
+        <span className="lg:text-6xl md:text-3xl text-2xl font-medium">
           안녕하세요, 김수환입니다
         </span>
       </motion.div>
       <motion.div
-        className="md:text-5xl md:pt-4  font-medium leading-tight"
+        className="lg:text-5xl md:text-2xl lg:pt-4  font-medium leading-tight"
         variants={FadeUp}
       >
         <span>

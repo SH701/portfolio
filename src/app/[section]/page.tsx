@@ -2,7 +2,7 @@
 
 import Contact from "@/componenets/contact/contact";
 import Introduce from "@/componenets/introduce/introduce";
-import Projects from "@/componenets/project/project";
+import ProjectContainer from "@/componenets/project/projectcontainer";
 import Skills from "@/componenets/skills/skills";
 
 import { useParams, useRouter } from "next/navigation";
@@ -36,7 +36,7 @@ export default function SectionPage() {
             <Skills />
           </section>
           <section id="projects" className="w-full">
-            <Projects />
+            <ProjectContainer />
           </section>
           <section id="contact">
             <Contact />
