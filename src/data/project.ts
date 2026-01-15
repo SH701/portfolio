@@ -27,7 +27,7 @@ export const Main: ProjectProps[] = [
     img: "/images/TripUs/TripUs_thumbnail.png",
 
     simple: "혼자는 싫고, 아무나도 싫은 사람을 위한 취향 기반 여행 동행 서비스",
-    detailimg: ["/images/course.png"],
+    detailimg: ["/images/tripus_thumbnail.png"],
     language: [
       "Typescript",
       "NextJS",
