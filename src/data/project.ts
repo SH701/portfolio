@@ -6,7 +6,6 @@ interface ProjectProps {
   description: string;
   simple: string;
   img: string;
-
   language: string[];
   period: string;
   detailimg: string[];
@@ -27,18 +26,24 @@ export const Main: ProjectProps[] = [
     img: "/images/tripus/tripus_thumbnail.png",
 
     simple: "혼자는 싫고, 아무나도 싫은 사람을 위한 취향 기반 여행 동행 서비스",
-    detailimg: ["/images/tripus_thumbnail.png"],
+    detailimg: [
+      "/images/tripus/login.png",
+      "/images/tripus/post.png",
+      "/images/tripus/profile.png",
+      "/images/tripus/chatting.png",
+      "/images/tripus/notify.png",
+    ],
     language: [
-      "Typescript",
-      "NextJS",
+      "TypeScript",
+      "Next.js",
       "React",
       "TailwindCSS",
-      "Zod",
       "React-Query",
       "Zustand",
+      "Zod",
+      "Next-Auth",
       "ShadcnUI",
       "Jest",
-      "Next-Auth",
     ],
     description:
       "여행 스타일과 취향이 맞는 동행을 찾아주는 매칭 서비스입니다. 게시글을 통해 여행 동행자를 모집할 수 있으며, 실시간 채팅으로 여행 전부터 소통하며 서로를 알아갈 수 있습니다.",
@@ -52,30 +57,30 @@ export const Main: ProjectProps[] = [
     githubLink: "https://github.com/codeit12-team3/FE",
     capability: [
       {
-        title: "인증 기반 기능 분리",
+        title: "게시글 CRUD",
         description:
-          "- 자체 회원가입, 이메일+비밀번호 로그인과 더불어 Github 로그인을 구현했으며, 인증된 사용자만 글 작성, 수정, 삭제가 가능하도록 권한을 분리했습니다.",
+          "- 여행 동행 모집 게시글의 작성, 수정, 삭제 기능을 구현했으며, 이미지 업로드와 여행 정보 입력 폼을 포함합니다.",
       },
       {
-        title: "실시간 채팅 기능",
+        title: "동행 신청",
         description:
-          "- 채팅방 생성, 메시지 전송, 읽음 여부 표시 기능을 포함한 실시간 채팅 기능을 구현하였고, 채팅 목록은 최근 메시지 기준으로 정렬되며, 상대방의 메시지를 확인하면 자동으로 읽음 처리됩니다.",
+          "- 게시글에서 동행 신청 버튼을 통해 신청할 수 있으며, 신청 상태를 관리하는 기능을 구현했습니다.",
       },
       {
-        title: "게시글 및 댓글 CRUD",
+        title: "북마크",
         description:
-          "- 사용자는 게시글과 댓글을 자유롭게 작성, 수정, 삭제 할 수 있으며, 이 모든 동작은 로그인 여부 및 작성자 권한을 기반으로 제한됩니다.",
+          "- 관심 있는 게시글을 북마크하여 마이페이지에서 모아볼 수 있는 기능을 구현했습니다.",
       },
       {
-        title: "이미지 업로드",
+        title: "필터링",
         description:
-          "- Uploadthing을 이용해 게시글 작성 시 이미지를 업로드할 수 있도록 했으며, 이미지 파일은 업로드 즉시 미리보기가 가능합니다.",
+          "- 여행 국가, 날짜, 성별, 나이 등 조건별 게시글 필터링 기능을 구현하여 원하는 동행을 쉽게 찾을 수 있습니다.",
       },
     ],
   },
   {
     title: "🎡 SeoulCourse",
-    period: "2025.10 ~ 2025.11",
+    period: "2025.10 ~ 2026.01",
     img: "/images/seoul_course/seoul_course_thumbnail.png",
     contribution: "100%",
     simple:
@@ -83,19 +88,22 @@ export const Main: ProjectProps[] = [
     detailimg: [
       "/images/seoul_course/course.png",
       "/images/seoul_course/chat.png",
+      "/images/seoul_course/detail.png",
+      "/images/seoul_course/save.png",
+      "/images/seoul_course/post.png",
     ],
     language: [
-      "Typescript",
-      "NextJS",
+      "TypeScript",
+      "Next.js",
       "React",
       "TailwindCSS",
       "Framer-motion",
       "React-Query",
-      "Zsutand",
-      "Clerk",
+      "Zustand",
+      "OpenAI",
       "Prisma",
-      "PostgreSQL ",
-      "Openai",
+      "PostgreSQL",
+      "Clerk",
     ],
     description:
       "사용자의 지역·활동을 바탕으로 AI가 하루 일정을 자동으로 설계합니다. 요청은 입력 또는 챗으로 할 수 있으며 식사·카페·관광 등을 미리보기로 확인할 수 있습니다. 또한 AI를 거치지 않는 ‘구 탐색’ 모드로 특정 구의 인기 장소를 즉시 목록 형태로 확인할 수 있어 탐색과 맞춤 일정 생성 모두를 지원합니다.",
@@ -148,9 +156,9 @@ export const Main: ProjectProps[] = [
       "React",
       "TailwindCSS",
       "React-Query",
-      "Lottie",
       "Zustand",
-      "AWS3",
+      "Lottie",
+      "AWS S3",
     ],
     description:
       "페르소나 선택, 번역 박스, 음성 입력·TTS 기능을 결합한 대화형 학습 서비스입니다. 사용자는 상황(상사와 대화, 카페 주문 등)에 맞는 AI 페르소나를 선택해 실제 같은 대화를 경험할 수 있으며, 번역 박스로 언어 전환과 표현 교정을 확인할 수 있습니다.",
