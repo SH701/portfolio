@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Dispatch, SetStateAction, useState } from "react";
 import { Main } from "@/data/project";
 
@@ -39,7 +38,7 @@ export default function ProjectList({ setOpenIndex }: ProjectListProps) {
             <ScrollAnimation delay={0.5} key={title} className="w-full">
               <div className="bg-gray-800 rounded-lg overflow-hidden transition-all duration-300  h-full flex flex-col">
                 <div
-                  className="relative w-full h-[200px] lg:h-[240px] cursor-pointer group"
+                  className="relative w-full h-[240px] lg:h-[280px] cursor-pointer group"
                   onMouseEnter={() => setShowDetail(index)}
                   onMouseLeave={() => setShowDetail(null)}
                   onClick={() => {
@@ -79,19 +78,10 @@ export default function ProjectList({ setOpenIndex }: ProjectListProps) {
                     }`}
                   >
                     <div className="flex-1">
-                      <Link
-                        href={
-                          typeof projectLink[0] === "string"
-                            ? projectLink[0]
-                            : projectLink[0].url
-                        }
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <h3 className="text-lg lg:text-xl font-bold text-orange-500 transition-colors cursor-pointer line-clamp-1">
-                          {title}
-                        </h3>
-                      </Link>
+                      <h3 className="text-lg lg:text-xl font-bold text-orange-500">
+                        {title}
+                      </h3>
+
                       <p className="text-xs text-orange-600/80 mt-1">
                         {period}
                       </p>

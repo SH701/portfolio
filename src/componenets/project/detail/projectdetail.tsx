@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 
 import { useEffect, useState } from "react";
@@ -20,9 +18,10 @@ interface Props {
   projectLink: ProjectLink[];
   language: string[];
   capability: CapabilityItem[];
-  detailimg: string;
+  detailimg: string[];
   description: string;
-  awards?: string[];
+  contribution: string;
+  awards?: string;
 }
 
 export default function ProjectDetail({
@@ -34,6 +33,7 @@ export default function ProjectDetail({
   language,
   capability,
   detailimg,
+  contribution,
   awards,
 }: Props) {
   const [isOpen, setIsOpen] = useState<number[]>([]);
@@ -69,19 +69,22 @@ export default function ProjectDetail({
   return (
     <div className="h-auto rounded-2xl">
       <div className="-mx-6 -mt-6 mb-4 max-h-[500px] overflow-hidden">
-        <Image
-          src={detailimg}
-          alt="상세 내용"
-          width={800}
-          height={200}
-          className="
+        {detailimg.map((image) => (
+          <Image
+            key={image}
+            src={image}
+            alt="상세 내용"
+            width={800}
+            height={200}
+            className="
       max-h-[80vh]
       w-full
       h-auto
       object-contain
       rounded-t-xl
     "
-        />
+          />
+        ))}
       </div>
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold">{title}</h2>
@@ -98,35 +101,42 @@ export default function ProjectDetail({
         <CloseBtn onclose={onClose} />
       </div>
       <div className="flex flex-col gap-4">
-        <div >
-          <p className="text-black font-bold py-2">프로젝트 설명</p>
-          {awards && awards.length > 0 && (
-            <div>
-              <ul className="list-disc pl-5 space-y-1">
-                {awards.map((award, idx) => (
-                  <li key={idx} className="text-sm">
-                    {award}
-                  </li>
-                ))}
-              </ul>
+        <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm space-y-4">
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <p className="text-gray-900 font-semibold">프로젝트 설명</p>
+              {awards && (
+                <span className="text-xs px-2 py-0.5 bg-green-100 text-green-700 rounded-full font-medium">
+                  {awards}
+                </span>
+              )}
             </div>
-          )}
-          <div className="bg-gray-200 border-1 border-gray-300">
-            <p className="text-sm whitespace-pre-line p-2">{description}</p>
+            <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
+              {description}
+            </p>
           </div>
-        </div>
 
-        <div>
-          <p className="text-black font-bold py-2">기술 스택</p>
-          <div className="flex flex-wrap gap-2">
-            {language.map((tech) => (
-              <span
-                key={tech}
-                className="px-2 py-1 text-sm bg-sky-100 text-gray-700 rounded-md"
-              >
-                {tech}
-              </span>
-            ))}
+          <hr className="border-gray-200" />
+
+          <div className="flex items-center gap-2">
+            <p className="text-gray-900 font-semibold">기여도</p>
+            <span className="text-sm text-gray-600">{contribution}</span>
+          </div>
+
+          <hr className="border-gray-200" />
+
+          <div>
+            <p className="text-gray-900 font-semibold mb-2">기술 스택</p>
+            <div className="flex flex-wrap gap-2">
+              {language.map((tech) => (
+                <span
+                  key={tech}
+                  className="px-3 py-1 text-sm bg-gradient-to-r from-sky-50 to-blue-50 text-sky-700 rounded-full border border-sky-200 font-medium"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -146,7 +156,9 @@ export default function ProjectDetail({
                     </span>
                   </button>
                   {open && (
-                    <p className="px-5 text-gray-900">{item.description}</p>
+                    <p className="px-5 text-gray-900 text-sm">
+                      {item.description}
+                    </p>
                   )}
                 </div>
               );
