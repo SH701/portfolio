@@ -3,8 +3,9 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import { ProjectLink } from "@/data/project";
-import GithubIcon from "@/componenets/etc/githubicon";
+
 import { Globe, ChevronLeft, ChevronRight } from "lucide-react";
+import GithubIcon from "@/components/etc/Githubicon";
 
 interface CapabilityItem {
   title: string;

@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import ScrollAnimation from "../etc/scrollAnimation";
-import SectionContainer from "../etc/sectioncontainer";
-import ProjectList from "./projectlist";
+import ScrollAnimation from "../etc/ScrollAnimation";
+import SectionContainer from "../etc/Sectioncontainer";
+import ProjectList from "./ProjectList";
 
-import OpenDetail from "./detail/opendetail";
+import OpenDetail from "./detail/OpenDetail";
 
 export default function ProjectContainer() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);

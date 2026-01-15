@@ -5,8 +5,8 @@ import { Dispatch, SetStateAction, useState } from "react";
 import { Main } from "@/data/project";
 
 import { Globe } from "lucide-react";
-import ScrollAnimation from "../etc/scrollAnimation";
-import GithubIcon from "../etc/githubicon";
+import ScrollAnimation from "../etc/ScrollAnimation";
+import GithubIcon from "../etc/Githubicon";
 
 interface ProjectListProps {
   openIndex: number | null;

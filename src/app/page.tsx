@@ -1,10 +1,10 @@
 "use client";
 
-import Introduce from "../componenets/introduce/introduce";
+import Introduce from "../components/introduce/Introduce";
 
-import Skills from "../componenets/skills/skills";
-import ProjectContainer from "../componenets/project/projectcontainer";
-import Contact from "../componenets/contact/contact";
+import Skills from "../components/skills/Skills";
+import ProjectContainer from "../components/project/ProjectContainer";
+import Contact from "@/components/contact/Contact";
 
 export default function Home() {
   return (

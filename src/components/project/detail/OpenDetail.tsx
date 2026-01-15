@@ -1,7 +1,7 @@
 "use client";
 
 import { Dispatch, SetStateAction, useEffect } from "react";
-import ProjectDetail from "./projectdetail";
+import ProjectDetail from "./ProjectDetail";
 import { Main } from "@/data/project";
 import { ProjectLink } from "@/data/project";
 

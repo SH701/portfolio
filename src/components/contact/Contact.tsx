@@ -1,8 +1,7 @@
-import ScrollAnimation from "../etc/scrollAnimation";
-import SectionContainer from "../etc/sectioncontainer";
-import Description from "./description";
-
-import EmailForm from "./emailform";
+import ScrollAnimation from "../etc/ScrollAnimation";
+import SectionContainer from "../etc/Sectioncontainer";
+import Description from "./Description";
+import EmailForm from "./Emailform";
 
 export default function Contact() {
   return (

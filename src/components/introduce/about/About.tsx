@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FadeUp } from "@/lib/motion";
 import { User, Cake, Home, Mail, NotebookText } from "lucide-react";
-import GithubIcon from "@/componenets/etc/githubicon";
+import GithubIcon from "@/components/etc/Githubicon";
 
 export default function About() {
   return (
@@ -23,6 +23,7 @@ export default function About() {
             fill
             alt="프로필"
             className="rounded-full object-cover"
+            priority
           />
         </div>
         <div className="flex flex-col gap-3 text-base md:text-lg">

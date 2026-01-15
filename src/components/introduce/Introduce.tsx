@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { FadeUp } from "@/lib/motion";
 
-import About from "./about/about";
+import About from "./about/About";
 
 const textVariant = {
   on: {
