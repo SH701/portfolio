@@ -1,8 +1,9 @@
-import Footer from "@/componenets/footer/footer";
-import Header from "../componenets/header/header";
 
+
+import Footer from "@/components/footer/Footer";
 import "./globals.css";
 import { Metadata } from "next";
+import Header from "@/components/header/Header";
 
 export const metadata: Metadata = {
   title: "SuHawn portfolio",
