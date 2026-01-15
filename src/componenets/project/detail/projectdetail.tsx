@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import CloseBtn from "../../etc/closebtn";
 import { ProjectLink } from "@/data/project";
 import GithubIcon from "@/componenets/etc/githubicon";
-import { Globe } from "lucide-react";
+import { Globe, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface CapabilityItem {
   title: string;
@@ -37,6 +37,7 @@ export default function ProjectDetail({
   awards,
 }: Props) {
   const [isOpen, setIsOpen] = useState<number[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -65,26 +66,55 @@ export default function ProjectDetail({
   const moveGitHub = () => {
     window.open(githubLink, "_blank", "noopener,noreferrer");
   };
+  const goToNext = (index: number) => {
+    setCurrentIndex(index + 1);
+  };
+  const goToPrev = (index: number) => {
+    setCurrentIndex(index - 1);
+  };
 
   return (
     <div className="h-auto rounded-2xl">
-      <div className="-mx-6 -mt-6 mb-4 max-h-[500px] overflow-hidden">
-        {detailimg.map((image) => (
-          <Image
-            key={image}
-            src={image}
-            alt="상세 내용"
-            width={800}
-            height={200}
-            className="
-      max-h-[80vh]
-      w-full
-      h-auto
-      object-contain
-      rounded-t-xl
-    "
-          />
-        ))}
+      <div className="relative -mx-6 -mt-6 mb-4 max-h-[500px] overflow-hidden">
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {detailimg.map((image, idx) => (
+            <Image
+              key={idx}
+              src={image}
+              alt="상세 내용"
+              width={800}
+              height={200}
+              className="max-h-[80vh] w-full h-auto object-contain rounded-t-xl flex-shrink-0"
+            />
+          ))}
+        </div>
+        {currentIndex > 0 && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              goToPrev(currentIndex);
+            }}
+            className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/30 hover:bg-black/50 rounded-full cursor-pointer transition-all"
+            aria-label="이전 이미지"
+          >
+            <ChevronLeft className="w-6 h-6 text-white" />
+          </button>
+        )}
+        {currentIndex < detailimg.length - 1 && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              goToNext(currentIndex);
+            }}
+            className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/30 hover:bg-black/50 rounded-full cursor-pointer transition-all"
+            aria-label="다음 이미지"
+          >
+            <ChevronRight className="w-6 h-6 text-white" />
+          </button>
+        )}
       </div>
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold">{title}</h2>

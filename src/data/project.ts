@@ -180,7 +180,10 @@ export const Main: ProjectProps[] = [
     img: "/images/portfolio/portfolio_thumbnail.png",
 
     simple: "개인 포트폴리오를 탐색할 수 있는 웹 애플리케이션입니다.",
-    detailimg: ["/images/course.png"],
+    detailimg: [
+      "/images/portfolio/introduce.png",
+      "/images/portfolio/skills.png",
+    ],
     language: ["TypeScript", "Next.js", "React", "TailwindCSS"],
     description:
       "Next.js와 TypeScript 기반의 개인 포트폴리오 웹사이트입니다. Framer Motion을 활용한 부드러운 스크롤 애니메이션과 인터랙티브한 UI를 구현했으며, 반응형 디자인으로 다양한 디바이스에서 최적화된 경험을 제공합니다. 프로젝트 상세 모달, 기술 스택 시각화 등 사용자 친화적인 인터페이스를 통해 프로젝트와 경험을 효과적으로 소개합니다.",
