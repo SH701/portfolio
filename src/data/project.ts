@@ -24,7 +24,7 @@ export const Main: ProjectProps[] = [
   {
     title: "✈️ TripUs",
     period: "2025.12 ~ 2026.01",
-    img: "/images/TripUs/TripUs_thumbnail.png",
+    img: "/images/tripus/tripus_thumbnail.png",
 
     simple: "혼자는 싫고, 아무나도 싫은 사람을 위한 취향 기반 여행 동행 서비스",
     detailimg: ["/images/tripus_thumbnail.png"],
