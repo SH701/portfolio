@@ -1,9 +1,11 @@
 "use client";
 
-import Contact from "@/componenets/contact/contact";
-import Introduce from "@/componenets/introduce/introduce";
-import ProjectContainer from "@/componenets/project/projectcontainer";
-import Skills from "@/componenets/skills/skills";
+
+
+import Contact from "@/components/contact/Contact";
+import Introduce from "@/components/introduce/Introduce";
+import ProjectContainer from "@/components/project/ProjectContainer";
+import Skills from "@/components/skills/Skills";
 
 import { useParams, useRouter } from "next/navigation";
 import { useEffect } from "react";
