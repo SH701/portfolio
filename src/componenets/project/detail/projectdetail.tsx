@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { useEffect, useState } from "react";
-import CloseBtn from "../../etc/closebtn";
+
 import { ProjectLink } from "@/data/project";
 import GithubIcon from "@/componenets/etc/githubicon";
 import { Globe, ChevronLeft, ChevronRight } from "lucide-react";
@@ -87,7 +87,7 @@ export default function ProjectDetail({
               alt="상세 내용"
               width={800}
               height={200}
-              className="max-h-[80vh] w-full h-auto object-contain rounded-t-xl flex-shrink-0"
+              className="max-h-[80vh] w-full h-auto object-contain flex-shrink-0"
             />
           ))}
         </div>
@@ -128,7 +128,6 @@ export default function ProjectDetail({
             onClick={moveProject}
           />
         </div>
-        <CloseBtn onclose={onClose} />
       </div>
       <div className="flex flex-col gap-4">
         <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm space-y-4">

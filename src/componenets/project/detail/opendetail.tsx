@@ -31,7 +31,7 @@ export default function OpenDetail({ openIndex, setOpenIndex }: Props) {
           onClick={() => setOpenIndex(null)}
         >
           <div
-            className="bg-white text-gray-900 p-6 max-w-[800px] w-full max-h-[80vh] flex flex-col relative mx-auto mt-20 overflow-y-auto rounded-2xl"
+            className="bg-white text-gray-900 p-6 max-w-[800px] w-full max-h-[80vh] flex flex-col relative mx-auto mt-20 overflow-y-auto rounded-lg"
             onClick={(e) => e.stopPropagation()}
           >
             <ProjectDetail

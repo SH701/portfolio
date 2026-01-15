@@ -80,7 +80,10 @@ export const Main: ProjectProps[] = [
     contribution: "100%",
     simple:
       "나만의 취향을 반영해 원하는 지역과 활동으로 하루 코스를 설계해 주는 AI 서비스.",
-    detailimg: ["/images/noonchi.png"],
+    detailimg: [
+      "/images/seoul_course/course.png",
+      "/images/seoul_course/chat.png",
+    ],
     language: [
       "Typescript",
       "NextJS",
@@ -133,7 +136,12 @@ export const Main: ProjectProps[] = [
     img: "/images/noonchi/noonchi_thumbnail.png",
     awards: "네이버 클라우드 주최  508 AI 포텐데이 우수 프로젝트 선정",
     simple: "NOONCHI — 한국어 존댓말, 상황과 관계까지 코칭해주는 AI",
-    detailimg: ["/images/course.png"],
+    detailimg: [
+      "/images/noonchi/main.png",
+      "/images/noonchi/chatroom.png",
+      "/images/noonchi/chatting.png",
+      "/images/noonchi/history.png",
+    ],
     language: [
       "TypeScript",
       "Next.js",
@@ -183,6 +191,8 @@ export const Main: ProjectProps[] = [
     detailimg: [
       "/images/portfolio/introduce.png",
       "/images/portfolio/skills.png",
+      "/images/portfolio/projects.png",
+      "/images/portfolio/contact.png",
     ],
     language: ["TypeScript", "Next.js", "React", "TailwindCSS"],
     description:
