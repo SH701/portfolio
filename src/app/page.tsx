@@ -1,7 +1,4 @@
-"use client";
-
 import Introduce from "../components/introduce/Introduce";
-
 import Skills from "../components/skills/Skills";
 import ProjectContainer from "../components/project/ProjectContainer";
 import Contact from "@/components/contact/Contact";

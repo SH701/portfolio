@@ -21,6 +21,62 @@ interface ProjectProps {
 
 export const Main: ProjectProps[] = [
   {
+    title: "🤓 Noonchi ",
+    award: "508 비사이드 포텐데이 우수 프로젝트 선정",
+    period: "2025.08 ~ 진행 중",
+    img: "/images/noonchi/noonchi_thumbnail.png",
+    awards: "네이버 클라우드 주최  508 AI 포텐데이 우수 프로젝트 선정",
+    simple: "NOONCHI — 한국어 존댓말, 상황과 관계까지 코칭해주는 AI",
+    detailimg: [
+      "/images/noonchi/main.png",
+      "/images/noonchi/chatroom.png",
+      "/images/noonchi/chatting.png",
+      "/images/noonchi/history.png",
+    ],
+    language: [
+      "TypeScript",
+      "Next.js",
+      "React-Query",
+      "Zustand",
+      "TailwindCSS",
+      "Zod",
+      "React-Hook-Form",
+      "Axios",
+      "NextAuth v5",
+      "Storybook",
+    ],
+    description:
+      "페르소나 선택, 번역 박스, 음성 입력·TTS 기능을 결합한 대화형 학습 서비스입니다. 사용자는 상황(상사와 대화, 카페 주문 등)에 맞는 AI 페르소나를 선택해 실제 같은 대화를 경험할 수 있으며, 번역 박스로 언어 전환과 표현 교정을 확인할 수 있습니다.",
+    contribution: "33%",
+    projectLink: [
+      { label: "웹", url: "https://noonchi-web.vercel.app" },
+      { label: "모바일", url: "https://noonchi.ai.kr" },
+    ],
+    githubLink: "https://github.com/SH701/pangpang",
+    capability: [
+      {
+        title: "챗봇 대화 UI",
+        description:
+          "- 커스텀 챗봇과 상황별 챗봇의 실시간 대화 인터페이스를 구현하고, React-Query로 메시지 송수신 API를 연동했습니다.",
+      },
+      {
+        title: "피드백 · 리라이팅",
+        description:
+          "- 사용자 입력에 대한 정중도 분석 및 대안 표현을 보여주는 피드백 UI와 API 연동을 구현했습니다.",
+      },
+      {
+        title: "히스토리 · 리포트",
+        description:
+          "- 대화 기록 목록 조회 및 학습 리포트 화면을 구현하고, 필터링을 적용했습니다.",
+      },
+      {
+        title: "음성 입력 · TTS",
+        description:
+          "- 음성 녹음 및 TTS 재생 기능의 UI와 API 연동을 구현해 음성 기반 대화를 지원합니다.",
+      },
+    ],
+  },
+  {
     title: "✈️ TripUs",
     period: "2025.12 ~ 2026.01",
     img: "/images/tripus/tripus_thumbnail.png",
@@ -36,14 +92,15 @@ export const Main: ProjectProps[] = [
     language: [
       "TypeScript",
       "Next.js",
-      "React",
-      "TailwindCSS",
       "React-Query",
       "Zustand",
+      "TailwindCSS",
+      "Shadcn/UI",
       "Zod",
-      "Next-Auth",
-      "ShadcnUI",
+      "React-Hook-Form",
+      "NextAuth v5",
       "Jest",
+      "MSW",
     ],
     description:
       "여행 스타일과 취향이 맞는 동행을 찾아주는 매칭 서비스입니다. 게시글을 통해 여행 동행자를 모집할 수 있으며, 실시간 채팅으로 여행 전부터 소통하며 서로를 알아갈 수 있습니다.",
@@ -95,12 +152,11 @@ export const Main: ProjectProps[] = [
     language: [
       "TypeScript",
       "Next.js",
-      "React",
-      "TailwindCSS",
-      "Framer-motion",
       "React-Query",
       "Zustand",
-      "OpenAI",
+      "TailwindCSS",
+      "Framer-motion",
+      "OpenAI API",
       "Prisma",
       "PostgreSQL",
       "Clerk",
@@ -134,96 +190,6 @@ export const Main: ProjectProps[] = [
         title: "게시글 · 댓글 CRUD",
         description:
           "- Next.js Server Actions을 활용해 게시글·댓글을 구현하였습니다.",
-      },
-    ],
-  },
-  {
-    title: "🤓 Noonchi ",
-    award: "508 비사이드 포텐데이 우수 프로젝트 선정",
-    period: "2025.08 ~ 진행 중",
-    img: "/images/noonchi/noonchi_thumbnail.png",
-    awards: "네이버 클라우드 주최  508 AI 포텐데이 우수 프로젝트 선정",
-    simple: "NOONCHI — 한국어 존댓말, 상황과 관계까지 코칭해주는 AI",
-    detailimg: [
-      "/images/noonchi/main.png",
-      "/images/noonchi/chatroom.png",
-      "/images/noonchi/chatting.png",
-      "/images/noonchi/history.png",
-    ],
-    language: [
-      "TypeScript",
-      "Next.js",
-      "React",
-      "TailwindCSS",
-      "React-Query",
-      "Zustand",
-      "Lottie",
-      "AWS S3",
-    ],
-    description:
-      "페르소나 선택, 번역 박스, 음성 입력·TTS 기능을 결합한 대화형 학습 서비스입니다. 사용자는 상황(상사와 대화, 카페 주문 등)에 맞는 AI 페르소나를 선택해 실제 같은 대화를 경험할 수 있으며, 번역 박스로 언어 전환과 표현 교정을 확인할 수 있습니다.",
-    contribution: "33%",
-    projectLink: [
-      { label: "웹", url: "https://noonchi-web.vercel.app" },
-      { label: "모바일", url: "https://noonchi.ai.kr" },
-    ],
-    githubLink: "https://github.com/SH701/pangpang",
-    capability: [
-      {
-        title: "챗봇 대화 UI",
-        description:
-          "- 커스텀 챗봇과 상황별 챗봇의 실시간 대화 인터페이스를 구현하고, React-Query로 메시지 송수신 API를 연동했습니다.",
-      },
-      {
-        title: "피드백 · 리라이팅",
-        description:
-          "- 사용자 입력에 대한 정중도 분석 및 대안 표현을 보여주는 피드백 UI와 API 연동을 구현했습니다.",
-      },
-      {
-        title: "히스토리 · 리포트",
-        description:
-          "- 대화 기록 목록 조회 및 학습 리포트 화면을 구현하고, 필터링을 적용했습니다.",
-      },
-      {
-        title: "음성 입력 · TTS",
-        description:
-          "- 음성 녹음 및 TTS 재생 기능의 UI와 API 연동을 구현해 음성 기반 대화를 지원합니다.",
-      },
-    ],
-  },
-  {
-    title: "🤗 Portfolio ",
-    period: "2025.06 ~ 진행 중",
-    img: "/images/portfolio/portfolio_thumbnail.png",
-
-    simple: "개인 포트폴리오를 탐색할 수 있는 웹 애플리케이션입니다.",
-    detailimg: [
-      "/images/portfolio/introduce.png",
-      "/images/portfolio/skills.png",
-      "/images/portfolio/projects.png",
-      "/images/portfolio/contact.png",
-    ],
-    language: ["TypeScript", "Next.js", "React", "TailwindCSS"],
-    description:
-      "Next.js와 TypeScript 기반의 개인 포트폴리오 웹사이트입니다. Framer Motion을 활용한 부드러운 스크롤 애니메이션과 인터랙티브한 UI를 구현했으며, 반응형 디자인으로 다양한 디바이스에서 최적화된 경험을 제공합니다. 프로젝트 상세 모달, 기술 스택 시각화 등 사용자 친화적인 인터페이스를 통해 프로젝트와 경험을 효과적으로 소개합니다.",
-    contribution: "100%",
-    projectLink: [{ label: "웹", url: "https://kimsuhwan.vercel.app/" }],
-    githubLink: "https://github.com/SH701/portfolio",
-    capability: [
-      {
-        title: "메인 페이지",
-        description:
-          "- Framer Motion 스크롤 애니메이션과 FadeUp 효과 적용, Introduce에서 About 섹션으로 자연스럽게 연결됩니다.",
-      },
-      {
-        title: "Project 섹션",
-        description:
-          "- 카드형 레이아웃으로 프로젝트 목록 표시, 호버 시 상세보기 전환 애니메이션과 반응형 그리드를 제공합니다.",
-      },
-      {
-        title: "Contact 섹션",
-        description:
-          "- EmailJS를 활용한 이메일 전송 폼 구현, 반응형 디자인으로 모바일·데스크톱 모두 최적화했습니다.",
       },
     ],
   },

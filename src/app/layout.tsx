@@ -1,5 +1,3 @@
-
-
 import Footer from "@/components/footer/Footer";
 import "./globals.css";
 import { Metadata } from "next";
