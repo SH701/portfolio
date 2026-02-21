@@ -9,7 +9,9 @@ import GithubIcon from "@/components/etc/Githubicon";
 
 interface CapabilityItem {
   title: string;
-  description: string;
+  problem: string;
+  strategy: string;
+  result: string;
 }
 
 interface Props {
@@ -23,6 +25,7 @@ interface Props {
   description: string;
   contribution: string;
   awards?: string;
+  testAccount?: { id: string; password: string };
 }
 
 export default function ProjectDetail({
@@ -36,8 +39,16 @@ export default function ProjectDetail({
   detailimg,
   contribution,
   awards,
+  testAccount,
 }: Props) {
   const [isOpen, setIsOpen] = useState<number[]>([]);
+  const [copied, setCopied] = useState<"id" | "password" | null>(null);
+
+  const copyToClipboard = (text: string, type: "id" | "password") => {
+    navigator.clipboard.writeText(text);
+    setCopied(type);
+    setTimeout(() => setCopied(null), 1500);
+  };
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -54,7 +65,7 @@ export default function ProjectDetail({
 
   const toggleIndex = (index: number) => {
     setIsOpen((prev) =>
-      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index],
     );
   };
   const moveProject = () => {
@@ -153,6 +164,43 @@ export default function ProjectDetail({
             <span className="text-sm text-gray-600">{contribution}</span>
           </div>
 
+          {testAccount && (
+            <>
+              <hr className="border-gray-200" />
+              <div>
+                <p className="text-gray-900 font-semibold mb-2">테스트 계정</p>
+                <div className="flex flex-col gap-2">
+                  <button
+                    onClick={() => copyToClipboard(testAccount.id, "id")}
+                    className="flex items-center justify-between px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-700 transition-colors cursor-pointer"
+                  >
+                    <span>
+                      <span className="font-medium text-gray-500 mr-2">ID</span>
+                      {testAccount.id}
+                    </span>
+                    <span className="text-xs text-gray-400">
+                      {copied === "id" ? "복사됨!" : "클릭하여 복사"}
+                    </span>
+                  </button>
+                  <button
+                    onClick={() =>
+                      copyToClipboard(testAccount.password, "password")
+                    }
+                    className="flex items-center justify-between px-3 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm text-gray-700  transition-colors cursor-pointer"
+                  >
+                    <span>
+                      <span className="font-medium text-gray-500 mr-2">PW</span>
+                      {testAccount.password}
+                    </span>
+                    <span className="text-xs text-gray-400">
+                      {copied === "password" ? "복사됨!" : "클릭하여 복사"}
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </>
+          )}
+
           <hr className="border-gray-200" />
 
           <div>
@@ -186,9 +234,32 @@ export default function ProjectDetail({
                     </span>
                   </button>
                   {open && (
-                    <p className="px-5 text-gray-900 text-sm">
-                      {item.description}
-                    </p>
+                    <div className="px-5 pb-2 flex flex-col gap-2">
+                      <div>
+                        <span className="font-bold text-base text-red-500">
+                          문제{" "}
+                        </span>
+                        <span className="text-gray-700 text-sm">
+                          {item.problem}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="font-bold text-base text-blue-500">
+                          전략{" "}
+                        </span>
+                        <span className="text-gray-700 text-sm">
+                          {item.strategy}
+                        </span>
+                      </div>
+                      <div>
+                        <span className="font-bold text-base text-green-600">
+                          결과{" "}
+                        </span>
+                        <span className="text-gray-700 text-sm">
+                          {item.result}
+                        </span>
+                      </div>
+                    </div>
                   )}
                 </div>
               );

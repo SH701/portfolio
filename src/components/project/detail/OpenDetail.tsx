@@ -45,6 +45,7 @@ export default function OpenDetail({ openIndex, setOpenIndex }: Props) {
               awards={Main[openIndex].awards}
               detailimg={Main[openIndex].detailimg}
               contribution={Main[openIndex].contribution}
+              testAccount={Main[openIndex].testAccount}
             />
           </div>
         </div>
