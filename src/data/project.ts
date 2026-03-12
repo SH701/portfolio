@@ -56,13 +56,13 @@ export const Main: ProjectProps[] = [
     testAccount: { id: "test@naver.com", password: "qwer1234" },
     capability: [
       {
-        title: "NextAuth.js 기반 인증 시스템 설계",
+        title: "NextAuth.js 기반 토큰 자동 갱신 및 인증 상태 통합",
         problem:
-          "Next.js App Router 환경에서 자체 JWT를 사용할 경우 서버 컴포넌트에서 쿠키를 직접 꺼내 디코딩해야 했고, 서버·클라이언트 컴포넌트 간 인증 상태 공유가 복잡해지는 문제가 있었습니다.",
+          "토큰 만료 시 자동 재발급 로직을 직접 구현하면 서버/클라이언트 각각에서 처리해야 해서 코드가 분산되는 문제가 있었습니다.",
         strategy:
-          "NextAuth.js를 도입해 서버에서는 auth(), 클라이언트에서는 useSession()으로 동일한 세션에 일관되게 접근하도록 구성했습니다. jwt 콜백에서 accessToken 만료 감지 후 refreshToken으로 자동 재발급하고,  Axios interceptor와 연계해 모든 API 요청에 Bearer 토큰을 자동 주입했습니다.",
+          " NextAuth.js를 도입해 jwt 콜백에서 accessToken 만료 감지 후 refreshToken으로 자동 재발급하도록 구성했습니다. 서버에서는 auth(), 클라이언트에서는 useSession()으로 동일한 세션에 일관되게 접근하고, Axios interceptor와 연계해 모든 API 요청에 Bearer 토큰을 자동 주입했습니다.",
         result:
-          "서버/클라이언트 인증 코드 이원화를 제거하였고 토큰이 만료되어 강제로 로그아웃 되는 일이 0건으로 줄었습니다.",
+          "서버/클라이언트 인증 코드 이원화를 제거하였고 토큰이 만료되어 강제로 로그아웃 되는 일이 없어졌습니다.",
       },
       {
         title: "MediaRecorder 기반 음성 채팅 구현",
