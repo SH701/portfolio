@@ -1,9 +1,6 @@
 import Image from "next/image";
-
 import { useEffect, useState } from "react";
-
 import { ProjectLink } from "@/data/project";
-
 import { Globe, ChevronLeft, ChevronRight } from "lucide-react";
 import GithubIcon from "@/components/etc/Githubicon";
 
@@ -24,7 +21,7 @@ interface Props {
   detailimg: string[];
   description: string;
   contribution: string;
-
+  video: string;
   testAccount?: { id: string; password: string };
 }
 
@@ -38,10 +35,12 @@ export default function ProjectDetail({
   capability,
   detailimg,
   contribution,
+  video,
   testAccount,
 }: Props) {
   const [isOpen, setIsOpen] = useState<number[]>([]);
   const [copied, setCopied] = useState<"id" | "password" | null>(null);
+  const [showVideoModal, setShowVideoModal] = useState(false);
 
   const copyToClipboard = (text: string, type: "id" | "password") => {
     navigator.clipboard.writeText(text);
@@ -154,6 +153,44 @@ export default function ProjectDetail({
             <p className="text-gray-900 font-semibold">기여도</p>
             <span className="text-sm text-gray-600">{contribution}</span>
           </div>
+          {video && (
+            <>
+              <hr className="border-gray-200" />
+              <div className="flex items-center gap-2">
+                <p className="text-gray-900 font-semibold">시연 영상</p>
+                <button
+                  onClick={() => setShowVideoModal(true)}
+                  className="text-sm text-blue-500 hover:text-blue-700 hover:underline transition-colors cursor-pointer"
+                >
+                  시연 영상 보기 →
+                </button>
+              </div>
+              {showVideoModal && (
+                <div
+                  className="fixed inset-0 z-50 flex items-center justify-center bg-black/70"
+                  onClick={() => setShowVideoModal(false)}
+                >
+                  <div
+                    className="relative w-full max-w-3xl aspect-video mx-4"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <button
+                      onClick={() => setShowVideoModal(false)}
+                      className="absolute -top-8 right-0 text-white text-sm hover:text-gray-300 cursor-pointer"
+                    >
+                      닫기 ✕
+                    </button>
+                    <iframe
+                      src={`https://www.youtube.com/embed/${video.match(/(?:youtu\.be\/|v=)([^&?/]+)/)?.[1]}`}
+                      className="w-full h-full rounded-xl"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              )}
+            </>
+          )}
 
           {testAccount && (
             <>

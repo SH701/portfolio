@@ -45,6 +45,7 @@ export default function OpenDetail({ openIndex, setOpenIndex }: Props) {
               detailimg={Main[openIndex].detailimg}
               contribution={Main[openIndex].contribution}
               testAccount={Main[openIndex].testAccount}
+              video={Main[openIndex].video ?? ""}
             />
           </div>
         </div>

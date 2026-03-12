@@ -3,7 +3,7 @@ export type ProjectLink = string | { label: string; url: string };
 interface ProjectProps {
   title: string;
   description: string;
-
+  video?: string;
   img: string;
   language: string[];
   period: string;
@@ -115,6 +115,7 @@ export const Main: ProjectProps[] = [
       "/images/tripus/chatting.png",
       "/images/tripus/notify.png",
     ],
+    video: "https://youtu.be/lNPxqNL8djA?si=nAif0JgsXhSGimZE",
     language: [
       "TypeScript",
       "Next.js",
