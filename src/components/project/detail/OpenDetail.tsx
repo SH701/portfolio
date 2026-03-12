@@ -42,7 +42,6 @@ export default function OpenDetail({ openIndex, setOpenIndex }: Props) {
               projectLink={Main[openIndex]?.projectLink ?? []}
               language={Main[openIndex].language}
               capability={Main[openIndex].capability}
-              awards={Main[openIndex].awards}
               detailimg={Main[openIndex].detailimg}
               contribution={Main[openIndex].contribution}
               testAccount={Main[openIndex].testAccount}

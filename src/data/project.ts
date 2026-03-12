@@ -2,9 +2,8 @@ export type ProjectLink = string | { label: string; url: string };
 
 interface ProjectProps {
   title: string;
-  award?: string;
   description: string;
-  simple: string;
+
   img: string;
   language: string[];
   period: string;
@@ -18,18 +17,16 @@ interface ProjectProps {
     result: string;
   }[];
   contribution: string;
-  awards?: string;
+
   testAccount?: { id: string; password: string };
 }
 
 export const Main: ProjectProps[] = [
   {
     title: "🤓 Noonchi ",
-    award: "508 비사이드 포텐데이 우수 프로젝트 선정",
     period: "2025.08 ~ 진행 중",
     img: "/images/noonchi/noonchi_thumbnail.png",
-    awards: "네이버 클라우드 주최  508 AI 포텐데이 우수 프로젝트 선정",
-    simple:
+    description:
       "한국어 학습을 위한 AI 서비스입니다. 상황에 맞는 한국어 표현과 롤플레이 대화를 통해 눈치(사회적 맥락 이해)를 학습할 수 있습니다.",
     detailimg: [
       "/images/noonchi/noonchi_1.png",
@@ -49,8 +46,7 @@ export const Main: ProjectProps[] = [
       "NextAuth v5",
       "Storybook",
     ],
-    description:
-      "페르소나 선택, 번역 박스, 음성 입력·TTS 기능을 결합한 대화형 학습 서비스입니다. 사용자는 상황에 맞는 AI 페르소나를 선택해 실제 같은 대화를 경험할 수 있으며, 번역 박스로 언어 전환과 표현 교정을 확인할 수 있습니다.",
+
     contribution: "33%",
     projectLink: [
       { label: "웹", url: "https://noonchi-web.vercel.app" },
@@ -60,22 +56,22 @@ export const Main: ProjectProps[] = [
     testAccount: { id: "test@naver.com", password: "qwer1234" },
     capability: [
       {
-        title: "사용자 경험 중심의 인증 시스템 최적화",
+        title: "NextAuth.js 기반 인증 시스템 설계",
         problem:
-          "Access Token 만료 시 사용자가 다시 로그인해야 하거나 앱 흐름이 끊기는 불편함이 있었고, 클라이언트 사이드 리다이렉트로 인해 비로그인 사용자에게 보호된 페이지가 잠깐 노출되는 문제가 있었습니다.",
+          "Next.js App Router 환경에서 자체 JWT를 사용할 경우 서버 컴포넌트에서 쿠키를 직접 꺼내 디코딩해야 했고, 서버·클라이언트 컴포넌트 간 인증 상태 공유가 복잡해지는 문제가 있었습니다.",
         strategy:
-          "NextAuth v5의 JWT 콜백을 통해 토큰을 자동 갱신하고, Next.js Middleware에서 세션을 검증하여 서버 사이드에서 보호된 라우트를 처리했습니다.",
+          "NextAuth.js를 도입해 서버에서는 auth(), 클라이언트에서는 useSession()으로 동일한 세션에 일관되게 접근하도록 구성했습니다. jwt 콜백에서 accessToken 만료(60분) 감지 후 refreshToken으로 자동 재발급하고, 페이지 새로고침 시 token.user 소실 엣지 케이스는 /api/users/me 재호출로 복구했습니다. trigger === 'update'를 활용해 프로필 수정 후 세션을 즉시 반영하고, Axios interceptor와 연계해 모든 API 요청에 Bearer 토큰을 자동 주입했습니다.",
         result:
-          "백그라운드에서 토큰이 자동으로 갱신되어 사용자 경험이 개선되었고, 비로그인 사용자가 보호된 페이지에 접근할 때 페이지 내용이 잠깐이라도 보이는 현상이 사라졌습니다.",
+          "서버·클라이언트 양쪽에서 인증 상태를 일관되게 접근할 수 있게 되었고, 토큰 만료 시 사용자 개입 없이 백그라운드에서 자동 재발급되어 서비스 흐름이 끊기지 않게 됐습니다.",
       },
       {
-        title: "디자이너 3인과의 협업 체계 구축",
+        title: "MediaRecorder 기반 음성 채팅 구현",
         problem:
-          "프론트엔드 개발자가 1명인 상황에서 3명의 디자이너가 제작하는 다양한 컴포넌트의 일관성을 유지해야 했고, UI 수정 및 검토 과정에서 발생하는 커뮤니케이션 비용을 줄여야 했습니다.",
+          "텍스트 입력만으로는 언어 학습 특성상 말하기 연습이 불가능했고, 음성 입력부터 AI 응답까지의 흐름을 자연스럽게 연결해야 했습니다.",
         strategy:
-          "Storybook 10을 도입하여 모든 공통 컴포넌트를 독립된 환경에서 문서화하고, 각 컴포넌트의 다양한 상태(Default, Hover, Disabled, Error 등)를 미리 시각화하여 디자이너가 개발 단계에서 결과물을 즉시 검토할 수 있도록 공유했습니다.",
+          "MediaRecorder API로 마이크 입력을 녹음하고, 녹음된 Blob을 서버에 업로드한 뒤 STT API를 통해 텍스트로 변환했습니다. 변환된 텍스트는 미리보기 후 전송할 수 있도록 recorded 상태를 두어 사용자가 내용을 확인하고 수정할 수 있게 했습니다.",
         result:
-          "디자인 가이드와 실제 구현체 간의 차이를 최소화하여 UI 품질의 일관성을 확보하였습니다.",
+          "idle → recording → recorded 3단계 상태 머신으로 음성 입력 흐름을 관리하여, 텍스트와 음성 모두로 AI와 대화할 수 있는 인터페이스를 구현했습니다.",
       },
       {
         title: "SSE 스트리밍으로 실시간 AI 응답 표시",
@@ -86,14 +82,32 @@ export const Main: ProjectProps[] = [
         result:
           "글자가 하나씩 나타나는 스트리밍 UX를 구현하여 사용자가 느끼는 첫 응답 대기 시간을 단축하였습니다.",
       },
+      {
+        title: "Google Analytics 기반 사용자 행동 분석",
+        problem:
+          "서비스 출시 후 실제 사용자가 어떤 방식으로 서비스를 이용하는지 파악할 수 없어, 개선 방향을 데이터 기반으로 결정하기 어려웠습니다.",
+        strategy:
+          "Google Analytics 4를 도입하여 페이지뷰, 활성 사용자, 이벤트 발생 수, 이탈률 등 핵심 지표를 수집했습니다.",
+        result:
+          "113명의 활성 사용자와 평균 5분 28초의 참여 시간, 이탈률 37.3%를 확인하였고, 이를 바탕으로 사용자가 서비스에 충분히 몰입하고 있음을 데이터로 검증했습니다.",
+      },
+      {
+        title: "디자이너 3인과의 협업 체계 구축",
+        problem:
+          "프론트엔드 개발자가 1명인 상황에서 3명의 디자이너가 제작하는 다양한 컴포넌트의 일관성을 유지해야 했고, UI 수정 및 검토 과정에서 발생하는 커뮤니케이션 비용을 줄여야 했습니다.",
+        strategy:
+          "Storybook 10을 도입하여 모든 공통 컴포넌트를 독립된 환경에서 문서화하고, 각 컴포넌트의 다양한 상태(Default, Hover, Disabled, Error 등)를 미리 시각화하여 디자이너가 개발 단계에서 결과물을 즉시 검토할 수 있도록 공유했습니다.",
+        result:
+          "디자인 가이드와 실제 구현체 간의 차이를 최소화하여 UI 품질의 일관성을 확보하였습니다.",
+      },
     ],
   },
   {
     title: "✈️ TripUs",
     period: "2025.12 ~ 2026.01",
     img: "/images/tripus/tripus_thumbnail.png",
-
-    simple: "혼자는 싫고, 아무나도 싫은 사람을 위한 취향 기반 여행 동행 서비스",
+    description:
+      "자신과 비슷한 취향을 가진 여행 동행을 구할 수 있는 플랫폼입니다.",
     detailimg: [
       "/images/tripus/login.png",
       "/images/tripus/post.png",
@@ -114,8 +128,7 @@ export const Main: ProjectProps[] = [
       "Jest",
       "MSW",
     ],
-    description:
-      "여행 스타일과 취향이 맞는 동행을 찾아주는 매칭 서비스입니다. 게시글을 통해 여행 동행자를 모집할 수 있으며, 실시간 채팅으로 여행 전부터 소통하며 서로를 알아갈 수 있습니다.",
+
     contribution: "25%",
     projectLink: [
       {
@@ -159,8 +172,8 @@ export const Main: ProjectProps[] = [
     period: "2025.10 ~ 2026.01",
     img: "/images/seoul_course/seoul_course_thumbnail.png",
     contribution: "100%",
-    simple:
-      "나만의 취향을 반영해 원하는 지역과 활동으로 하루 코스를 설계해 주는 AI 서비스.",
+    description:
+      "원하는 지역과 활동을 입력하면 AI가 식사·카페·관광을 포함한 하루 코스를 자동으로 설계해줍니다.",
     detailimg: [
       "/images/seoul_course/course.png",
       "/images/seoul_course/chat.png",
@@ -174,14 +187,12 @@ export const Main: ProjectProps[] = [
       "React-Query",
       "Zustand",
       "TailwindCSS",
-      "Framer-motion",
       "OpenAI API",
       "Prisma",
       "PostgreSQL",
       "Clerk",
     ],
-    description:
-      "사용자의 지역·활동을 바탕으로 AI가 하루 일정을 자동으로 설계합니다. 요청은 입력 또는 챗으로 할 수 있으며 식사·카페·관광 등을 미리보기로 확인할 수 있습니다. 또한 AI를 거치지 않는 ‘구 탐색’ 모드로 특정 구의 인기 장소를 즉시 목록 형태로 확인할 수 있어 탐색과 맞춤 일정 생성 모두를 지원합니다.",
+
     projectLink: [
       {
         label: "사이트",
@@ -191,13 +202,13 @@ export const Main: ProjectProps[] = [
     githubLink: "https://github.com/SH701/potenday",
     capability: [
       {
-        title: "SSE 스트리밍으로 실시간 AI 응답 표시",
+        title: "신뢰성 있는 AI 추천 시스템 설계 (OpenAI & Naver API)",
         problem:
-          "서버에서 AI 응답을 한 번에 받아올 경우, 전체 답변이 생성될 때까지 긴 대기 시간이 발생하여 사용자 이탈 및 UX 저하가 우려되었습니다.",
+          "단순 AI 생성형 답변이 존재하지 않는 장소를 추천하거나 잘못된 정보를 제공하여 서비스의 신뢰도가 저하되는 문제가 있었습니다",
         strategy:
-          "ReadableStream API를 사용하여 서버로부터 전달되는 SSE 데이터를 data: 라인 단위로 실시간 파싱했습니다. chunk 타입은 즉시 화면에 스트리밍하고, done 타입은 최종 응답 완성 및 상태 업데이트로 처리했습니다.",
+          "Naver API를 통해 특정 구역의 실제 장소 데이터를 선제적으로 확보하여 실제 데이터를 OpenAI 프롬프트에 주입하여, 검증된 장소 내에서만 사용자 맞춤형 추천이 이루어지도록 파이프라인을 구축하였습니다.",
         result:
-          "글자가 하나씩 나타나는 스트리밍 UX를 구현하여 사용자가 느끼는 첫 응답 대기 시간을 획기적으로 단축하였습니다.",
+          " AI의 창의성과 외부 API의 정확성을 결합하여 사용자에게 신뢰도 높은 여행 코스 큐레이션 제공합니다.",
       },
       {
         title: "React Query를 통한 데이터 페칭 및 캐싱 최적화",
@@ -209,13 +220,13 @@ export const Main: ProjectProps[] = [
           "동일 데이터에 대한 네트워크 요청 발생 빈도를 대폭 절감하고, 캐싱된 데이터를 통한 즉각적인 UI 응답성 확보하였습니다.",
       },
       {
-        title: "신뢰성 있는 AI 추천 시스템 설계 (OpenAI & Naver API)",
+        title: "Promise.all 병렬 처리로 Naver API 응답 속도 개선",
         problem:
-          "단순 AI 생성형 답변이 존재하지 않는 장소를 추천하거나 잘못된 정보를 제공하여 서비스의 신뢰도가 저하되는 문제가 있었습니다",
+          "카페·맛집·명소·관광 4개 카테고리의 장소 데이터를 순차적으로 호출할 경우, 각 요청이 직렬로 쌓여 전체 응답 시간이 길어지는 문제가 있었습니다.",
         strategy:
-          "Naver API를 통해 특정 구역의 실제 장소 데이터를 선제적으로 확보하여 실제 데이터를 OpenAI 프롬프트에 주입하여, 검증된 장소 내에서만 사용자 맞춤형 추천이 이루어지도록 파이프라인을 구축하였습니다.",
+          "Promise.all을 사용해 4개 카테고리의 Naver API 요청을 동시에 병렬 호출하도록 변경했습니다.",
         result:
-          " AI의 창의성과 외부 API의 정확성을 결합하여 사용자에게 신뢰도 높은 여행 코스 큐레이션 제공합니다.",
+          "순차 호출 대비 응답 시간을 단축하여 장소 데이터 수집 및 AI 추천 응답 속도를 개선했습니다.",
       },
     ],
   },

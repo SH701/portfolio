@@ -20,8 +20,16 @@ export default function ProjectList({ setOpenIndex }: ProjectListProps) {
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
       {Main.map(
         (
-          { title, simple, language, period, img, githubLink, projectLink },
-          index
+          {
+            title,
+            language,
+            period,
+            img,
+            githubLink,
+            projectLink,
+            description,
+          },
+          index,
         ) => {
           const isHovered = showDetail === index;
           const moveProject = () => {
@@ -87,7 +95,7 @@ export default function ProjectList({ setOpenIndex }: ProjectListProps) {
                       </p>
 
                       <p className="text-sm leading-relaxed text-gray-300 mt-3 line-clamp-2">
-                        {simple}
+                        {description}
                       </p>
                     </div>
 
@@ -122,7 +130,7 @@ export default function ProjectList({ setOpenIndex }: ProjectListProps) {
               </div>
             </ScrollAnimation>
           );
-        }
+        },
       )}
     </div>
   );

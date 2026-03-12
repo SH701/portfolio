@@ -24,7 +24,7 @@ interface Props {
   detailimg: string[];
   description: string;
   contribution: string;
-  awards?: string;
+
   testAccount?: { id: string; password: string };
 }
 
@@ -38,7 +38,6 @@ export default function ProjectDetail({
   capability,
   detailimg,
   contribution,
-  awards,
   testAccount,
 }: Props) {
   const [isOpen, setIsOpen] = useState<number[]>([]);
@@ -144,14 +143,6 @@ export default function ProjectDetail({
       <div className="flex flex-col gap-4">
         <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm space-y-4">
           <div>
-            <div className="flex items-center gap-2 mb-2">
-              <p className="text-gray-900 font-semibold">프로젝트 설명</p>
-              {awards && (
-                <span className="text-xs px-2 py-0.5 bg-green-100 text-green-700 rounded-full font-medium">
-                  {awards}
-                </span>
-              )}
-            </div>
             <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
               {description}
             </p>

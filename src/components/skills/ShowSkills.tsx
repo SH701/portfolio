@@ -8,7 +8,7 @@ import ScrollAnimation from "../etc/ScrollAnimation";
 import { TabKey } from "@/data/skillsdata";
 
 export default function ShowSkills() {
-  const [activeTab, setActiveTab] = useState<TabKey>("Language");
+  const [activeTab, setActiveTab] = useState<TabKey>("Core");
 
   return (
     <ScrollAnimation
