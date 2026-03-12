@@ -60,7 +60,7 @@ export const Main: ProjectProps[] = [
         problem:
           "Next.js App Router 환경에서 자체 JWT를 사용할 경우 서버 컴포넌트에서 쿠키를 직접 꺼내 디코딩해야 했고, 서버·클라이언트 컴포넌트 간 인증 상태 공유가 복잡해지는 문제가 있었습니다.",
         strategy:
-          "NextAuth.js를 도입해 서버에서는 auth(), 클라이언트에서는 useSession()으로 동일한 세션에 일관되게 접근하도록 구성했습니다. jwt 콜백에서 accessToken 만료 감지 후 refreshToken으로 자동 재발급하고, 페이지 새로고침 시 token.user 소실 엣지 케이스는 /api/users/me 재호출로 복구했습니다. trigger === 'update'를 활용해 프로필 수정 후 세션을 즉시 반영하고, Axios interceptor와 연계해 모든 API 요청에 Bearer 토큰을 자동 주입했습니다.",
+          "NextAuth.js를 도입해 서버에서는 auth(), 클라이언트에서는 useSession()으로 동일한 세션에 일관되게 접근하도록 구성했습니다. jwt 콜백에서 accessToken 만료 감지 후 refreshToken으로 자동 재발급하고,  Axios interceptor와 연계해 모든 API 요청에 Bearer 토큰을 자동 주입했습니다.",
         result:
           "서버/클라이언트 인증 코드 이원화를 제거하였고 토큰이 만료되어 강제로 로그아웃 되는 일이 0건으로 줄었습니다.",
       },
