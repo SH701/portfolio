@@ -43,7 +43,6 @@ export const Main: ProjectProps[] = [
       "Zod",
       "React-Hook-Form",
       "Axios",
-      "NextAuth v5",
       "Storybook",
     ],
 
@@ -55,15 +54,6 @@ export const Main: ProjectProps[] = [
     githubLink: "https://github.com/SH701/noonchi.ai",
     testAccount: { id: "test@naver.com", password: "qwer1234" },
     capability: [
-      {
-        title: "NextAuth.js 기반 토큰 자동 갱신 및 인증 상태 통합",
-        problem:
-          "토큰 만료 시 자동 재발급 로직을 직접 구현하면 서버/클라이언트 각각에서 처리해야 해서 코드가 분산되는 문제가 있었습니다.",
-        strategy:
-          " NextAuth.js를 도입해 jwt 콜백에서 accessToken 만료 감지 후 refreshToken으로 자동 재발급하도록 구성했습니다. 서버에서는 auth(), 클라이언트에서는 useSession()으로 동일한 세션에 일관되게 접근하고, Axios interceptor와 연계해 모든 API 요청에 Bearer 토큰을 자동 주입했습니다.",
-        result:
-          "서버/클라이언트 인증 코드 이원화를 제거하였고 토큰이 만료되어 강제로 로그아웃 되는 일이 없어졌습니다.",
-      },
       {
         title: "MediaRecorder 기반 음성 채팅 구현",
         problem:
@@ -135,15 +125,6 @@ export const Main: ProjectProps[] = [
           "도메인 단위의 응집도 높은 구조로 코드 변경 영향 범위를 최소화했고, 복잡한 폼도 안정적으로 동작하도록 구현했습니다.",
       },
       {
-        title: "React Virtuoso를 통한 무한스크롤 성능 최적화",
-        problem:
-          "무한 스크롤 기능을 통해 대량의 게시글이 로드될 때, 브라우저 내 DOM 노드가 무한정 증가하며 메모리 점유율이 상승하고 스크롤이 끊기는 성능 저하 현상이 발생했습니다.",
-        strategy:
-          "React Virtuoso를 도입하여 수백 개의 데이터 중 현재 사용자 화면에 보이는 항목만 렌더링하고, 나머지는 DOM에서 동적으로 제거하는 윈도잉 기법을 구현했습니다.",
-        result:
-          "수백 개의 게시글을 로드하더라도 실제 DOM 노드 수를 일정하게 유지하였습니다.",
-      },
-      {
         title: "MSW 기반의 Post 도메인 개발 및 테스트 로직 구현",
         problem:
           "백엔드 API 개발이 완료될 때까지 기다릴 경우 프론트엔드 전체 일정이 지연되는 병목 현상이 예상되었습니다.",
@@ -205,15 +186,6 @@ export const Main: ProjectProps[] = [
           "Naver API를 통해 특정 구역의 실제 장소 데이터를 선제적으로 확보하여 실제 데이터를 OpenAI 프롬프트에 주입하여, 검증된 장소 내에서만 사용자 맞춤형 추천이 이루어지도록 파이프라인을 구축하였습니다.",
         result:
           " AI의 창의성과 외부 API의 정확성을 결합하여 사용자에게 신뢰도 높은 정보를 제공합니다.",
-      },
-      {
-        title: "React Query를 통한 데이터 페칭 및 캐싱 최적화",
-        problem:
-          "초기 useEffect 기반의 페칭 방식에서 발생하던 페이지 진입 시마다 중복 API 호출, 불필요한 리렌더링, 캐싱 부재 문제를 해결하기 위해 도입 하였습니다.",
-        strategy:
-          "빈번하게 변하지 않는 장소 정보는 staleTime을 길게(예: 5분) 설정하고, 실시간성이 중요한 채팅 데이터는 짧게 설정하여 데이터 성격에 따른 네트워크 비용을 최적화였습니다.",
-        result:
-          "동일 데이터에 대한 네트워크 요청 발생 빈도를 대폭 절감하고, 캐싱된 데이터를 통한 즉각적인 UI 응답성 확보하였습니다.",
       },
     ],
   },
