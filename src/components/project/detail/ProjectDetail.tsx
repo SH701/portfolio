@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { ProjectLink } from "@/data/project";
 import { Globe, ChevronLeft, ChevronRight } from "lucide-react";
 import GithubIcon from "@/components/etc/Githubicon";
+import CloseModal from "../CloseModal";
 
 interface CapabilityItem {
   title: string;
@@ -41,6 +42,7 @@ export default function ProjectDetail({
   const [isOpen, setIsOpen] = useState<number[]>([]);
   const [copied, setCopied] = useState<"id" | "password" | null>(null);
   const [showVideoModal, setShowVideoModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const copyToClipboard = (text: string, type: "id" | "password") => {
     navigator.clipboard.writeText(text);
@@ -67,11 +69,13 @@ export default function ProjectDetail({
     );
   };
   const moveProject = () => {
-    if (projectLink.length > 0) {
-      const link = projectLink[0];
-      const url = typeof link === "string" ? link : link.url;
-      window.open(url, "_blank", "noopener,noreferrer");
+    if (projectLink.length === 0) {
+      setShowModal(true);
+      return;
     }
+    const link = projectLink[0];
+    const url = typeof link === "string" ? link : link.url;
+    window.open(url, "_blank", "noopener,noreferrer");
   };
   const moveGitHub = () => {
     window.open(githubLink, "_blank", "noopener,noreferrer");
@@ -90,6 +94,7 @@ export default function ProjectDetail({
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
+          {/* 이미지 */}
           {detailimg.map((image, idx) => (
             <Image
               key={idx}
@@ -126,6 +131,7 @@ export default function ProjectDetail({
           </button>
         )}
       </div>
+      {/* 외부 링크 (깃허브, 사이트) */}
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold">{title}</h2>
         <div className="flex gap-2 ">
@@ -141,6 +147,7 @@ export default function ProjectDetail({
       </div>
       <div className="flex flex-col gap-4">
         <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm space-y-4">
+          {/* 한 줄 설명 */}
           <div>
             <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
               {description}
@@ -148,11 +155,12 @@ export default function ProjectDetail({
           </div>
 
           <hr className="border-gray-200" />
-
+          {/* 기여도 */}
           <div className="flex items-center gap-2">
             <p className="text-gray-900 font-semibold">기여도</p>
             <span className="text-sm text-gray-600">{contribution}</span>
           </div>
+          {/* 시연 영상 */}
           {video && (
             <>
               <hr className="border-gray-200" />
@@ -191,7 +199,7 @@ export default function ProjectDetail({
               )}
             </>
           )}
-
+          {/* 테스트 계정  */}
           {testAccount && (
             <>
               <hr className="border-gray-200" />
@@ -228,9 +236,8 @@ export default function ProjectDetail({
               </div>
             </>
           )}
-
           <hr className="border-gray-200" />
-
+          {/* 기술 스텍 */}
           <div>
             <p className="text-gray-900 font-semibold mb-2">기술 스택</p>
             <div className="flex flex-wrap gap-2">
@@ -245,7 +252,7 @@ export default function ProjectDetail({
             </div>
           </div>
         </div>
-
+        {/* 기능 설명 */}
         <div>
           <p className="text-black font-bold py-2">서비스 기능 </p>
           <div>
@@ -294,6 +301,8 @@ export default function ProjectDetail({
             })}
           </div>
         </div>
+        {/* 서버 종료 모달 */}
+          <CloseModal showModal={showModal} setShowModal={setShowModal} />
       </div>
     </div>
   );

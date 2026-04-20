@@ -91,15 +91,6 @@ export const Main: ProjectProps[] = [
         result:
           "113명의 활성 사용자와 평균 5분 28초의 참여 시간, 이탈률 37.3%를 확인하였고, 이를 바탕으로 사용자가 서비스에 충분히 몰입하고 있음을 데이터로 검증했습니다.",
       },
-      {
-        title: "디자이너 3인과의 협업 체계 구축",
-        problem:
-          "프론트엔드 개발자가 1명인 상황에서 3명의 디자이너가 제작하는 다양한 컴포넌트의 일관성을 유지해야 했고, UI 수정 및 검토 과정에서 발생하는 커뮤니케이션 비용을 줄여야 했습니다.",
-        strategy:
-          "Storybook을 도입하여 공통 컴포넌트 7개를 독립된 환경에서 문서화하고, 각 컴포넌트의 다양한 상태(Default, Hover, Disabled, Error 등)를 미리 시각화하여 디자이너가 개발 단계에서 결과물을 즉시 검토할 수 있도록 공유했습니다.",
-        result:
-          "디자이너가 Figma 시안과 실제 구현체를 Storybook에서 직접 비교·검토할 수 있게 되어, 디자인-개발 간 불일치를 줄이고 커뮤니케이션 비용을 낮췄습니다.",
-      },
     ],
   },
   {
@@ -131,12 +122,7 @@ export const Main: ProjectProps[] = [
     ],
 
     contribution: "25%",
-    projectLink: [
-      {
-        label: "사이트",
-        url: "https://tripus.site/",
-      },
-    ],
+    projectLink: [],
     githubLink: "https://github.com/codeit12-team3/FE",
     capability: [
       {

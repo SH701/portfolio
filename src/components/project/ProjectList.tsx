@@ -7,6 +7,7 @@ import { Main } from "@/data/project";
 import { Globe } from "lucide-react";
 import ScrollAnimation from "../etc/ScrollAnimation";
 import GithubIcon from "../etc/Githubicon";
+import CloseModal from "./CloseModal";
 
 interface ProjectListProps {
   openIndex: number | null;
@@ -15,7 +16,7 @@ interface ProjectListProps {
 
 export default function ProjectList({ setOpenIndex }: ProjectListProps) {
   const [showDetail, setShowDetail] = useState<number | null>(null);
-
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
       {Main.map(
@@ -127,6 +128,7 @@ export default function ProjectList({ setOpenIndex }: ProjectListProps) {
                     </div>
                   </div>
                 </div>
+                <CloseModal showModal={showModal} setShowModal={setShowModal} />
               </div>
             </ScrollAnimation>
           );
