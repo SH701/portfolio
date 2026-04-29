@@ -27,7 +27,7 @@ export const Main: ProjectProps[] = [
     period: "2025.08 ~ 진행 중",
     img: "/images/noonchi/noonchi_thumbnail.png",
     description:
-      "한국어 학습을 위한 AI 서비스입니다. 상황에 맞는 한국어 표현과 롤플레이 대화를 통해 눈치(사회적 맥락 이해)를 학습할 수 있습니다.",
+      "Next.js 기반 AI 한국어 학습 서비스에서 OAuth 인증, 실시간 스트리밍 채팅, PWA 등을 구현하며 프론트엔드 전반을 담당하였습니다.",
     detailimg: [
       "/images/noonchi/noonchi_1.png",
       "/images/noonchi/noonchi_2.png",
@@ -47,19 +47,16 @@ export const Main: ProjectProps[] = [
     ],
 
     contribution: "33%",
-    projectLink: [
-      { label: "웹", url: "https://noonchi-web.vercel.app" },
-      { label: "모바일", url: "https://noonchi.ai.kr" },
-    ],
+    projectLink: [{ label: "모바일", url: "https://noonchi.ai.kr" }],
     githubLink: "https://github.com/SH701/noonchi.ai",
     testAccount: { id: "test@naver.com", password: "qwer1234" },
     capability: [
       {
-        title: "MediaRecorder 기반 음성 채팅 구현",
+        title: "WebSpeech API 기반 음성 채팅 구현",
         problem:
           "텍스트 입력만으로는 언어 학습 특성상 말하기 연습이 불가능했고, 음성 입력부터 AI 응답까지의 흐름을 자연스럽게 연결해야 했습니다.",
         strategy:
-          "브라우저 내장 MediaRecorder API로 녹음 → Blob 업로드 → STT 변환 파이프라인을 외부 라이브러리 없이 구현하고, 녹음 전/중/후 3단계로 음성 입력 흐름을 설계했습니다.",
+          "브라우저 내장 Web Speech API를 외부 라이브러리 없이 사용해 마이크 입력을 실시간 텍스트로 변환했습니다.",
         result:
           "idle → recording → recorded 3단계 상태 머신으로 음성 입력 흐름을 관리하여, 텍스트와 음성 모두로 AI와 대화할 수 있는 인터페이스를 구현했습니다.",
       },
@@ -68,9 +65,27 @@ export const Main: ProjectProps[] = [
         problem:
           "AI 응답 완성까지 로딩 상태만 표시되어 사용자가 평균 6초를 대기해야 했습니다.",
         strategy:
-          "AI 응답은 서버→클라이언트 단방향 수신이어서 양방향 통신인 WebSocket 대신 SSE를 선택했습니다. 전달받은 데이터의 타입을 구분하여 chunk 타입은 즉시 화면에 출력하고 done 타입은 최종 상태 업데이트로 처리하였습니다.",
+          "AI 응답은 서버→클라이언트 단방향 수신이어서 양방향 통신인 WebSocket 대신 SSE를 선택했습니다. ReadableStream과 TextDecoder로 청크를 직접 파싱하여 chunk 타입은 즉시 화면에 누적 출력하고, situation·done 타입은 별도 상태 업데이트로 처리했습니다.",
         result:
-          "동일 AI 서버 기준, 일반 fetch 방식은 응답 완성까지 평균 6초가 소요되었으나, SSE 스트리밍 도입 후 사용자가 첫 응답을 받기까지의 시간을 1.61초로 단축하였습니다.",
+          "동일 AI 서버 기준 일반 fetch 방식은 응답 완성까지 평균 6초가 소요되었으나 SSE 스트리밍 도입 후 사용자가 첫 응답을 받기까지의 시간을 1.61초로 단축하였습니다.",
+      },
+      {
+        title: "Axios 인터셉터 기반 인증 자동화 및 401 처리",
+        problem:
+          "모든 API 요청마다 토큰을 수동으로 주입해야 했고, 토큰 만료 시 사용자가 갑작스럽게 오류 화면을 마주하는 문제가 있었습니다.",
+        strategy:
+          "Axios request 인터셉터에서 NextAuth 세션을 자동으로 읽어 Authorization 헤더를 주입하고 response 인터셉터에서 401 응답을 감지해 signOut을 자동 호출하도록 설계했습니다.",
+        result:
+          "인증 관련 코드를 인터셉터 단 1곳으로 집중시켜 전체 API 호출 코드에서 토큰 주입 로직을 제거했고 401 발생 시 자동 로그아웃 및 리디렉션이 동작하는 일관된 인증 처리 구조를 만들었습니다.",
+      },
+      {
+        title: "TanStack Query + Zustand 서버/클라이언트 상태 분리",
+        problem:
+          "서버 데이터와 UI 상태가 혼재되어 캐싱이 불가능하고 동일 데이터를 여러 컴포넌트에서 중복 요청하는 문제가 있었습니다.",
+        strategy:
+          "서버 데이터(API 응답)는 TanStack Query로 캐싱·동기화하고 클라이언트 UI 상태(모달 개폐, 탭, 채팅 히스토리)는 Zustand 스토어 4개로 분리 관리했습니다.",
+        result:
+          "API 중복 호출을 제거하고 캐시 기반 즉시 응답으로 즐겨찾기 등 인터랙션의 반응속도를 개선했습니다.",
       },
       {
         title: "Google Analytics 기반 사용자 행동 분석",
@@ -79,7 +94,7 @@ export const Main: ProjectProps[] = [
         strategy:
           "이벤트 기반 데이터 모델로 커스텀 이벤트 추적이 유연한 Google Analytics 4를 도입하여 페이지뷰, 활성 사용자, 이벤트 발생 수, 이탈률 등 핵심 지표를 수집했습니다.",
         result:
-          "113명의 활성 사용자와 평균 5분 28초의 참여 시간, 이탈률 37.3%를 확인하였고, 이를 바탕으로 사용자가 서비스에 충분히 몰입하고 있음을 데이터로 검증했습니다.",
+          "113명의 활성 사용자와 평균 5분 28초의 참여 시간과 이탈률 37.3%를 확인하였습니다.",
       },
     ],
   },
@@ -125,14 +140,14 @@ export const Main: ProjectProps[] = [
           "도메인 단위의 응집도 높은 구조로 코드 변경 영향 범위를 최소화했고, 복잡한 폼도 안정적으로 동작하도록 구현했습니다.",
       },
       {
-        title: "React Hook Form + Zod로 폼 설계",
+        title: "클라이언트 사이드 이미지 압축으로 업로드 성능 개선",
         problem:
-          "국가, 날짜, 인원, 나이, 이미지 등 다양한 타입의 필드와 복잡한 유효성 검증이 필요했습니다",
+          "용량이 큰 이미지를 업로드 하면 속도가 느리고 렌더링 성능에도 영향을 줬습니다.",
         strategy:
-          "React Hook Form으로 폼 상태를 관리하고 Zod로 필드별 스키마를 정의하여 안전한 유효성 검증을 구현하였습니다.",
-        result:
-          "국가, 날짜, 인원, 나이, 이미지 등 8개 이상의 이기종 필드를 단일 폼으로 관리하며 타입 안전한 유효성 검증을 구현하였습니다.",
+          "browser-image-compression 라이브러리를 활용해 업로드 전 클라이언트에서 압축을 처리하고, 프로필(1MB)과 게시물(5MB)의 용도별 프리셋을 분리 설계했습니다. useWebWorker 옵션으로 압축 작업을 별도 스레드에서 실행하였습니다.",
+        result: "업로드 용량 절감 및 렌더링 속도 개선하였습니다.",
       },
+
       {
         title: "MSW 기반의 Post 도메인 개발 및 테스트 로직 구현",
         problem:
@@ -150,7 +165,7 @@ export const Main: ProjectProps[] = [
     img: "/images/seoul_course/seoul_course_thumbnail.png",
     contribution: "100%",
     description:
-      "원하는 지역과 활동을 입력하면 AI가 식사·카페·관광을 포함한 하루 코스를 자동으로 설계해줍니다.",
+      "프론트엔드부터 API 설계, DB 스키마, 외부 API 연동, 배포까지 전 과정을 단독으로 설계·구현했습니다.",
     detailimg: [
       "/images/seoul_course/course.png",
       "/images/seoul_course/chat.png",
@@ -181,20 +196,20 @@ export const Main: ProjectProps[] = [
       {
         title: "Clerk + Prisma 기반 인증 및 데이터 계층 구축",
         problem:
-          "소셜 로그인과 인증 UI를 직접 구현할 경우 OAuth 연동, 세션 관리, 로그인 화면 제작까지 개발 범위가 넓어져 핵심 기능인 AI 추천 개발에 집중하기 어려웠습니다.",
+          "OAuth 연동, 세션 관리 등 인증 시스템 직접 구현 시 개발 범위가 지나치게 확장되는 문제가 있었습니다.",
         strategy:
-          "소셜 로그인 내장과 인증 UI 컴포넌트를 제공하는 Clerk을 도입해 인증 관련 개발 범위를 최소화하고, DB는 익숙한 Prisma ORM을 선택해 러닝커브 없이 데이터 계층을 구축했습니다.",
+          "Clerk을 도입하여 인증 UI와 소셜 로그인이 내장된 라이브러리를 활용해 인증 개발 공수 최소화하였고 익숙한 ORM을 선택하여 데이터 계층 구축 시 발생하는 러닝커브 제거",
         result:
-          "인증·DB 구현 시간을 최소화하여 AI 추천 파이프라인 등 핵심 비즈니스 로직 개발에 집중할 수 있었습니다.",
+          "인증 및 DB 인프라 구축 시간을 단축하여 AI 추천 파이프라인 등 핵심 비즈니스 로직 개발에 자원 집중할 수 있었습니다.",
       },
       {
-        title: "신뢰성 있는 AI 추천 시스템 설계 (OpenAI & Naver API)",
+        title: "React Query 캐싱으로 AI API 호출 최적화",
         problem:
-          "단순 AI 생성형 답변이 존재하지 않는 장소를 추천하거나 잘못된 정보를 제공하여 서비스의 신뢰도가 저하되는 문제가 있었습니다",
+          "같은 구를 반복 선택할 때마다 불필요한 API 호출이 발생, AI 응답 지연 문제가 있었습니다.",
         strategy:
-          "Naver API를 통해 특정 구역의 실제 장소 데이터를 선제적으로 확보하여 실제 데이터를 OpenAI 프롬프트에 주입하여, 검증된 장소 내에서만 사용자 맞춤형 추천이 이루어지도록 파이프라인을 구축하였습니다.",
+          "React Query의 staleTime을 자정까지 동적으로 계산해 설정하고 로딩 중에는 스피너와 텍스트로 대기 상태를 명확히 표시했습니다.",
         result:
-          " AI의 창의성과 외부 API의 정확성을 결합하여 사용자에게 신뢰도 높은 정보를 제공합니다.",
+          " 같은 구 재선택 시 캐시에서 즉시 렌더링되어 불필요한 AI API 호출을 제거했으며 낙관적 업데이트로 저장 인터랙션의 체감 응답 속도를 개선했습니다.",
       },
     ],
   },
